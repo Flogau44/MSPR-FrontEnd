@@ -62,7 +62,6 @@ async function updateData() {
     // code à exécuter après réception de la réponse
     // conversion de la réponse au format Javascript
     const reponseJS = await reponseJSON.json();
-    console.log(reponseJS);
     let newsCategory = reponseJS.filter(
       //Afficher que les articles (filtre à appliquer sur la category-news de WordPress)
       (n) => n.class_list[7] === "category-news"

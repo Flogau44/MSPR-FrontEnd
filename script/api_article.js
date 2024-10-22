@@ -62,7 +62,6 @@ async function updateData() {
     // code à exécuter après réception de la réponse
     // conversion de la réponse au format Javascript
     const reponseJS = await reponseJSON.json();
-    console.log(reponseJS);
     // Trouver l'id de l'article correspondant à l'id de l'url
     const item = reponseJS.find((news) => news.id == id);
     // Je rappelle la fonction createArticle afin de créer tout les éléments de l'article

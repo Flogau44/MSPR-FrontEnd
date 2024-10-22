@@ -50,7 +50,7 @@ const createArtists = (item) => {
 // Récupérer les données de l'API WP et ensuite afficher tous les artistes sur la page information
 //Sélection de l'url WP-JSON
 const restUrl =
-  "http://localhost:10004/wp-json/wp/v2/posts?_embed&categories=4&per_page=6";
+  "http://localhost:10004/wp-json/wp/v2/posts?_embed&categories=4&per_page=12";
 
 async function updateData() {
   try {

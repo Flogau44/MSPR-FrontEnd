@@ -210,3 +210,6 @@
 .horaireArtistHour {
   @apply text-white text-xl font-semibold;
 }
+.imgPartner {
+  @apply max-w-full h-[100px];
+}

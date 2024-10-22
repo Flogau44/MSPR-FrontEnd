@@ -46,7 +46,7 @@
             id="toggleHamburger"
             class="cursor-pointer px-4 w-7 md:hidden"
           >
-            <i class="fas fa-bars fa-2xl" style="color: #ffffff"></i>
+            <i class="fas fa-bars fa-2xl text-white"></i>
           </button>
           <ul
             id="toggleMobileMenu"
@@ -177,26 +177,26 @@
     </header>
     <main class="h-full mt-0 pt-0">
       <!--Section Caroussel-->
-      <section class="relative m-0 p-0">
+      <section class="hidden md:flex md:relative md:m-0 md:p-0">
         <!--Faire apparaitre les images-->
         <div class="carouselSlide hidden">
           <img
             src="./images/Scene1.jpg"
-            class="w-full h-[300px] md:h-[500px] object-cover"
+            class="w-screen h-[300px] md:h-[500px] object-cover"
             alt="Scène1"
           />
         </div>
         <div class="carouselSlide hidden">
           <img
             src="./images/scene2.jpg"
-            class="w-full h-[300px] md:h-[500px] object-cover"
+            class="w-screen h-[300px] md:h-[500px] object-cover"
             alt="Scène2"
           />
         </div>
         <div class="carouselSlide hidden">
           <img
             src="./images/scene3.jpg"
-            class="w-full h-[300px] md:h-[500px] object-cover"
+            class="w-screen h-[300px] md:h-[500px] object-cover"
             alt="Scène3"
           />
         </div>
@@ -223,7 +223,7 @@
         class="w-full py-10 flex flex-col items-center gap-y-4 bg-navyblue"
       >
         <div
-          class="slidebuttons py-4 px-20 w-full flex flex-row justify-between items-center md:justify-around"
+          class="slidebuttons py-4 w-full flex flex-row items-center justify-around"
         >
           <h2 class="uppercase text-lightblue">— Programmation —</h2>
           <div class="flex flex-row gap-x-4">
@@ -257,12 +257,10 @@
       <!--Section billetterie-->
       <section class="py-8 flex flex-col items-center space-y-4">
         <h2 class="uppercase js-show-on-scroll-2">— Billetterie —</h2>
-        <div class="flex flex-row justify-center items-center gap-x-4">
-          <p class="uppercase text-base font-medium md:text-xl">
-            Billet 1 jour · Forfait 3 Jours
-          </p>
-          <img src="./images/ticket.png" alt="ticket" />
-        </div>
+        <p class="uppercase text-base font-medium md:text-xl">
+          Billet 1 jour · Forfait 3 Jours
+        </p>
+        <img src="./images/ticket.png" alt="ticket" />
         <button
           type="button"
           class="h-10 px-5 text-darkblue text-xl font-bold bg-lightblue-900 ring-darkblue rounded-md hover:text-white hover:bg-blue-900 outline-none hover:ring hover:ring-darkblue transition-colors duration-700 animate-fadeinup js-show-on-scroll3"
