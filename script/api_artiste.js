@@ -1,42 +1,49 @@
 //Sélection de la div où tous les articles vont être chargés
-let postsContainer = document.querySelector("#artiste");
-
-// Changer le format de date
-function formateDate(maDate) {
-  const event = new Date(maDate);
-  const options = { year: "numeric", month: "numeric", day: "numeric" };
-  return event.toLocaleDateString("fr-FR", options);
-}
+let postsContainer = document.querySelector("#artist");
 
 //Créer tout le contenu pour un artiste
-function articles(item) {
+function createArtist(item) {
   let image = document.createElement("img");
   image.src = `${item["_embedded"]["wp:featuredmedia"][0]["source_url"]}`;
+  image.setAttribute(
+    "alt",
+    `${item["_embedded"]["wp:featuredmedia"][0]["slug"]}`
+  );
   image.classList.add("imgArtiste");
   postsContainer.appendChild(image);
 
-  let informationArtiste = document.createElement("div");
-  informationArtiste.classList.add("informationArtiste");
-  postsContainer.appendChild(informationArtiste);
+  let informationArtist = document.createElement("div");
+  informationArtist.classList.add("informationArtist");
+  postsContainer.appendChild(informationArtist);
 
-  let headerArtiste = document.createElement("div");
-  headerArtiste.classList.add("headerArtiste");
-  informationArtiste.appendChild(headerArtiste);
+  let headerArtist = document.createElement("div");
+  headerArtist.classList.add("headerArtist");
+  informationArtist.appendChild(headerArtist);
 
-  let resumeArtiste = document.createElement("div");
-  resumeArtiste.innerHTML = `${item.excerpt.rendered}`;
-  resumeArtiste.classList.add("resumeArtiste");
-  informationArtiste.appendChild(resumeArtiste);
+  let resumeArtist = document.createElement("div");
+  resumeArtist.innerHTML = `${item.excerpt.rendered.slice(13)}`;
+  resumeArtist.classList.add("resumeArtist");
+  informationArtist.appendChild(resumeArtist);
 
   let name = document.createElement("h2");
   name.innerText = `${item.title.rendered}`;
-  name.classList.add("nameArtiste");
-  headerArtiste.appendChild(name);
+  name.classList.add("nameArtist");
+  headerArtist.appendChild(name);
 
   let date = document.createElement("p");
-  date.innerText = `${formateDate(item.date)}`;
-  date.classList.add("dateArtiste");
-  headerArtiste.appendChild(date);
+  date.innerText = `${item.excerpt.rendered.slice(3, 13)}`;
+  date.classList.add("dateArtist");
+  headerArtist.appendChild(date);
+
+  let horaire = document.createElement("p");
+  horaire.innerText = `${item.class_list[9].slice(11)}`;
+  horaire.classList.add("horaireArtist");
+  headerArtist.appendChild(horaire);
+
+  let scene = document.createElement("p");
+  scene.innerText = `${item.class_list[8].slice(9)}`;
+  scene.classList.add("sceneArtist");
+  headerArtist.appendChild(scene);
 }
 
 // Récupérer l'ID article dans l'url
@@ -50,9 +57,7 @@ const id = urlSearchParams.get("id");
 
 const restUrl = "http://localhost:10004/wp-json/wp/v2/posts?_embed";
 
-data();
-
-async function data() {
+async function updateData() {
   try {
     const reponseJSON = await fetch(restUrl);
     // code à exécuter après réception de la réponse
@@ -62,8 +67,9 @@ async function data() {
     // Trouver l'id de l'objet correspondant à l'id de l'url
     const item = reponseJS.find((a) => a.id == id);
     // Afficher les données de l'article
-    articles(item);
+    createArtist(item);
   } catch (error) {
     console.log(error, "erreur");
   }
 }
+updateData();

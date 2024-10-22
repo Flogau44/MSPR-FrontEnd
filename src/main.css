@@ -56,6 +56,9 @@
 .visible {
   @apply block;
 }
+#myMap {
+  @apply h-[300px] z-10 md:h-[600px];
+}
 #articles {
   @apply mx-4 my-4 flex flex-col justify-center items-center gap-y-6 md:grid md:grid-cols-3 md:justify-center md:gap-x-4;
 }
@@ -90,45 +93,64 @@
   @apply py-6;
 }
 
-#artistes {
-  @apply mx-4 my-4 flex flex-col justify-center items-center gap-y-6 md:grid md:grid-cols-3 md:justify-center md:gap-x-4;
+#artists {
+  @apply mx-4 my-4 flex flex-col justify-center items-center gap-y-6 md:grid md:grid-cols-3 md:justify-center md:items-start md:gap-x-4;
 }
-#artiste {
+#artist {
   @apply mx-6 mb-6 flex flex-col justify-between gap-y-6 md:grid md:grid-cols-[60%,40%] md:space-x-6;
 }
 
-.artiste {
+.artist {
   @apply max-w-md relative flex flex-col justify-center;
 }
 
-.informationArtiste {
+.informationArtist {
   @apply flex flex-col;
 }
 
-.headerArtiste {
-  @apply flex flex-col md:flex-row md:justify-between;
+.headerArtist {
+  @apply flex flex-col gap-y-1;
 }
 
-.descriptionArtiste {
+.descriptionArtist {
   @apply absolute bottom-0 z-10 pl-2 flex flex-col justify-start;
 }
 
-.nameArtiste {
+.nameArtist {
   @apply text-lightblue text-2xl font-bold;
 }
 
-.dateArtistes {
+.dateArtists {
   @apply text-white text-xl font-medium;
 }
 
-.dateArtiste {
-  @apply text-blue text-base;
+.dateArtist {
+  @apply text-darkblue text-2xl font-semibold;
 }
 
-.imgArtiste {
-  @apply w-full;
+.horaireArtist {
+  @apply text-blue text-xl font-semibold;
 }
 
-#resumeArtiste {
+.sceneArtist {
+  @apply text-blue text-xl font-semibold;
+}
+
+.imgArtists {
+  @apply w-full rounded-lg;
+}
+
+.imgArtist {
+  @apply w-full rounded-lg;
+}
+
+.resumeArtist {
   @apply py-6;
+}
+
+#btnActiveProg {
+  @apply h-10 px-5 outline-none bg-lightblue-900 text-darkblue ring ring-darkblue;
+}
+#btnActiveProg1 {
+  @apply h-10 px-5 outline-none bg-lightblue-900 text-darkblue ring ring-darkblue;
 }

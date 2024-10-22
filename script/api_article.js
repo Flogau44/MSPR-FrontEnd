@@ -9,7 +9,7 @@ function formateDate(maDate) {
 }
 
 //Créer tout le contenu pour un article
-function articles(item) {
+function createArticle(item) {
   let image = document.createElement("img");
   image.src = `${item["_embedded"]["wp:featuredmedia"][0]["source_url"]}`;
   image.classList.add("imgArticle");
@@ -50,9 +50,7 @@ const id = urlSearchParams.get("id");
 
 const restUrl = "http://localhost:10004/wp-json/wp/v2/posts?_embed";
 
-data();
-
-async function data() {
+async function updateData() {
   try {
     const reponseJSON = await fetch(restUrl);
     // code à exécuter après réception de la réponse
@@ -62,8 +60,10 @@ async function data() {
     // Trouver l'id de l'objet correspondant à l'id de l'url
     const item = reponseJS.find((news) => news.id == id);
     // Afficher les données de l'article
-    articles(item);
+    createArticle(item);
   } catch (error) {
     console.log(error, "erreur");
   }
 }
+
+updateData();
