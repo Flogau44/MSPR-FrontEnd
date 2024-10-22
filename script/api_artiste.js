@@ -49,7 +49,7 @@ const createArtist = (item) => {
 
   //Je crée l'élement p pour récupérer dans wordpress la scène du concert de l'artiste
   let scene = document.createElement("p");
-  scene.innerText = `${item.class_list[8].slice(9)}`;
+  scene.innerText = `${item._embedded["wp:term"][0][1].name.slice(3)}`;
   scene.classList.add("sceneArtist");
   headerArtist.appendChild(scene);
 };

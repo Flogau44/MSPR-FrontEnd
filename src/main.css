@@ -37,16 +37,24 @@
     color: #3b556d;
   }
 }
-
 @tailwind components;
 @tailwind utilities;
 
+/*Menu*/
+#hamburgerNonactive {
+  @apply flex;
+}
+#hamburgerActive {
+  @apply hidden;
+}
 .sticky {
   @apply fixed;
 }
 .blueMenu {
   @apply bg-white-800 text-darkblue shadow-md;
 }
+
+/*Accordeon F.A.Q*/
 .question {
   @apply flex flex-row justify-between items-center py-2 space-x-4 cursor-pointer uppercase text-blue;
 }
@@ -56,25 +64,17 @@
 .visible {
   @apply block;
 }
-#hamburgerNonactive {
-  @apply flex;
-}
-#hamburgerActive {
-  @apply hidden;
-}
 
+/*Carte intéractive*/
 #myMap {
   @apply h-[300px] z-10 md:h-[600px];
 }
 .layers-control-img {
   @apply max-w-4 max-h-4 inline-flex cursor-pointer overflow-hidden mx-2;
 }
-
+/*Les articles*/
 #articles {
   @apply mx-4 my-4 flex flex-col justify-center items-center gap-y-6 md:grid md:grid-cols-2 md:justify-center md:gap-x-4 lg:grid-cols-3;
-}
-#article {
-  @apply mx-6 mb-6 text-base flex flex-col items-center justify-between gap-y-6 md:text-xl md:flex-row md:items-start md:gap-x-12 md:justify-center;
 }
 .article {
   @apply max-w-md flex flex-col justify-center;
@@ -85,6 +85,20 @@
 .imgArticles {
   @apply w-full rounded-lg;
 }
+.descriptionArticle {
+  @apply pt-2 flex flex-row justify-between items-center;
+}
+.titleArticle {
+  @apply text-darkblue font-bold;
+}
+.dateArticle {
+  @apply text-blue text-xl;
+}
+
+/*Un seul article*/
+#article {
+  @apply mx-6 mb-6 text-base flex flex-col items-center justify-between gap-y-6 md:text-xl md:flex-row md:items-start md:gap-x-12 md:justify-center;
+}
 .imgArticle {
   @apply max-w-full h-full rounded-lg md:max-w-[400px];
 }
@@ -94,93 +108,11 @@
 .headerArticle {
   @apply flex flex-col md:flex-row md:justify-between;
 }
-.descriptionArticle {
-  @apply pt-2 flex flex-row justify-between items-center;
-}
-
-.titleArticle {
-  @apply text-darkblue font-bold;
-}
-.dateArticle {
-  @apply text-blue text-xl;
-}
-#resumeArticle {
+.resumeArticle {
   @apply py-6;
 }
 
-#artists {
-  @apply mx-4 my-4 flex flex-col justify-center items-center gap-y-6 md:grid md:grid-cols-2 md:justify-items-center md:gap-x-4 lg:grid-cols-3;
-}
-.artist {
-  @apply max-w-full h-auto relative flex flex-col justify-center animate-fadeinup;
-}
-.image-list {
-  @apply flex flex-row gap-x-4 overflow-hidden;
-}
-.artistProg {
-  @apply relative;
-}
-.imgArtistsProg {
-  @apply max-w-full h-[300px] object-cover rounded-lg;
-}
-#artists .artist.hide {
-  @apply hidden;
-}
-#artist {
-  @apply mx-6 mb-6 text-base flex flex-col items-center justify-between gap-y-6 md:text-xl md:flex-row md:items-start md:gap-x-12 md:justify-center;
-}
-.linkArtist {
-  @apply transform transition-all duration-300 hover:opacity-80 hover:scale-105;
-}
-.informationArtist {
-  @apply max-w-full flex flex-col md:max-w-[500px];
-}
-.headerArtist {
-  @apply flex flex-col gap-y-1;
-}
-.descriptionArtist {
-  @apply absolute bottom-0 z-10 pl-2 flex flex-col justify-start;
-}
-.nameArtist {
-  @apply text-lightblue font-bold;
-}
-.dateArtists {
-  @apply text-white text-xl font-bold;
-}
-.dateArtist {
-  @apply text-darkblue text-2xl font-semibold;
-}
-.horaireArtist {
-  @apply text-blue text-xl font-semibold;
-}
-.sceneArtist {
-  @apply text-blue text-xl font-semibold;
-}
-.imgArtists {
-  @apply w-[325px] h-[400px] object-cover rounded-lg;
-}
-.imgArtist {
-  @apply max-w-full h-full rounded-lg md:max-w-[400px];
-}
-.resumeArtist {
-  @apply py-6;
-}
-.videoArtist {
-  @apply w-full h-full aspect-video;
-}
-
-#filterButtonArtist {
-  @apply text-white bg-navyblue;
-}
-
-#filterButtonArtist:hover {
-  @apply text-darkblue bg-lightblue-900 ring ring-darkblue;
-}
-
-#filterButtonArtist.active {
-  @apply text-darkblue bg-lightblue-900 ring ring-darkblue;
-}
-
+/*Bouton Article*/
 #filterButtonArticle {
   @apply text-white bg-navyblue;
 }
@@ -193,6 +125,81 @@
   @apply text-darkblue bg-lightblue-900 ring ring-darkblue;
 }
 
+/*Les artistes line-up*/
+#artists {
+  @apply mx-4 my-4 flex flex-col justify-center items-center gap-y-6 md:grid md:grid-cols-2 md:justify-items-center md:gap-x-4 lg:grid-cols-3;
+}
+.artist {
+  @apply max-w-full h-auto relative flex flex-col justify-center animate-fadeinup;
+}
+#artists .artist.hide {
+  @apply hidden;
+}
+.linkArtist {
+  @apply transform transition-all duration-300 hover:opacity-80 hover:scale-105;
+}
+.descriptionArtist {
+  @apply absolute bottom-0 z-10 pl-2 flex flex-col justify-start;
+}
+.nameArtist {
+  @apply text-lightblue font-bold;
+}
+.dateArtists {
+  @apply text-white text-xl font-bold;
+}
+.imgArtists {
+  @apply w-[325px] h-[400px] object-cover rounded-lg;
+}
+
+/*Carousel programmation*/
+.artistProg {
+  @apply relative;
+}
+.imgArtistsProg {
+  @apply max-w-full h-[300px] object-cover rounded-lg;
+}
+
+/*Un seul artiste*/
+#artist {
+  @apply mx-6 mb-6 text-base flex flex-col items-center justify-between gap-y-6 md:text-xl md:flex-row md:items-start md:gap-x-12 md:justify-center;
+}
+.informationArtist {
+  @apply max-w-full flex flex-col md:max-w-[500px];
+}
+.headerArtist {
+  @apply flex flex-col gap-y-1;
+}
+.dateArtist {
+  @apply text-darkblue text-2xl font-semibold;
+}
+.horaireArtist {
+  @apply text-blue text-xl font-semibold;
+}
+.sceneArtist {
+  @apply text-blue text-xl font-semibold;
+}
+.imgArtist {
+  @apply max-w-full h-full rounded-lg md:max-w-[400px];
+}
+.resumeArtist {
+  @apply py-6;
+}
+.videoArtist {
+  @apply w-full h-full aspect-video;
+}
+
+/*Bouton programmation*/
+#filterButtonArtist {
+  @apply text-white bg-navyblue;
+}
+
+#filterButtonArtist:hover {
+  @apply text-darkblue bg-lightblue-900 ring ring-darkblue;
+}
+
+#filterButtonArtist.active {
+  @apply text-darkblue bg-lightblue-900 ring ring-darkblue;
+}
 #filterButtonsArtist {
   @apply text-white bg-navyblue;
 }
@@ -226,11 +233,22 @@
 #filterButtonsSubLevel button.active {
   @apply text-darkblue bg-lightblue-900 ring ring-darkblue;
 }
+
+/*Planning Artistes*/
 #planning {
-  @apply mx-4 my-4 flex flex-col justify-items-center gap-y-6 md:grid md:grid-cols-2 md:justify-items-center md:gap-x-4 lg:grid-cols-3;
+  @apply mx-4 my-4 flex flex-col gap-y-6;
+}
+.sceneContainer {
+  @apply flex flex-col gap-y-4;
+}
+.nameScene {
+  @apply ml-4 md:ml-14 lg:ml-16;
+}
+.sceneArtists {
+  @apply flex flex-col gap-y-4 md:grid md:grid-cols-2 md:justify-items-center md:gap-x-4 lg:grid-cols-3;
 }
 .artistHour {
-  @apply mx-4 h-28 w-full bg-blue rounded-lg md:w-72;
+  @apply px-4 h-28 w-full bg-blue rounded-lg md:w-72;
 }
 .linkArtistHour {
   @apply p-2 grid grid-cols-2 content-center justify-items-start gap-2;
@@ -247,6 +265,8 @@
 .horaireArtistHour {
   @apply text-white text-xl font-semibold;
 }
+
+/*Partenaires*/
 #partners {
   @apply flex flex-col items-center p-6 space-y-6 md:grid md:grid-cols-3 md:gap-6 md:justify-items-center lg:grid-cols-4;
 }

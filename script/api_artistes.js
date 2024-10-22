@@ -1,17 +1,17 @@
 //Création de la liste des artistes
 //Sélection de la div où tous les artistes seront chargées
-let postsContainerArtists = document.getElementById("artists");
+const postsContainerArtists = document.getElementById("artists");
 
 //Créer la fonction qui permet de créer toute la mise en forme d'un artistes (éléments et attributs)
 const createArtists = (item) => {
   //Je crée l'élement article pour afficher correctement les informations de chaque artistes
-  let artist = document.createElement("article");
+  const artist = document.createElement("article");
   artist.classList.add("artist");
   artist.setAttribute("data-name", `${item.class_list[10].slice(9)}`);
   postsContainerArtists.appendChild(artist);
 
   //Je crée l'élement a pour générer un lien qui permettra d'aller sur la page détaillée de l'artiste
-  let link = document.createElement("a");
+  const link = document.createElement("a");
   link.href = `artiste.html?id=${item.id}`;
   link.classList.add("linkArtist");
   link.setAttribute(
@@ -21,7 +21,7 @@ const createArtists = (item) => {
   artist.appendChild(link);
 
   //Je crée l'élement img pour récupérer dans wordpress l'image de chaque artistes
-  let image = document.createElement("img");
+  const image = document.createElement("img");
   image.src = `${item["_embedded"]["wp:featuredmedia"][0]["source_url"]}`;
   image.classList.add("imgArtists");
   image.setAttribute(
@@ -31,91 +31,86 @@ const createArtists = (item) => {
   link.appendChild(image);
 
   //Je crée l'élement div pour afficher correctement la partie description pour chaque artiste
-  let descriptionArtist = document.createElement("div");
+  const descriptionArtist = document.createElement("div");
   descriptionArtist.classList.add("descriptionArtist");
   link.appendChild(descriptionArtist);
 
   //Je crée l'élement h2 pour récupérer dans wordpress le nom de l'artiste
-  let name = document.createElement("h2");
+  const name = document.createElement("h2");
   name.innerText = `${item.title.rendered}`;
   name.classList.add("nameArtist");
   descriptionArtist.appendChild(name);
 
   //Je crée l'élement p pour récupérer dans wordpress la date pour chaque artistes
-  let date = document.createElement("p");
+  const date = document.createElement("p");
   date.classList.add("dateArtists");
   date.innerText = `${item.class_list[11].slice(11)}`;
   descriptionArtist.appendChild(date);
 };
 
 //Création de la liste des artistes pour le planning
-
 //Sélection de la div où toutes les artistes seront chargées
-let postsContainerPlanning = document.getElementById("planning");
+const postsContainerPlanning = document.getElementById("planning");
 
-const createScene = (item) => {
-  //Je crée l'élement div pour afficher correctement les informations de chaque scènes
-  let scene = document.createElement("div");
-  scene.classList.add("scene");
-  scene.setAttribute("data-filter", `${item.slug}`);
-  postsContainerPlanning.appendChild(scene);
+function displaySceneArtists(sceneName, artists) {
+  const sceneContainer = document.createElement("div");
+  sceneContainer.classList.add("sceneContainer");
+  postsContainerPlanning.appendChild(sceneContainer);
 
-  let titleScene = document.createElement("h1");
-  titleScene.classList.add("titleScene");
-  titleScene.innerText = `${item.title.rendered}`;
-  scene.appendChild(titleScene);
-};
+  const nameScene = document.createElement("h1");
+  nameScene.classList.add("nameScene");
+  nameScene.innerText = `${sceneName.toUpperCase()}`;
+  sceneContainer.appendChild(nameScene);
 
-//Créer la fonction qui permet de créer toute la mise en forme d'un artistes (éléments et attributs)
-const createArtistsHours = (item) => {
-  //Je crée l'élement article pour afficher correctement les informations de chaque artistes
-  let artistHour = document.createElement("article");
-  artistHour.classList.add("artistHour");
-  artistHour.setAttribute("data-scene", `${item.class_list[8].slice(9)}`);
-  postsContainerPlanning.appendChild(artistHour);
+  const sceneAllartists = document.createElement("div");
+  sceneAllartists.classList.add("sceneArtists");
+  sceneContainer.appendChild(sceneAllartists);
 
-  //Je crée l'élement a pour générer un lien qui permettra d'aller sur la page détaillée de l'artiste
-  let linkArtistHour = document.createElement("a");
-  linkArtistHour.href = `artiste.html?id=${item.id}`;
-  linkArtistHour.classList.add("linkArtistHour");
-  linkArtistHour.setAttribute(
-    "title",
-    `${item["_embedded"]["wp:featuredmedia"][0]["slug"]}`
-  );
-  artistHour.appendChild(linkArtistHour);
+  artists.forEach((artist) => {
+    //Je crée l'élement article pour afficher correctement les informations de chaque artistes
+    const artistHour = document.createElement("article");
+    artistHour.classList.add("artistHour");
+    artistHour.setAttribute("data-scene", `${artist.class_list[8].slice(9)}`);
+    sceneAllartists.appendChild(artistHour);
 
-  //Je crée l'élement img pour récupérer dans wordpress l'image de chaque artistes
-  let imgArtistHour = document.createElement("img");
-  imgArtistHour.src = `${item["_embedded"]["wp:featuredmedia"][0]["source_url"]}`;
-  imgArtistHour.classList.add("imgArtistHour");
-  imgArtistHour.setAttribute(
-    "alt",
-    `${item["_embedded"]["wp:featuredmedia"][0]["slug"]}`
-  );
-  linkArtistHour.appendChild(imgArtistHour);
+    //Je crée l'élement a pour générer un lien qui permettra d'aller sur la page détaillée de l'artiste
+    const linkArtistHour = document.createElement("a");
+    linkArtistHour.href = `artiste.html?id=${artist.id}`;
+    linkArtistHour.classList.add("linkArtistHour");
+    linkArtistHour.setAttribute(
+      "title",
+      `${artist["_embedded"]["wp:featuredmedia"][0]["slug"]}`
+    );
+    artistHour.appendChild(linkArtistHour);
 
-  //Je crée l'élement div pour afficher correctement la partie description pour chaque artiste
-  let descriptionArtistHour = document.createElement("div");
-  descriptionArtistHour.classList.add("descriptionArtistHour");
-  linkArtistHour.appendChild(descriptionArtistHour);
+    //Je crée l'élement img pour récupérer dans wordpress l'image de chaque artistes
+    const imgArtistHour = document.createElement("img");
+    imgArtistHour.src = `${artist["_embedded"]["wp:featuredmedia"][0]["source_url"]}`;
+    imgArtistHour.classList.add("imgArtistHour");
+    imgArtistHour.setAttribute(
+      "alt",
+      `${artist["_embedded"]["wp:featuredmedia"][0]["slug"]}`
+    );
+    linkArtistHour.appendChild(imgArtistHour);
 
-  //Je crée l'élement h2 pour récupérer dans wordpress le nom de l'artiste
-  let nameArtistHour = document.createElement("h2");
-  nameArtistHour.innerText = `${item.title.rendered}`;
-  nameArtistHour.classList.add("nameArtistHour");
-  descriptionArtistHour.appendChild(nameArtistHour);
+    //Je crée l'élement div pour afficher correctement la partie description pour chaque artiste
+    const descriptionArtistHour = document.createElement("div");
+    descriptionArtistHour.classList.add("descriptionArtistHour");
+    linkArtistHour.appendChild(descriptionArtistHour);
 
-  //Je crée l'élement p pour récupérer dans wordpress l'heure pour chaque artistes
-  let horaireArtistHour = document.createElement("p");
-  horaireArtistHour.classList.add("horaireArtistHour");
-  horaireArtistHour.innerText = `${item.class_list[9].slice(11)}`;
-  descriptionArtistHour.appendChild(horaireArtistHour);
-};
+    //Je crée l'élement h2 pour récupérer dans wordpress le nom de l'artiste
+    const nameArtistHour = document.createElement("h2");
+    nameArtistHour.innerText = `${artist.title.rendered}`;
+    nameArtistHour.classList.add("nameArtistHour");
+    descriptionArtistHour.appendChild(nameArtistHour);
 
-/*const createArtistsScene = (a) => {
-  createScene(a);
-  const allArtistScene = document.querySelectorAll(".scene");
-};*/
+    //Je crée l'élement p pour récupérer dans wordpress l'heure pour chaque artistes
+    const horaireArtistHour = document.createElement("p");
+    horaireArtistHour.classList.add("horaireArtistHour");
+    horaireArtistHour.innerText = `${artist.class_list[9].slice(11)}`;
+    descriptionArtistHour.appendChild(horaireArtistHour);
+  });
+}
 
 // Récupérer les données de l'API WP et ensuite afficher tous les artistes sur la page information
 //Sélection de l'url WP-JSON
@@ -130,24 +125,23 @@ async function updateData() {
     const reponseJS = await reponseJSON.json();
     console.log(reponseJS);
     //Récupérer la liste complète des artistes au chargement de la page
-    let allArtist = reponseJS.filter(
+    const allArtist = reponseJS.filter(
       //Afficher que les artistes (filtre à appliquer sur la category-artiste de WordPress)
       (a) => a.class_list[7] === "category-artiste"
     );
     allArtist.forEach((a) => {
       createArtists(a);
-      createArtistsHours(a);
       // Je rappelle la fonction createArtists et afin de créer tout les éléments de chaque artistes
     });
-    /*let allScene = reponseJS.filter(
-      //Afficher que les artistes (filtre à appliquer sur la category-scene de WordPress)
-      (a) => a.class_list[6] === "category-scene"
-    );
-    allScene.forEach((a) => {
-      createScene(a);
-
-      // Je rappelle la fonction createArtistsScene et afin de créer tout les éléments de chaque artistes
-    });*/
+    // Récupérer la liste complète des scènes et artistes au chargement de la page
+    // Filtrer les artistes par scène
+    const scenes = ["sonata", "resonance", "pulse", "thunder", "reverb"]; //Tableau avec les noms de scène
+    scenes.forEach((scene) => {
+      const sceneArtists = reponseJS.filter(
+        (a) => a.class_list[8] === `category-scene-${scene}`
+      );
+      displaySceneArtists(`${scene}`, sceneArtists);
+    });
   } catch (error) {
     console.log(error, "erreur");
   }

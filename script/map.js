@@ -23,19 +23,21 @@ var myIconScene = L.icon({
 
 var scene1 = L.marker([49.05982, 2.3579], {
     icon: myIconScene,
-  }).bindPopup("Scène 1"),
+  }).bindPopup("Sonata <br> 1er concert à 16h <br> Dernier concert à 22h"),
   scene2 = L.marker([49.06072, 2.36116], {
     icon: myIconScene,
-  }).bindPopup("Scène 2"),
+  }).bindPopup(
+    "Resonance <br> 1er concert à 17h30 <br> Dernier concert à 23h30"
+  ),
   scene3 = L.marker([49.06617, 2.38374], {
     icon: myIconScene,
-  }).bindPopup("Scène 3"),
+  }).bindPopup("Pulse <br> 1er concert à 16h <br> Dernier concert à 22h"),
   scene4 = L.marker([49.06693, 2.38101], {
     icon: myIconScene,
-  }).bindPopup("Scène 4"),
+  }).bindPopup("Thunder <br> 1er concert à 17h30 <br> Dernier concert à 23h30"),
   scene5 = L.marker([49.05034, 2.35851], {
     icon: myIconScene,
-  }).bindPopup("Scène 5");
+  }).bindPopup("Reverb <br> 1er concert à 17h <br> Dernier concert à 23h");
 
 var markerScene = L.layerGroup([scene1, scene2, scene3, scene4, scene5]).addTo(
   myMap
