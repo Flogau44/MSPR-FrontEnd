@@ -6,7 +6,7 @@ var myMap = L.map("myMap", {
   fullscreenControl: true, // Ajoute le bouton plein écran
 });
 
-// Fonction pour ajuster le zoom en fonction de la taille de la fenêtre
+// Fonction pour ajuster le zoom en fonction de la taille de l'écran
 function adjustZoom() {
   var width = window.innerWidth;
   var zoomLevel;
@@ -35,6 +35,38 @@ adjustZoom();
 
 // Ajuster le zoom lors du redimensionnement de la fenêtre
 window.addEventListener("resize", adjustZoom);
+
+// Ajouter le contrôle de géolocalisation
+L.control
+  .locate({
+    position: "topleft",
+    drawCircle: true,
+    follow: true,
+    setView: "untilPan",
+    keepCurrentZoomLevel: true,
+    markerStyle: {
+      weight: 1,
+      opacity: 0.8,
+      fillOpacity: 0.8,
+    },
+    circleStyle: {
+      weight: 1,
+      clickable: false,
+    },
+    icon: "fa fa-location-arrow",
+    metric: true,
+    strings: {
+      title: "Montre moi où je suis !",
+      popup: "Vous êtes dans un rayon de {distance} {unit} de ce point",
+      outsideMapBoundsMsg:
+        "Vous semblez être en dehors des limites de la carte",
+    },
+    locateOptions: {
+      maxZoom: 18,
+      enableHighAccuracy: true,
+    },
+  })
+  .addTo(myMap);
 
 // liste des scènes
 var myIconScene = L.icon({

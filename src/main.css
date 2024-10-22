@@ -89,7 +89,7 @@
   @apply pt-2 flex flex-row justify-between items-center;
 }
 .titleArticle {
-  @apply text-darkblue font-bold;
+  @apply text-darkblue text-xl font-bold;
 }
 .dateArticle {
   @apply text-blue text-xl;
