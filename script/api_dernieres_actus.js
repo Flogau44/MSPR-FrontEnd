@@ -56,7 +56,7 @@ const createArticles = (item) => {
 
 //Sélection de l'url WP-JSON (la catégorie article et nombre d'article à afficher sont filtré directement via l'url)
 const restUrl2 =
-  "http://localhost:10004/wp-json/wp/v2/posts?_embed&categories=5&per_page=3";
+  "https://flo-perso.alwaysdata.net/nationsound/wordpress/wp-json/wp/v2/posts?_embed&categories=5&per_page=3";
 
 async function updateData2() {
   try {
