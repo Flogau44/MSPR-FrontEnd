@@ -50,8 +50,12 @@ async function data() {
     // conversion de la réponse au format Javascript
     const reponseJS = await reponseJSON.json();
     console.log(reponseJS);
-    reponseJS.forEach(function (news) {
-      artistes(news);
+    let artisteCategory = reponseJS.filter(
+      (a) => a.class_list[7] === "category-artiste"
+    );
+    artisteCategory.forEach(function (a) {
+      artistes(a);
+      console.log(artisteCategory);
     });
   } catch (error) {
     console.log(error, "erreur");

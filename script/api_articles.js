@@ -35,9 +35,6 @@ function articles(item) {
   date.classList.add("dateArticle");
   date.innerText = `${formateDate(item.date)}`;
   descriptionArticle.appendChild(date);
-
-  const categorieNews = `${item.class_list[7]}`;
-  console.log(categorieNews);
 }
 
 // Sélectionner l'index catégorie
@@ -55,8 +52,12 @@ async function data() {
     // conversion de la réponse au format Javascript
     const reponseJS = await reponseJSON.json();
     console.log(reponseJS);
-    reponseJS.forEach(function (news) {
+    let newsCategory = reponseJS.filter(
+      (news) => news.class_list[7] === "category-news"
+    );
+    newsCategory.forEach(function (news) {
       articles(news);
+      console.log(newsCategory);
     });
   } catch (error) {
     console.log(error, "erreur");
