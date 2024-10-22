@@ -449,8 +449,9 @@ video {
 body {
   font-family: "Cormorant Garamond", serif;
   display: flex;
-  flex-direction: column;
-  align-content: space-between;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
 }
 
 h1,
@@ -626,6 +627,11 @@ main {
   margin: 0px;
 }
 
+.mx-14 {
+  margin-left: 3.5rem;
+  margin-right: 3.5rem;
+}
+
 .mx-4 {
   margin-left: 1rem;
   margin-right: 1rem;
@@ -719,10 +725,6 @@ main {
   height: 0.75rem;
 }
 
-.h-\[300px\] {
-  height: 300px;
-}
-
 .h-full {
   height: 100%;
 }
@@ -759,6 +761,30 @@ main {
   min-width: 11rem;
 }
 
+.max-w-7xl {
+  max-width: 80rem;
+}
+
+.max-w-\[1000px\] {
+  max-width: 1000px;
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(0, 100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0, 0, 0);
+  }
+}
+
+.animate-fadeinup {
+  animation: fade-in-up 2s ease-in-out 0s 1;
+}
+
 @keyframes slide-in-left {
   0% {
     opacity: 0;
@@ -772,6 +798,22 @@ main {
 }
 
 .animate-menuslideinleft {
+  animation: slide-in-left 1s ease-in-out 0s 1;
+}
+
+@keyframes slide-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-400px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slideinleft {
   animation: slide-in-left 1s ease-in-out 0s 1;
 }
 
@@ -793,6 +835,10 @@ main {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.grid-flow-col {
+  grid-auto-flow: column;
 }
 
 .grid-cols-2 {
@@ -880,6 +926,10 @@ main {
   margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .rounded-full {
   border-radius: 9999px;
 }
@@ -896,10 +946,6 @@ main {
   border-radius: 0.125rem;
 }
 
-.border-4 {
-  border-width: 4px;
-}
-
 .border-y-2 {
   border-top-width: 2px;
   border-bottom-width: 2px;
@@ -913,10 +959,6 @@ main {
   border-top-width: 2px;
 }
 
-.border-solid {
-  border-style: solid;
-}
-
 .border-black-500 {
   border-color: rgba(0, 0, 0, 0.5);
 }
@@ -924,11 +966,6 @@ main {
 .border-darkblue {
   --tw-border-opacity: 1;
   border-color: rgb(11 22 44 / var(--tw-border-opacity));
-}
-
-.border-lightblue {
-  --tw-border-opacity: 1;
-  border-color: rgb(95 194 186 / var(--tw-border-opacity));
 }
 
 .bg-blue-300 {
@@ -965,6 +1002,11 @@ main {
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+}
+
+.px-20 {
+  padding-left: 5rem;
+  padding-right: 5rem;
 }
 
 .px-4 {
@@ -1338,6 +1380,18 @@ main {
   justify-content: center;
 }
 
+.artistProg {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.imgArtistsProg {
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
 #artists .artist.hide {
   display: none;
 }
@@ -1528,6 +1582,79 @@ main {
   --tw-ring-color: rgb(11 22 44 / var(--tw-ring-opacity));
 }
 
+#planning {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  row-gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  #planning {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    justify-items: center;
+    -moz-column-gap: 1rem;
+         column-gap: 1rem;
+  }
+}
+
+.artistHour {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  height: 7rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 85 109 / var(--tw-bg-opacity));
+}
+
+@media (min-width: 768px) {
+  .artistHour {
+    width: 18rem;
+  }
+}
+
+.linkArtistHour {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-content: center;
+  justify-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+
+.imgArtistHour {
+  height: 6rem;
+  border-radius: 0.375rem;
+}
+
+.descriptionArtistHour {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.nameArtistHour {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  --tw-text-opacity: 1;
+  color: rgb(95 194 186 / var(--tw-text-opacity));
+}
+
+.horaireArtistHour {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
 .hover\:border-b-2:hover {
   border-bottom-width: 2px;
 }
@@ -1695,8 +1822,8 @@ main {
     align-items: center;
   }
 
-  .md\:justify-start {
-    justify-content: flex-start;
+  .md\:justify-center {
+    justify-content: center;
   }
 
   .md\:justify-between {

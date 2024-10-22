@@ -43,12 +43,57 @@ function createArtists(item) {
   //Je crée l'élement p pour récupérer dans wordpress la date pour chaque artistes
   let date = document.createElement("p");
   date.classList.add("dateArtists");
-  date.innerText = `${item.excerpt.rendered.slice(3, 13)}`;
+  date.innerText = `${item.class_list[11].slice(11)}`;
   descriptionArtist.appendChild(date);
 }
 //Création de la liste des artistes
 //Sélection de la div où toutes les artistes seront chargées
 let postsContainerPlanning = document.getElementById("planning");
+
+//Créer la fonction qui permet de créer toute la mise en forme d'un artistes (éléments et attributs)
+function createArtistsHours(item) {
+  //Je crée l'élement article pour afficher correctement les informations de chaque artistes
+  let artistHour = document.createElement("article");
+  artistHour.classList.add("artistHour");
+  postsContainerPlanning.appendChild(artistHour);
+
+  //Je crée l'élement a pour générer un lien qui permettra d'aller sur la page détaillée de l'artiste
+  let linkArtistHour = document.createElement("a");
+  linkArtistHour.href = `artiste.html?id=${item.id}`;
+  linkArtistHour.classList.add("linkArtistHour");
+  linkArtistHour.setAttribute(
+    "title",
+    `${item["_embedded"]["wp:featuredmedia"][0]["slug"]}`
+  );
+  artistHour.appendChild(linkArtistHour);
+
+  //Je crée l'élement img pour récupérer dans wordpress l'image de chaque artistes
+  let imgArtistHour = document.createElement("img");
+  imgArtistHour.src = `${item["_embedded"]["wp:featuredmedia"][0]["source_url"]}`;
+  imgArtistHour.classList.add("imgArtistHour");
+  imgArtistHour.setAttribute(
+    "alt",
+    `${item["_embedded"]["wp:featuredmedia"][0]["slug"]}`
+  );
+  linkArtistHour.appendChild(imgArtistHour);
+
+  //Je crée l'élement div pour afficher correctement la partie description pour chaque artiste
+  let descriptionArtistHour = document.createElement("div");
+  descriptionArtistHour.classList.add("descriptionArtistHour");
+  linkArtistHour.appendChild(descriptionArtistHour);
+
+  //Je crée l'élement h2 pour récupérer dans wordpress le nom de l'artiste
+  let nameArtistHour = document.createElement("h2");
+  nameArtistHour.innerText = `${item.title.rendered}`;
+  nameArtistHour.classList.add("nameArtistHour");
+  descriptionArtistHour.appendChild(nameArtistHour);
+
+  //Je crée l'élement p pour récupérer dans wordpress l'heure pour chaque artistes
+  let horaireArtistHour = document.createElement("p");
+  horaireArtistHour.classList.add("horaireArtistHour");
+  horaireArtistHour.innerText = `${item.class_list[9].slice(11)}`;
+  descriptionArtistHour.appendChild(horaireArtistHour);
+}
 
 // Récupérer les données de l'API WP et ensuite afficher tous les artistes sur la page information
 //Sélection de l'url WP-JSON
@@ -68,7 +113,8 @@ async function updateData() {
     );
     allArtist.forEach(function (a) {
       createArtists(a);
-      // Je rappelle la fonction createArtists afin de créer tout les éléments de chaque artistes
+      createArtistsHours(a);
+      // Je rappelle la fonction createArtists et createArtistsHours afin de créer tout les éléments de chaque artistes
       console.log(allArtist);
     });
   } catch (error) {
@@ -82,7 +128,7 @@ updateData();
 // Sélectionner les éléments HTML
 
 const artistsOrPlanning = document.querySelectorAll("#artistsOrPlanning");
-console.log(artistsOrPlanning);
+
 // Fonction permettant de filtrer les artistes en fonction des boutons de filtrage
 
 const filterArtistsOrPlanning = (e) => {

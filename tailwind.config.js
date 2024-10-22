@@ -9,6 +9,9 @@ module.exports = {
       "black-500": "rgba(0, 0, 0, 0.5)",
       red: "#ff0000",
       darkblue: "#0B162C",
+      "darkblue-100": "rgba(11, 24, 44, 0.1)",
+      "darkblue-300": "rgba(11, 24, 44, 0.3)",
+      "darkblue-500": "rgba(11, 24, 44, 0.5)",
       "darkblue-700": "rgba(11, 24, 44, 0.7)",
       "darkblue-900": "rgba(11, 24, 44, 0.9)",
       navyblue: "#1C2942",
@@ -191,11 +194,11 @@ module.exports = {
         "fade-in-up": {
           "0%": {
             opacity: 0,
-            transform: "translate3d(0, 100%, 0)",
+            transform: "translateY(0, 100%, 0)",
           },
           "100%": {
             opacity: 1,
-            transform: "translate3d(0, 0, 0)",
+            transform: "translateY(0, 0, 0)",
           },
         },
         "fade-out-down": {

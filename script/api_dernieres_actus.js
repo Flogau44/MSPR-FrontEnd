@@ -1,5 +1,5 @@
 //Sélection de la div où toutes les articles seront chargées
-let postsContainer = document.querySelector("#articles");
+let postsContainer = document.getElementById("articles");
 
 // Créer la fonction pour Changer le format de date, elle permet de passer la date en JJ/MM/YYYY
 function formateDate(maDate) {
@@ -55,23 +55,23 @@ function createArticles(item) {
 // Récupérer les données de l'API WordPress et ensuite afficher ces données sur la page d'acceuil (affichage des 3 derniers articles)
 
 //Sélection de l'url WP-JSON (la catégorie article et nombre d'article à afficher sont filtré directement via l'url)
-const restUrl =
+const restUrl2 =
   "http://localhost:10004/wp-json/wp/v2/posts?_embed&categories=5&per_page=3";
 
-async function updateData() {
+async function updateData2() {
   try {
-    const reponseJSON = await fetch(restUrl);
+    const reponseJSON2 = await fetch(restUrl2);
     // code à exécuter après réception de la réponse
     // conversion de la réponse au format Javascript
-    const reponseJS = await reponseJSON.json();
-    reponseJS.forEach(function (n) {
+    const reponseJS2 = await reponseJSON2.json();
+    reponseJS2.forEach(function (n) {
       // Je rappelle la fonction createArticles afin de créer tout les éléments de chaque articles
       createArticles(n);
-      console.log(reponseJS);
+      console.log(reponseJS2);
     });
   } catch (error) {
     console.log(error, "erreur");
   }
 }
 //Je rappelle la fonction updateData afin d'afficher les données de l'article
-updateData();
+updateData2();

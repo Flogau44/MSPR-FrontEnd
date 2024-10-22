@@ -4,8 +4,9 @@
   body {
     font-family: "Cormorant Garamond", serif;
     display: flex;
-    flex-direction: column;
-    align-content: space-between;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
   }
   h1,
   h2,
@@ -106,6 +107,12 @@
 .artist {
   @apply max-w-md relative flex flex-col justify-center;
 }
+.artistProg {
+  @apply relative flex flex-col justify-center;
+}
+.imgArtistsProg {
+  @apply w-full rounded-lg;
+}
 #artists .artist.hide {
   @apply hidden;
 }
@@ -178,4 +185,25 @@
 
 #filterButtonsSubLevel button.active {
   @apply text-darkblue bg-lightblue-900 ring ring-darkblue;
+}
+#planning {
+  @apply mx-4 my-4 flex flex-col justify-items-center gap-y-6 md:grid md:grid-cols-3 md:justify-items-center md:gap-x-4;
+}
+.artistHour {
+  @apply mx-4 h-28 w-full bg-blue rounded-lg md:w-72;
+}
+.linkArtistHour {
+  @apply p-2 grid grid-cols-2 content-center justify-items-center gap-2;
+}
+.imgArtistHour {
+  @apply h-24 rounded-md;
+}
+.descriptionArtistHour {
+  @apply flex flex-col justify-center;
+}
+.nameArtistHour {
+  @apply text-lightblue text-xl font-bold;
+}
+.horaireArtistHour {
+  @apply text-white text-xl font-semibold;
 }
