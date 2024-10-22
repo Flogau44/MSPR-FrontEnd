@@ -164,20 +164,15 @@
         </div>
       </nav>
     </header>
-    <main class="h-screen pt-0 md:pt-2">
+    <main class="h-full pt-0 md:pt-2">
       <section class="mt-6">
         <div class="mb-6 flex flex-row justify-center">
-          <h1 class="uppercase">Nos partenaires</h1>
+          <h1 class="uppercase">Actualités</h1>
         </div>
-        <div
-          class="flex flex-col items-center px-6 space-y-6 md:grid md:grid-cols-4 md:space-y-0 md:gap-x-6 md:gap-y-6 md:content-center"
-        >
-          <div>
-            <a href="https://www.epsi.fr/" title="Site EPSI" target="_blank">
-              <img src="../images/logoEpsiFondBlanc.svg" alt="Ecole EPSI" />
-            </a>
-          </div>
-        </div>
+        <!--Afficher tous les articles-->
+        <section id="articles">
+          <!-- Articles ajoutés en JavaScript via le lien du fichier JSON Wordpress-->
+        </section>
       </section>
     </main>
     <footer class="bg-darkblue text-white w-full">
@@ -281,5 +276,6 @@
       </div>
     </footer>
     <script src="./script/menu.js"></script>
+    <script src="./script/api_articles.js"></script>
   </body>
 </html>

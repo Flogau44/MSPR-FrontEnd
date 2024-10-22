@@ -56,3 +56,56 @@
 .visible {
   @apply block;
 }
+#articles {
+  @apply mx-4 my-4 flex flex-col justify-center items-center gap-y-6 md:grid md:grid-cols-3 md:justify-center md:gap-x-4;
+}
+#article {
+  @apply mx-6 mb-6 flex flex-col justify-between gap-y-6 md:grid md:grid-cols-[60%,40%] md:space-x-6;
+}
+.article {
+  @apply max-w-md flex flex-col justify-center;
+}
+
+.imgArticle {
+  @apply w-full;
+}
+.informationArticle {
+  @apply flex flex-col;
+}
+.headerArticle {
+  @apply flex flex-col md:flex-row md:justify-between;
+}
+.descriptionArticle {
+  @apply pt-2 flex flex-row justify-between items-center;
+}
+
+.titleArticle {
+  @apply text-darkblue text-2xl font-bold;
+}
+
+.dateArticle {
+  @apply text-blue text-base;
+}
+#resumeArticle {
+  @apply py-6;
+}
+
+#artistes {
+  @apply mx-4 my-4 flex flex-col justify-center items-center gap-y-6 md:grid md:grid-cols-3 md:justify-center md:gap-x-4;
+}
+
+.artiste {
+  @apply max-w-md relative flex flex-col justify-center;
+}
+
+.descriptionArtiste {
+  @apply absolute bottom-0 z-10 pl-2 flex flex-col justify-start;
+}
+
+.nameArtiste {
+  @apply text-lightblue text-2xl font-bold;
+}
+
+.dateArtiste {
+  @apply text-white text-xl font-medium;
+}

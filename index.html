@@ -44,31 +44,31 @@
             <li>
               <a
                 href="./index.html"
-                class="uppercase transition duration-0 text-white hover:text-lightblue hover:duration-1000"
+                class="uppercase transition duration-0 text-white hover:text-lightblue hover:duration-500"
                 title="Vers la page d'acceuil du site 'Nation Sound'"
                 >Acceuil</a
               >
             </li>
             <li>
               <a
-                href="#"
-                class="uppercase transition duration-0 text-white hover:text-lightblue hover:duration-1000"
+                href="./informations.html"
+                class="uppercase transition duration-0 text-white hover:text-lightblue hover:duration-500"
                 title="Vers la page d'informations du site 'Nation Sound'"
                 >Informations</a
               >
             </li>
             <li>
               <a
-                href="#"
-                class="uppercase transition duration-0 text-white hover:text-lightblue hover:duration-1000"
+                href="./programmation.html"
+                class="uppercase transition duration-0 text-white hover:text-lightblue hover:duration-500"
                 title="Vers la page programmation du site 'Nation Sound'"
                 >Programmation</a
               >
             </li>
             <li>
               <a
-                href="#"
-                class="uppercase transition duration-0 text-white hover:text-lightblue hover:duration-1000"
+                href="./billetterie.html"
+                class="uppercase transition duration-0 text-white hover:text-lightblue hover:duration-500"
                 title="Vers la page billetterie du site 'Nation Sound'"
                 >Billetterie</a
               >
@@ -76,7 +76,7 @@
             <li>
               <a
                 href="./infos_pratiques.html"
-                class="uppercase transition duration-0 text-white hover:text-lightblue hover:duration-1000"
+                class="uppercase transition duration-0 text-white hover:text-lightblue hover:duration-500"
                 title="Vers la page d'infos pratiques du site 'Nation Sound'"
                 >Infos pratiques</a
               >
@@ -84,7 +84,7 @@
             <li>
               <a
                 href="./partenaires.html"
-                class="uppercase transition duration-0 text-white hover:text-lightblue hover:duration-1000"
+                class="uppercase transition duration-0 text-white hover:text-lightblue hover:duration-500"
                 title="Vers la page des partenaires du site 'Nation Sound'"
                 >Partenaires</a
               >
@@ -115,31 +115,31 @@
             <li>
               <a
                 href="./index.html"
-                class="uppercase transition duration-0 hover:text-lightblue hover:duration-1000"
+                class="uppercase transition duration-0 hover:text-lightblue hover:duration-500"
                 title="Vers la page d'acceuil du site 'Nation Sound'"
                 >Acceuil</a
               >
             </li>
             <li>
               <a
-                href="#"
-                class="uppercase transition duration-0 hover:text-lightblue hover:duration-1000"
+                href="./informations.html"
+                class="uppercase transition duration-0 hover:text-lightblue hover:duration-500"
                 title="Vers la page d'informations du site 'Nation Sound'"
                 >Informations</a
               >
             </li>
             <li>
               <a
-                href="#"
-                class="uppercase transition duration-0 hover:text-lightblue hover:duration-1000"
+                href="./programmation.html"
+                class="uppercase transition duration-0 hover:text-lightblue hover:duration-500"
                 title="Vers la page programmation du site 'Nation Sound'"
                 >Programmation</a
               >
             </li>
             <li>
               <a
-                href="#"
-                class="uppercase transition duration-0 hover:text-lightblue hover:duration-1000"
+                href="./billetterie.html"
+                class="uppercase transition duration-0 hover:text-lightblue hover:duration-500"
                 title="Vers la page billetterie du site 'Nation Sound'"
                 >Billetterie</a
               >
@@ -147,7 +147,7 @@
             <li class="min-w-44">
               <a
                 href="./infos_pratiques.html"
-                class="uppercase transition duration-0 hover:text-lightblue hover:duration-1000"
+                class="uppercase transition duration-0 hover:text-lightblue hover:duration-500"
                 title="Vers la page d'infos pratiques du site 'Nation Sound'"
                 >Infos pratiques</a
               >
@@ -155,7 +155,7 @@
             <li>
               <a
                 href="./partenaires.html"
-                class="uppercase transition duration-0 hover:text-lightblue hover:duration-1000"
+                class="uppercase transition duration-0 hover:text-lightblue hover:duration-500"
                 title="Vers la page des partenaires du site 'Nation Sound'"
                 >Partenaires</a
               >
@@ -164,8 +164,38 @@
         </div>
       </nav>
     </header>
-    <main class="h-[800px] pt-0 md:pt-2">
-      <section class="mt-6 flex flex-row justify-center"></section>
+    <main class="h-full mt-0 pt-0">
+      <!--Section Caroussel-->
+      <section class="relative m-0 p-0">
+        <!--Faire apparaitre les images-->
+        <div class="carouselSlide hidden">
+          <img src="./images/Scene1.jpg" class="w-full h-1/2" alt="Scène1" />
+        </div>
+        <div class="carouselSlide hidden">
+          <img src="./images/scene2.jpg" class="w-full h-1/2" alt="Scène2" />
+        </div>
+        <div class="carouselSlide hidden">
+          <img src="./images/scene3.jpg" class="w-full h-1/2" alt="Scène3" />
+        </div>
+        <!--Faire apparaitre 3 boutons pour sélectionner l'image-->
+        <div
+          class="absolute z-40 bottom-5 left-0 w-full h-3 flex justify-center space-x-1 md:h-5"
+        >
+          <div
+            class="carouselDot focus:bg-white bg-white hover:bg-lightblue-700 transition duration-700 ease-in-out rounded-full w-3 cursor-pointer md:w-5"
+            onclick="currentSlide(1)"
+          ></div>
+          <div
+            class="carouselDot focus:bg-white bg-white hover:bg-lightblue-700 transition duration-700 ease-in-out rounded-full w-3 cursor-pointer md:w-5"
+            onclick="currentSlide(2)"
+          ></div>
+          <div
+            class="carouselDot focus:bg-white bg-white hover:bg-lightblue-700 transition duration-700 ease-in-out rounded-full w-3 cursor-pointer md:w-5"
+            onclick="currentSlide(3)"
+          ></div>
+        </div>
+      </section>
+      <section class="h-[300px]"></section>
     </main>
     <footer class="bg-darkblue text-white w-full">
       <div
@@ -267,6 +297,7 @@
         </div>
       </div>
     </footer>
-    <script src="/menu.js"></script>
+    <script src="./script/menu.js"></script>
+    <script src="./script/carousel.js"></script>
   </body>
 </html>

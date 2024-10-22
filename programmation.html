@@ -164,20 +164,95 @@
         </div>
       </nav>
     </header>
-    <main class="h-screen pt-0 md:pt-2">
+    <main class="h-full pt-0 md:pt-2">
       <section class="mt-6">
         <div class="mb-6 flex flex-row justify-center">
-          <h1 class="uppercase">Nos partenaires</h1>
+          <h1 class="uppercase">Programmation</h1>
+        </div>
+        <div class="ml-4 pb-4 flex flex-row justify-start gap-x-4">
+          <button
+            type="submit"
+            class="h-10 px-5 text-white text-xl font-bold bg-navyblue rounded-lg transition-colors duration-700 focus:shadow-outline hover:bg-blue-700"
+            aria-required="true"
+          >
+            Artistes
+          </button>
+
+          <button
+            type="submit"
+            class="h-10 px-5 text-white text-xl font-bold bg-navyblue rounded-lg transition-colors duration-700 focus:shadow-outline hover:bg-blue-700"
+          >
+            Horaires
+          </button>
         </div>
         <div
-          class="flex flex-col items-center px-6 space-y-6 md:grid md:grid-cols-4 md:space-y-0 md:gap-x-6 md:gap-y-6 md:content-center"
+          class="mx-4 pb-4 grid grid-cols-3 justify-start gap-4 md:flex md:flex-row"
         >
-          <div>
-            <a href="https://www.epsi.fr/" title="Site EPSI" target="_blank">
-              <img src="../images/logoEpsiFondBlanc.svg" alt="Ecole EPSI" />
-            </a>
-          </div>
+          <button
+            type="submit"
+            class="h-10 px-5 text-white text-xl font-bold bg-navyblue rounded-lg transition-colors duration-700 focus:shadow-outline hover:bg-blue-700"
+            aria-required="true"
+          >
+            Line-Up
+          </button>
+          <button
+            type="submit"
+            class="h-10 px-5 text-white text-xl font-bold bg-navyblue rounded-lg transition-colors duration-700 focus:shadow-outline hover:bg-blue-700"
+          >
+            Ven.11/07
+          </button>
+          <button
+            type="submit"
+            class="h-10 px-5 text-white text-xl font-bold bg-navyblue rounded-lg transition-colors duration-700 focus:shadow-outline hover:bg-blue-700"
+          >
+            Sam.12/07
+          </button>
+          <button
+            type="submit"
+            class="h-10 px-5 text-white text-xl font-bold bg-navyblue rounded-lg transition-colors duration-700 focus:shadow-outline hover:bg-blue-700"
+          >
+            Dim.13/07
+          </button>
         </div>
+        <!--Affichage des Artistes-->
+        <section id="artistes">
+          <article class="artiste">
+            <a href="#">
+              <img src="./images/Scene1.jpg" class="imgArtiste" />
+              <div class="descriptionArtiste">
+                <h2 class="nameArtiste">Pass 3 jours</h2>
+                <p class="dateArtiste">12/08/2024</p>
+              </div>
+            </a>
+          </article>
+          <article class="artiste">
+            <a href="#">
+              <img src="./images/scene2.jpg" class="imgArtiste" />
+              <div class="descriptionArtiste">
+                <h2 class="nameArtiste">Pass 3 jours</h2>
+                <p class="dateArtiste">12/08/2024</p>
+              </div>
+            </a>
+          </article>
+          <article class="artiste">
+            <a href="#">
+              <img src="./images/scene3.jpg" class="imgArtiste" />
+              <div class="descriptionArtiste">
+                <h2 class="nameArtiste">Pass 3 jours</h2>
+                <p class="dateArtiste">12/08/2024</p>
+              </div>
+            </a>
+          </article>
+          <article class="artiste">
+            <a href="#">
+              <img src="./images/camping.jpg" class="imgArtiste" />
+              <div class="descriptionArtiste">
+                <h2 class="nameArtiste">Pass 3 jours</h2>
+                <p class="dateArtiste">12/08/2024</p>
+              </div>
+            </a>
+          </article>
+        </section>
       </section>
     </main>
     <footer class="bg-darkblue text-white w-full">

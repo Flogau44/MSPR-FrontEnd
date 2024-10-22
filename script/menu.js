@@ -44,5 +44,5 @@ window.onscroll = function () {
     logoTitle.style.color = "#ffffff";
     hamburger.style.color = "#ffffff";
   }
-  console.log(logoTitle);
+  //console.log(logoTitle);
 };
