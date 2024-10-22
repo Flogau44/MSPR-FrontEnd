@@ -52,7 +52,7 @@ const createArticles = (item) => {
   descriptionArticle.appendChild(date);
 };
 
-// Récupérer les données de l'API WordPress et ensuite afficher ces données sur la page d'acceuil (affichage des 3 derniers articles)
+// Récupérer les données de l'API WordPress et ensuite afficher ces données sur la page d'accueil (affichage des 3 derniers articles)
 
 //Sélection de l'url WP-JSON (la catégorie article et nombre d'article à afficher sont filtré directement via l'url)
 const restUrl2 =

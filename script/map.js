@@ -331,7 +331,7 @@ markerFamily.bindPopup("<b>Espace Famille</b>");
 
 // liste réception
 var myIconReception = L.icon({
-  iconUrl: "./images/mapIcone/acceuil.png",
+  iconUrl: "./images/mapIcone/accueil.png",
   iconSize: [25, 25],
   iconAnchor: [0, 25],
   popupAnchor: [0, -25],
@@ -340,7 +340,7 @@ var myIconReception = L.icon({
 var markerReception = L.marker([49.05081, 2.38008], {
   icon: myIconReception,
 }).addTo(myMap);
-markerReception.bindPopup("<b>Acceuil</b>");
+markerReception.bindPopup("<b>Accueil</b>");
 
 // liste tipi
 var myIconTipi = L.icon({
@@ -368,18 +368,18 @@ var markerPrevention = L.marker([49.05159, 2.37186], {
 }).addTo(myMap);
 markerPrevention.bindPopup("<b>Stand de prévention</b>");
 
-// liste acceuil psh
-var myIconPshAcceuil = L.icon({
-  iconUrl: "./images/mapIcone/acceuil_psh.png",
+// liste accueil psh
+var myIconPshaccueil = L.icon({
+  iconUrl: "./images/mapIcone/accueil_psh.png",
   iconSize: [25, 25],
   iconAnchor: [0, 25],
   popupAnchor: [0, -25],
 });
 
-var markerPshAcceuil = L.marker([49.05079, 2.37595], {
-  icon: myIconPshAcceuil,
+var markerPshaccueil = L.marker([49.05079, 2.37595], {
+  icon: myIconPshaccueil,
 }).addTo(myMap);
-markerPshAcceuil.bindPopup("<b>Acceuil PSH</b>");
+markerPshaccueil.bindPopup("<b>accueil PSH</b>");
 
 // Polygone festival
 
@@ -446,7 +446,7 @@ var overlayMaps = {
     markerPrevention,
   "<div class='layers-control-img'><img src='./images/mapIcone/tipi.png'/> </div>Tipi":
     markerTipi,
-  "<div class='layers-control-img'><img src='./images/mapIcone/acceuil.png'/> </div>Acceuil":
+  "<div class='layers-control-img'><img src='./images/mapIcone/accueil.png'/> </div>accueil":
     markerReception,
   "<div class='layers-control-img'><img src='./images/mapIcone/parking.png'/> </div>Parking Auto":
     markerParking,
@@ -472,8 +472,8 @@ var overlayMaps = {
     markerWc,
   "<div class='layers-control-img'><img src='./images/mapIcone/micro.png'/> </div>Scène":
     markerScene,
-  "<div class='layers-control-img'><img src='./images/mapIcone/acceuil_psh.png'/> </div>Acceuil PSH":
-    markerPshAcceuil,
+  "<div class='layers-control-img'><img src='./images/mapIcone/accueil_psh.png'/> </div>accueil PSH":
+    markerPshaccueil,
 };
 
 var layerControl = L.control

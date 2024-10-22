@@ -47,9 +47,24 @@ const createArtists = (item) => {
   date.innerText = `${item.class_list[11].slice(11)}`;
   descriptionArtist.appendChild(date);
 };
-//Création de la liste des artistes
+
+//Création de la liste des artistes pour le planning
+
 //Sélection de la div où toutes les artistes seront chargées
 let postsContainerPlanning = document.getElementById("planning");
+
+const createScene = (item) => {
+  //Je crée l'élement div pour afficher correctement les informations de chaque scènes
+  let scene = document.createElement("div");
+  scene.classList.add("scene");
+  scene.setAttribute("data-filter", `${item.slug}`);
+  postsContainerPlanning.appendChild(scene);
+
+  let titleScene = document.createElement("h1");
+  titleScene.classList.add("titleScene");
+  titleScene.innerText = `${item.title.rendered}`;
+  scene.appendChild(titleScene);
+};
 
 //Créer la fonction qui permet de créer toute la mise en forme d'un artistes (éléments et attributs)
 const createArtistsHours = (item) => {
@@ -97,6 +112,11 @@ const createArtistsHours = (item) => {
   descriptionArtistHour.appendChild(horaireArtistHour);
 };
 
+/*const createArtistsScene = (a) => {
+  createScene(a);
+  const allArtistScene = document.querySelectorAll(".scene");
+};*/
+
 // Récupérer les données de l'API WP et ensuite afficher tous les artistes sur la page information
 //Sélection de l'url WP-JSON
 const restUrl =
@@ -108,7 +128,7 @@ async function updateData() {
     // code à exécuter après réception de la réponse
     // conversion de la réponse au format Javascript
     const reponseJS = await reponseJSON.json();
-
+    console.log(reponseJS);
     //Récupérer la liste complète des artistes au chargement de la page
     let allArtist = reponseJS.filter(
       //Afficher que les artistes (filtre à appliquer sur la category-artiste de WordPress)
@@ -117,21 +137,30 @@ async function updateData() {
     allArtist.forEach((a) => {
       createArtists(a);
       createArtistsHours(a);
-      // Je rappelle la fonction createArtists et createArtistsHours afin de créer tout les éléments de chaque artistes
+      // Je rappelle la fonction createArtists et afin de créer tout les éléments de chaque artistes
     });
+    /*let allScene = reponseJS.filter(
+      //Afficher que les artistes (filtre à appliquer sur la category-scene de WordPress)
+      (a) => a.class_list[6] === "category-scene"
+    );
+    allScene.forEach((a) => {
+      createScene(a);
+
+      // Je rappelle la fonction createArtistsScene et afin de créer tout les éléments de chaque artistes
+    });*/
   } catch (error) {
     console.log(error, "erreur");
   }
 }
-//Je rappelle la fonction updateData afin d'afficher les données de l'artiste
+//Je rappelle la fonction updateData afin d'afficher les données des artistes
 updateData();
 
-//Filtrer les artistes
+//Filtrer les artistes via des boutons
 // Sélectionner les éléments HTML
 
 const artistsOrPlanning = document.querySelectorAll("#artistsOrPlanning");
 
-// Fonction permettant de filtrer les artistes en fonction des boutons de filtrage
+// Fonction permettant de filtrer les artistes en fonction des boutons de filtrage (artistes ou planning)
 
 const filterArtistsOrPlanning = (e) => {
   document
@@ -172,7 +201,7 @@ const filterButtonsSubLevel = document.querySelectorAll(
   "#filterButtonsSubLevel button"
 );
 const filterArtist = document.getElementById("artists").children;
-// Fonction permettant de filtrer les artistes en fonction des boutons de filtrage
+// Fonction permettant de filtrer les artistes en fonction des boutons de filtrage (boutons date)
 const filterArtists = (e) => {
   document
     .querySelector("#filterButtonsSubLevel .active")
@@ -192,18 +221,3 @@ const filterArtists = (e) => {
 filterButtonsSubLevel.forEach((button) =>
   button.addEventListener("click", filterArtists)
 );
-
-//Afficher les artistes en fonction des scènes et horaires
-const filterScenes = document.getElementById("planning").children;
-
-const filterScene = () => {
-  for (let i = 0; i < filterScenes.length; i++) {
-    if (filterScenes[i].dataset.scene === "scene-1") {
-      filterScenes[i].classList.replace("hide", "show");
-      console.log(filterScenes);
-    } else {
-      filterScenes[i].classList.add("hide");
-    }
-  }
-};
-filterScene();
