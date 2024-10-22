@@ -17,6 +17,11 @@
     />
     <link
       rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <link
+      rel="stylesheet"
       href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
       integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
       crossorigin=""
@@ -150,45 +155,39 @@
     </header>
     <main class="h-full mt-0 pt-0">
       <!--Section Caroussel-->
-      <section class="hidden lg:flex lg:relative lg:m-0 md:p-0 lg:w-full">
+      <section class="hidden lg:flex">
         <!--Faire apparaitre les images-->
-        <div class="carouselSlide hidden">
-          <img
-            src="./images/Scene1.jpg"
-            class="w-screen h-[300px] md:h-[500px] object-cover"
-            alt="Scène1"
-          />
-        </div>
-        <div class="carouselSlide hidden">
-          <img
-            src="./images/scene2.jpg"
-            class="w-screen h-[300px] md:h-[500px] object-cover"
-            alt="Scène2"
-          />
-        </div>
-        <div class="carouselSlide hidden">
-          <img
-            src="./images/scene3.jpg"
-            class="w-screen h-[300px] md:h-[500px] object-cover"
-            alt="Scène3"
-          />
-        </div>
-        <!--Faire apparaitre 3 boutons pour sélectionner l'image-->
         <div
-          class="absolute z-40 bottom-5 left-0 w-full h-3 flex justify-center space-x-1 md:h-5"
+          id="slider1"
+          class="splide"
+          role="group"
+          aria-label="Splide Basic HTML Example"
         >
-          <div
-            class="carouselDot focus:bg-white bg-white hover:bg-lightblue-700 transition duration-700 ease-in-out rounded-full w-3 cursor-pointer md:w-5"
-            onclick="currentSlide(1)"
-          ></div>
-          <div
-            class="carouselDot focus:bg-white bg-white hover:bg-lightblue-700 transition duration-700 ease-in-out rounded-full w-3 cursor-pointer md:w-5"
-            onclick="currentSlide(2)"
-          ></div>
-          <div
-            class="carouselDot focus:bg-white bg-white hover:bg-lightblue-700 transition duration-700 ease-in-out rounded-full w-3 cursor-pointer md:w-5"
-            onclick="currentSlide(3)"
-          ></div>
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide" data-splide-interval="100">
+                <img
+                  src="./images/Scene1.jpg"
+                  class="w-screen h-[400px] md:h-[500px] object-cover"
+                  alt="Scène1"
+                />
+              </li>
+              <li class="splide__slide" data-splide-interval="100">
+                <img
+                  src="./images/scene2.jpg"
+                  class="w-screen h-[400px] md:h-[500px] object-cover"
+                  alt="Scène2"
+                />
+              </li>
+              <li class="splide__slide" data-splide-interval="100">
+                <img
+                  src="./images/scene3.jpg"
+                  class="w-screen h-[400px] md:h-[500px] object-cover"
+                  alt="Scène3"
+                />
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
       <!--Section liste des concerts-->
@@ -198,24 +197,15 @@
         <div class="py-4 w-full flex flex-row justify-center">
           <h2 class="uppercase text-lightblue">— Programmation —</h2>
         </div>
-        <div class="slidebuttons relative">
-          <button
-            id="prev-slide"
-            class="slide-button absolute -left-6 bottom-1/2 z-30 w-12 h-12 rounded-full text-darkblue bg-lightblue hover:ring-darkblue hover:bg-blue hover:text-white transition-colors duration-700"
-          >
-            <i class="fa fa-2xl fa-chevron-left"></i>
-          </button>
-          <div
-            class="slider-artist max-w-[400px] md:max-w-[830px] flex flex-col"
-          >
-            <div id="programmationArtists" class="image-list"></div>
+        <div
+          id="slider2"
+          class="splide px-16 md:px-20"
+          role="group"
+          aria-label="Splide Basic HTML Example"
+        >
+          <div class="splide__track">
+            <ul class="splide__list" id="slider2-list"></ul>
           </div>
-          <button
-            id="next-slide"
-            class="slide-button absolute -right-6 bottom-1/2 z-30 w-12 h-12 rounded-full text-darkblue bg-lightblue hover:ring-darkblue hover:bg-blue hover:text-white transition-colors duration-700"
-          >
-            <i class="fa fa-2xl fa-chevron-right"></i>
-          </button>
         </div>
         <button
           type="button"
@@ -361,7 +351,6 @@
     </footer>
     <script src="./script/menu.js"></script>
     <script src="./script/carousel.js"></script>
-    <script src="./script/api_programmation.js"></script>
     <script src="./script/map.js"></script>
     <script src="./script/animate.js"></script>
     <script src="./script/api_dernieres_actus.js"></script>

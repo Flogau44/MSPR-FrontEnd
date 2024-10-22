@@ -1,5 +1,5 @@
 //Création de la liste des artistes
-//Sélection de la div où toutes les artistes seront chargées
+//Sélection de la div où tous les artistes seront chargées
 let postsContainerArtists = document.getElementById("artists");
 
 //Créer la fonction qui permet de créer toute la mise en forme d'un artistes (éléments et attributs)

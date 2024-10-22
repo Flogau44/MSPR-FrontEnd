@@ -51,28 +51,28 @@ var myIconWc = L.icon({
 
 var wc1 = L.marker([49.0482, 2.36675], {
     icon: myIconWc,
-  }).bindPopup("WC 1"),
+  }).bindPopup("WC"),
   wc2 = L.marker([49.05439, 2.37699], {
     icon: myIconWc,
-  }).bindPopup("WC 2"),
+  }).bindPopup("WC"),
   wc3 = L.marker([49.057, 2.39258], {
     icon: myIconWc,
-  }).bindPopup("WC 3"),
+  }).bindPopup("WC"),
   wc4 = L.marker([49.06127, 2.38523], {
     icon: myIconWc,
-  }).bindPopup("WC 4"),
+  }).bindPopup("WC"),
   wc5 = L.marker([49.06482, 2.39172], {
     icon: myIconWc,
-  }).bindPopup("WC 5"),
+  }).bindPopup("WC"),
   wc6 = L.marker([49.06131, 2.38262], {
     icon: myIconWc,
-  }).bindPopup("WC 6"),
+  }).bindPopup("WC"),
   wc7 = L.marker([49.0634, 2.3703], {
     icon: myIconWc,
-  }).bindPopup("WC 7"),
+  }).bindPopup("WC"),
   wc8 = L.marker([49.05199, 2.38202], {
     icon: myIconWc,
-  }).bindPopup("WC 8");
+  }).bindPopup("WC");
 
 var markerWc = L.layerGroup([wc1, wc2, wc3, wc4, wc5, wc6, wc7, wc8]).addTo(
   myMap
@@ -88,23 +88,23 @@ var myIconBar = L.icon({
 
 var bar1 = L.marker([49.04834, 2.37284], {
     icon: myIconBar,
-  }).bindPopup("Bar 1"),
+  }).bindPopup("Bar du village <br> Ouvert de 15h à 23h"),
   bar2 = L.marker([49.05727, 2.38058], {
     icon: myIconBar,
-  }).bindPopup("Bar 2"),
+  }).bindPopup("Bar à vin <br> Ouvert de 15h à 23h"),
   bar3 = L.marker([49.06268, 2.3682], {
     icon: myIconBar,
-  }).bindPopup("Bar 3"),
+  }).bindPopup("Bar à vin <br> Ouvert de 15h30 à 22h30"),
   bar4 = L.marker([49.06204, 2.36532], {
     icon: myIconBar,
-  }).bindPopup("Bar 4"),
+  }).bindPopup("Bar à bière <br> Ouvert de 15h30 à 22h30"),
   bar5 = L.marker([49.0555, 2.37874], {
     icon: myIconBar,
-  }).bindPopup("Bar 5"),
+  }).bindPopup("Bar à bière <br> Ouvert de 15h à 23h"),
   bar6 = L.marker([49.05198, 2.35618], {
     icon: myIconBar,
   })
-    .bindPopup("Bar 6")
+    .bindPopup("Bar à bière <br> Ouvert de 15h30 à 22h30")
     .addTo(myMap);
 
 var markerBar = L.layerGroup([bar1, bar2, bar3, bar4, bar5, bar6]).addTo(myMap);
@@ -119,22 +119,22 @@ var myIconWaterPoint = L.icon({
 
 var waterPoint1 = L.marker([49.04829, 2.37931], {
     icon: myIconWaterPoint,
-  }).bindPopup("Point d'eau 1"),
+  }).bindPopup("Point d'eau"),
   waterPoint2 = L.marker([49.05321, 2.37733], {
     icon: myIconWaterPoint,
-  }).bindPopup("Point d'eau 2"),
+  }).bindPopup("Point d'eau"),
   waterPoint3 = L.marker([49.05436, 2.36926], {
     icon: myIconWaterPoint,
-  }).bindPopup("Point d'eau 3"),
+  }).bindPopup("Point d'eau"),
   waterPoint4 = L.marker([49.06511, 2.37612], {
     icon: myIconWaterPoint,
-  }).bindPopup("Point d'eau 4"),
+  }).bindPopup("Point d'eau"),
   waterPoint5 = L.marker([49.05757, 2.35526], {
     icon: myIconWaterPoint,
-  }).bindPopup("Point d'eau 5"),
+  }).bindPopup("Point d'eau"),
   waterPoint6 = L.marker([49.05408, 2.38721], {
     icon: myIconWaterPoint,
-  }).bindPopup("Point d'eau 6");
+  }).bindPopup("Point d'eau");
 
 var markerWaterPoint = L.layerGroup([
   waterPoint1,
@@ -155,13 +155,13 @@ var myIconStageManagement = L.icon({
 
 var stageManagement1 = L.marker([49.05625, 2.36145], {
     icon: myIconStageManagement,
-  }).bindPopup("Régie 1"),
+  }).bindPopup("Régie pour scène 1 et scène 2"),
   stageManagement2 = L.marker([49.05501, 2.36162], {
     icon: myIconStageManagement,
-  }).bindPopup("Régie 2"),
+  }).bindPopup("Régie pour scène 5"),
   stageManagement3 = L.marker([49.05979, 2.37424], {
     icon: myIconStageManagement,
-  }).bindPopup("Régie 3");
+  }).bindPopup("Régie pour scène 3 et scène 4");
 
 var markerStageManagement = L.layerGroup([
   stageManagement1,
@@ -179,10 +179,10 @@ var myIconRescuer = L.icon({
 
 var rescuer1 = L.marker([49.05285, 2.3695], {
     icon: myIconRescuer,
-  }).bindPopup("Secouriste 1"),
+  }).bindPopup("Point de Secouriste"),
   rescuer2 = L.marker([49.05402, 2.39301], {
     icon: myIconRescuer,
-  }).bindPopup("Secouriste 2");
+  }).bindPopup("Point de Secouriste");
 
 var markerRescuer = L.layerGroup([rescuer1, rescuer2]).addTo(myMap);
 
@@ -196,13 +196,13 @@ var myIconPlateformPsh = L.icon({
 
 var psh1 = L.marker([49.05681, 2.36489], {
     icon: myIconPlateformPsh,
-  }).bindPopup("Plateforme PSH 1"),
+  }).bindPopup("Plateforme PSH pour scène 1 et scène 2"),
   psh2 = L.marker([49.06336, 2.38261], {
     icon: myIconPlateformPsh,
-  }).bindPopup("Plateforme PSH 2"),
+  }).bindPopup("Plateforme PSH pour scène 3 et scène 4"),
   psh3 = L.marker([49.05129, 2.36625], {
     icon: myIconPlateformPsh,
-  }).bindPopup("Plateforme PSH 3");
+  }).bindPopup("Plateforme PSH pour scène 5");
 
 var markerPsh = L.layerGroup([psh1, psh2, psh3]).addTo(myMap);
 
@@ -216,28 +216,42 @@ var myIconRestaurant = L.icon({
 
 var restaurant1 = L.marker([49.04845, 2.37687], {
     icon: myIconRestaurant,
-  }).bindPopup("Restaurant 1"),
+  }).bindPopup(
+    "Restaurant du village <br> Pannini, Croque Monsieur, Pizza, Frites <br> Ouvert de 18h à 23h"
+  ),
   restaurant2 = L.marker([49.04829, 2.36945], {
     icon: myIconRestaurant,
-  }).bindPopup("Restaurant 2"),
+  }).bindPopup(
+    "Restaurant du village <br> Kebab, Americain, Frites <br> Ouvert de 18h à 23h"
+  ),
   restaurant3 = L.marker([49.05947, 2.382], {
     icon: myIconRestaurant,
-  }).bindPopup("Restaurant 3"),
+  }).bindPopup(
+    "Restaurant 3 <br> Kebab, Americain, Frites <br> Ouvert de 17h à 22h"
+  ),
   restaurant4 = L.marker([49.06409, 2.37249], {
     icon: myIconRestaurant,
-  }).bindPopup("Restaurant 4"),
+  }).bindPopup(
+    "Restaurant 4 <br> Burgers, Saucisse, Frites <br> Ouvert de 17h à 22h"
+  ),
   restaurant5 = L.marker([49.05364, 2.35579], {
     icon: myIconRestaurant,
-  }).bindPopup("Restaurant 5"),
+  }).bindPopup(
+    "Restaurant 5 <br> Sandwich, Pannini, Croque Monsieur, Frites <br> Ouvert de 17h à 22h"
+  ),
   restaurant6 = L.marker([49.06131, 2.382623], {
     icon: myIconRestaurant,
-  }).bindPopup("Restaurant 6"),
+  }).bindPopup(
+    "Restaurant 6 <br> Plats cuisinées: Poulet curry riz, Chili cone carne, Végétarien <br> Ouvert de 18h30 à 21h"
+  ),
   restaurant7 = L.marker([49.0634, 2.3703], {
     icon: myIconRestaurant,
-  }).bindPopup("Restaurant 7"),
+  }).bindPopup(
+    "Restaurant 7 <br> Poulet curry riz, Chili cone carne, Végétarien <br> Ouvert de 18h30 à 21h"
+  ),
   restaurant8 = L.marker([49.05541, 2.35545], {
     icon: myIconRestaurant,
-  }).bindPopup("Restaurant 8");
+  }).bindPopup("Restaurant 8 <br> Burgers, Frites <br> Ouvert de 17h à 22h");
 
 var markerRestaurants = L.layerGroup([
   restaurant1,

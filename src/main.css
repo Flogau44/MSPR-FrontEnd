@@ -121,7 +121,7 @@
   @apply relative;
 }
 .imgArtistsProg {
-  @apply max-w-max h-[300px] object-cover rounded-lg;
+  @apply max-w-full h-[300px] object-cover rounded-lg;
 }
 #artists .artist.hide {
   @apply hidden;
