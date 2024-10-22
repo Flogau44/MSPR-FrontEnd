@@ -146,14 +146,36 @@
   @apply py-6;
 }
 
-#filterButtons button {
+#filterButtonsArtist {
   @apply text-white bg-navyblue;
 }
 
-#filterButtons button:hover {
+#filterButtonsArtist:hover {
   @apply text-darkblue bg-lightblue-900 ring ring-darkblue;
 }
 
-#filterButtons button.active {
+#filterButtonsArtist.active {
+  @apply text-darkblue bg-lightblue-900 ring ring-darkblue;
+}
+#filterButtonsPlanning {
+  @apply text-white bg-navyblue;
+}
+
+#filterButtonsPlanning:hover {
+  @apply text-darkblue bg-lightblue-900 ring ring-darkblue;
+}
+
+#filterButtonsPlanning.active {
+  @apply text-darkblue bg-lightblue-900 ring ring-darkblue;
+}
+#filterButtonsSubLevel button {
+  @apply text-white bg-navyblue;
+}
+
+#filterButtonsSubLevel button:hover {
+  @apply text-darkblue bg-lightblue-900 ring ring-darkblue;
+}
+
+#filterButtonsSubLevel button.active {
   @apply text-darkblue bg-lightblue-900 ring ring-darkblue;
 }

@@ -1,19 +1,21 @@
-//Sélection de la div où tous les articles vont être chargés
+//Sélection de la div où toutes les articles seront chargées
 let postsContainer = document.querySelector("#articles");
 
-// Changer le format de date
+// Créer la fonction pour Changer le format de date, elle permet de passer la date en JJ/MM/YYYY
 function formateDate(maDate) {
   const event = new Date(maDate);
   const options = { year: "numeric", month: "numeric", day: "numeric" };
   return event.toLocaleDateString("fr-FR", options);
 }
 
-//Créer tout le contenu pour un article
+//Créer la fonction qui permet de créer toute la mise en forme d'un article (éléments et attributs)
 function createArticles(item) {
+  //Je crée l'élement article pour afficher correctement les informations de chaque article
   let article = document.createElement("article");
   article.classList.add("article");
   postsContainer.appendChild(article);
 
+  //Je crée l'élement a pour générer un lien qui permettra d'aller sur la page détaillée de l'article
   let link = document.createElement("a");
   link.href = `article.html?id=${item.id}`;
   link.setAttribute(
@@ -22,6 +24,7 @@ function createArticles(item) {
   );
   article.appendChild(link);
 
+  //Je crée l'élement img pour récupérer dans wordpress l'image de chaque articles
   let image = document.createElement("img");
   image.src = `${item["_embedded"]["wp:featuredmedia"][0]["source_url"]}`;
   image.classList.add("imgArticles");
@@ -31,25 +34,27 @@ function createArticles(item) {
   );
   link.appendChild(image);
 
+  //Je crée l'élement div pour afficher correctement la partie description pour chaque article
   let descriptionArticle = document.createElement("div");
   descriptionArticle.classList.add("descriptionArticle");
   link.appendChild(descriptionArticle);
 
+  //Je crée l'élement h2 pour récupérer dans wordpress le titre de l'article
   let title = document.createElement("h2");
   title.innerText = `${item.title.rendered}`;
   title.classList.add("titleArticle");
   descriptionArticle.appendChild(title);
 
+  //Je crée l'élement p pour récupérer dans wordpress la date pour chaque articles
   let date = document.createElement("p");
   date.classList.add("dateArticle");
   date.innerText = `${formateDate(item.date)}`;
   descriptionArticle.appendChild(date);
 }
 
-// Sélectionner l'index catégorie
+// Récupérer les données de l'API WordPress et ensuite afficher ces données sur la page d'acceuil (affichage des 3 derniers articles)
 
-// Récupérer les données de l'API WP et ensuite afficher ces données sur la page information
-
+//Sélection de l'url WP-JSON (la catégorie article et nombre d'article à afficher sont filtré directement via l'url)
 const restUrl =
   "http://localhost:10004/wp-json/wp/v2/posts?_embed&categories=5&per_page=3";
 
@@ -60,6 +65,7 @@ async function updateData() {
     // conversion de la réponse au format Javascript
     const reponseJS = await reponseJSON.json();
     reponseJS.forEach(function (n) {
+      // Je rappelle la fonction createArticles afin de créer tout les éléments de chaque articles
       createArticles(n);
       console.log(reponseJS);
     });
@@ -67,4 +73,5 @@ async function updateData() {
     console.log(error, "erreur");
   }
 }
+//Je rappelle la fonction updateData afin d'afficher les données de l'article
 updateData();

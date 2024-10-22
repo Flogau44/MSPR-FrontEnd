@@ -170,30 +170,33 @@
           <h1 class="uppercase">Programmation</h1>
         </div>
         <div>
-          <div class="ml-4 pb-4 flex flex-row justify-start gap-x-4">
+          <div
+            id="artistsOrPlanning"
+            class="ml-4 pb-4 flex flex-row justify-start gap-x-4"
+          >
             <button
+              id="filterButtonsArtist"
               type="button"
-              class="active h-10 px-5 text-white text-xl font-bold bg-navyblue rounded-md hover:text-darkblue hover:bg-lightblue-900 outline-none hover:ring hover:ring-darkblue transition-colors duration-700"
-              data-filter="lineup"
+              class="active h-10 px-5 rounded-md outline-none transition-colors duration-700 text-xl font-bold"
             >
               Artistes
             </button>
-
             <button
+              id="filterButtonsPlanning"
               type="button"
-              class="h-10 px-5 text-white text-xl font-bold bg-navyblue rounded-md hover:text-darkblue hover:bg-lightblue-900 outline-none hover:ring hover:ring-darkblue transition-colors duration-700"
+              class="h-10 px-5 rounded-md outline-none transition-colors duration-700 text-xl font-bold"
             >
               Horaires
             </button>
           </div>
           <div
-            id="filterButtons"
-            class="mx-4 pb-4 grid grid-cols-2 justify-start gap-4 md:flex md:flex-row"
+            id="filterButtonsSubLevel"
+            class="mx-4 pb-4 grid grid-cols-2 justify-start gap-4 md:grid-cols-[repeat(4,auto)]"
           >
             <button
               type="button"
               class="active h-10 px-5 rounded-md outline-none transition-colors duration-700 text-xl font-bold"
-              data-filter="lineup"
+              data-filter="lineupArtist"
             >
               Line-Up
             </button>
@@ -223,6 +226,10 @@
         <!--Afficher tous les Artistes-->
         <section id="artists">
           <!-- Artistes ajoutés en JavaScript via le lien du fichier JSON Wordpress-->
+        </section>
+        <section id="planning" style="display: none">
+          <!-- Artistes ajoutés en JavaScript via le lien du fichier JSON Wordpress-->
+          <div>sdgfdffdg</div>
         </section>
       </section>
     </main>
