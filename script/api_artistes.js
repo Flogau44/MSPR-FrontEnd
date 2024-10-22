@@ -49,29 +49,84 @@ const createArtists = (item) => {
 };
 
 //Création de la liste des artistes pour le planning
+
+//Convertir une date en jour
+function getDayName(dateString) {
+  const [day, month, year] = dateString.split("/");
+  const date = new Date(`${year}-${month}-${day}`);
+  return date.toLocaleDateString("fr-FR", { weekday: "long" });
+}
+
+// Convertir une date JJ/MM/AAAA en JJ Mois AAAA
+function convertDate(dateString) {
+  const [jour, moisIndex, annee] = dateString.split("/");
+  const date = new Date(`${annee}-${moisIndex}-${jour}`);
+  return date.toLocaleDateString("fr-FR", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+}
+
 //Sélection de la div où toutes les artistes seront chargées
 const postsContainerPlanning = document.getElementById("planning");
 
-function displaySceneArtists(sceneName, artists) {
-  const sceneContainer = document.createElement("div");
-  sceneContainer.classList.add("sceneContainer");
-  postsContainerPlanning.appendChild(sceneContainer);
+function displaySceneArtists(sceneName, artistDay, artists) {
+  let sceneContainer = document.querySelector(
+    `.sceneContainer[data-scene="${sceneName}"]`
+  );
+  if (!sceneContainer) {
+    sceneContainer = document.createElement("div");
+    sceneContainer.classList.add("sceneContainer");
+    sceneContainer.setAttribute("data-scene", sceneName);
+    postsContainerPlanning.appendChild(sceneContainer);
 
-  const nameScene = document.createElement("h1");
-  nameScene.classList.add("nameScene");
-  nameScene.innerText = `${sceneName.toUpperCase()}`;
-  sceneContainer.appendChild(nameScene);
+    const nameScene = document.createElement("h2");
+    nameScene.classList.add("nameScene");
+    nameScene.innerText = `${sceneName.toUpperCase()}`;
+    sceneContainer.appendChild(nameScene);
 
-  const sceneAllartists = document.createElement("div");
-  sceneAllartists.classList.add("sceneArtists");
-  sceneContainer.appendChild(sceneAllartists);
+    const sceneAllartists = document.createElement("div");
+    sceneAllartists.classList.add("sceneArtists");
+    sceneContainer.appendChild(sceneAllartists);
+  }
+
+  const sceneAllartist = sceneContainer.querySelector(".sceneArtists");
+
+  const dayContainer = document.createElement("div");
+  dayContainer.classList.add("dayContainer");
+  sceneAllartist.appendChild(dayContainer);
+
+  const dayArtist = document.createElement("div");
+  dayArtist.classList.add("dayArtist");
+  dayContainer.appendChild(dayArtist);
+
+  const day = document.createElement("h3");
+  day.classList.add("day");
+  day.innerText = getDayName(artistDay);
+  dayArtist.appendChild(day);
+
+  const dayMonthYear = document.createElement("h4");
+  dayMonthYear.classList.add("dayMonthYear");
+  dayMonthYear.innerText = convertDate(artistDay);
+  dayArtist.appendChild(dayMonthYear);
+
+  const daysAllartists = document.createElement("div");
+  daysAllartists.classList.add("dayArtists");
+  dayContainer.appendChild(daysAllartists);
+
+  // Trier en ordre croissant les heures de concert pour les artistes
+  artists.sort((a, b) => {
+    const timeA = a.class_list[9].slice(11);
+    const timeB = b.class_list[9].slice(11);
+    return timeA.localeCompare(timeB);
+  });
 
   artists.forEach((artist) => {
     //Je crée l'élement article pour afficher correctement les informations de chaque artistes
     const artistHour = document.createElement("article");
     artistHour.classList.add("artistHour");
-    artistHour.setAttribute("data-scene", `${artist.class_list[8].slice(9)}`);
-    sceneAllartists.appendChild(artistHour);
+    daysAllartists.appendChild(artistHour);
 
     //Je crée l'élement a pour générer un lien qui permettra d'aller sur la page détaillée de l'artiste
     const linkArtistHour = document.createElement("a");
@@ -135,12 +190,26 @@ async function updateData() {
     });
     // Récupérer la liste complète des scènes et artistes au chargement de la page
     // Filtrer les artistes par scène
-    const scenes = ["sonata", "resonance", "pulse", "thunder", "reverb"]; //Tableau avec les noms de scène
+    const scenes = [
+      "mainstage-1",
+      "mainstage-2",
+      "sonata",
+      "resonance",
+      "reverb",
+    ]; //Tableau avec les noms de scène
+    const days = ["11/07/2025", "12/07/2025", "13/07/2025"]; //Tableau avec les jours du festival
+
     scenes.forEach((scene) => {
-      const sceneArtists = reponseJS.filter(
+      const sceneArtists = allArtist.filter(
         (a) => a.class_list[8] === `category-scene-${scene}`
       );
-      displaySceneArtists(`${scene}`, sceneArtists);
+
+      days.forEach((day) => {
+        const dayArtists = sceneArtists.filter(
+          (a) => a._embedded["wp:term"][0][4].name === `5: ${day}`
+        );
+        displaySceneArtists(scene, day, dayArtists);
+      });
     });
   } catch (error) {
     console.log(error, "erreur");

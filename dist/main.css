@@ -1226,8 +1226,11 @@ main {
 }
 
 .imgArticles {
-  width: 100%;
+  height: 300px;
+  width: 600px;
   border-radius: 0.5rem;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .descriptionArticle {
@@ -1686,9 +1689,7 @@ main {
   margin-right: 1rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  display: flex;
-  flex-direction: column;
-  row-gap: 1.5rem;
+  row-gap: 2.5rem;
 }
 
 .sceneContainer {
@@ -1698,25 +1699,16 @@ main {
 }
 
 .nameScene {
-  margin-left: 1rem;
-}
-
-@media (min-width: 768px) {
-  .nameScene {
-    margin-left: 3.5rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .nameScene {
-    margin-left: 4rem;
-  }
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-weight: 800;
 }
 
 .sceneArtists {
   display: flex;
   flex-direction: column;
-  row-gap: 1rem;
+  row-gap: 2.5rem;
 }
 
 @media (min-width: 768px) {
@@ -1735,9 +1727,60 @@ main {
   }
 }
 
+.dayContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1.5rem;
+}
+
+.dayArtist {
+  display: flex;
+  height: 7rem;
+  width: 300px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  border-radius: 0.5rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(28 41 66 / var(--tw-bg-opacity));
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 768px) {
+  .dayArtist {
+    width: 18rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .dayArtist {
+    width: 20rem;
+  }
+}
+
+.day {
+  text-transform: uppercase;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.dayMonthYear {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.dayArtists {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 1rem;
+}
+
 .artistHour {
   height: 7rem;
-  width: 100%;
+  width: 300px;
   border-radius: 0.5rem;
   --tw-bg-opacity: 1;
   background-color: rgb(59 85 109 / var(--tw-bg-opacity));
@@ -1751,13 +1794,30 @@ main {
   }
 }
 
+@media (min-width: 1024px) {
+  .artistHour {
+    width: 20rem;
+  }
+}
+
 .linkArtistHour {
   display: grid;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   grid-template-columns: repeat(2, minmax(0, 1fr));
   align-content: center;
   justify-items: start;
   gap: 0.5rem;
   padding: 0.5rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.linkArtistHour:hover {
+  --tw-scale-x: 1.05;
+  --tw-scale-y: 1.05;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  opacity: 0.8;
 }
 
 .imgArtistHour {

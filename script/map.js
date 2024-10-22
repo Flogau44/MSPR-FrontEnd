@@ -31,10 +31,12 @@ var scene1 = L.marker([49.05982, 2.3579], {
   ),
   scene3 = L.marker([49.06617, 2.38374], {
     icon: myIconScene,
-  }).bindPopup("Pulse <br> 1er concert à 16h <br> Dernier concert à 22h"),
+  }).bindPopup("Mainstage 2 <br> 1er concert à 16h <br> Dernier concert à 22h"),
   scene4 = L.marker([49.06693, 2.38101], {
     icon: myIconScene,
-  }).bindPopup("Thunder <br> 1er concert à 17h30 <br> Dernier concert à 23h30"),
+  }).bindPopup(
+    "Mainstage 1 <br> 1er concert à 17h30 <br> Dernier concert à 23h30"
+  ),
   scene5 = L.marker([49.05034, 2.35851], {
     icon: myIconScene,
   }).bindPopup("Reverb <br> 1er concert à 17h <br> Dernier concert à 23h");

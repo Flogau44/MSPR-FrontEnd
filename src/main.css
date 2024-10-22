@@ -83,7 +83,7 @@
   @apply transform transition-all duration-300 hover:opacity-80 hover:scale-105;
 }
 .imgArticles {
-  @apply w-full rounded-lg;
+  @apply w-[600px] h-[300px] object-cover rounded-lg;
 }
 .descriptionArticle {
   @apply pt-2 flex flex-row justify-between items-center;
@@ -236,22 +236,37 @@
 
 /*Planning Artistes*/
 #planning {
-  @apply mx-4 my-4 flex flex-col gap-y-6;
+  @apply mx-4 my-4 gap-y-10;
 }
 .sceneContainer {
   @apply flex flex-col gap-y-4;
 }
 .nameScene {
-  @apply ml-4 md:ml-14 lg:ml-16;
+  @apply flex flex-row justify-center font-extrabold;
 }
 .sceneArtists {
-  @apply flex flex-col gap-y-4 md:grid md:grid-cols-2 md:justify-items-center md:gap-x-4 lg:grid-cols-3;
+  @apply flex flex-col gap-y-10 md:grid md:grid-cols-2 md:justify-items-center md:gap-x-4 lg:grid-cols-3;
+}
+.dayContainer {
+  @apply flex flex-col gap-y-6 items-center;
+}
+.dayArtist {
+  @apply px-4 h-28 w-[300px] flex flex-col justify-center items-start bg-navyblue  rounded-lg md:w-72 lg:w-80;
+}
+.day {
+  @apply text-white uppercase;
+}
+.dayMonthYear {
+  @apply text-white;
+}
+.dayArtists {
+  @apply flex flex-col gap-y-4 items-center;
 }
 .artistHour {
-  @apply px-4 h-28 w-full bg-blue rounded-lg md:w-72;
+  @apply px-4 h-28 w-[300px] bg-blue rounded-lg md:w-72 lg:w-80;
 }
 .linkArtistHour {
-  @apply p-2 grid grid-cols-2 content-center justify-items-start gap-2;
+  @apply p-2 grid grid-cols-2 content-center justify-items-start gap-2 transform transition-all duration-300 hover:opacity-80 hover:scale-105;
 }
 .imgArtistHour {
   @apply h-24 w-20 object-cover rounded-md;
