@@ -2,14 +2,14 @@
 let postsContainer = document.getElementById("articles");
 
 // Créer la fonction pour Changer le format de date, elle permet de passer la date en JJ/MM/YYYY
-function formateDate(maDate) {
+const formateDate = (maDate) => {
   const event = new Date(maDate);
   const options = { year: "numeric", month: "numeric", day: "numeric" };
   return event.toLocaleDateString("fr-FR", options);
-}
+};
 
 //Créer la fonction qui permet de créer toute la mise en forme d'un article (éléments et attributs)
-function createArticles(item) {
+const createArticles = (item) => {
   //Je crée l'élement article pour afficher correctement les informations de chaque article
   let article = document.createElement("article");
   article.classList.add("article");
@@ -50,7 +50,7 @@ function createArticles(item) {
   date.classList.add("dateArticle");
   date.innerText = `${formateDate(item.date)}`;
   descriptionArticle.appendChild(date);
-}
+};
 
 // Récupérer les données de l'API WordPress et ensuite afficher ces données sur la page d'acceuil (affichage des 3 derniers articles)
 
@@ -64,7 +64,7 @@ async function updateData2() {
     // code à exécuter après réception de la réponse
     // conversion de la réponse au format Javascript
     const reponseJS2 = await reponseJSON2.json();
-    reponseJS2.forEach(function (n) {
+    reponseJS2.forEach((n) => {
       // Je rappelle la fonction createArticles afin de créer tout les éléments de chaque articles
       createArticles(n);
       console.log(reponseJS2);

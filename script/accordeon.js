@@ -4,7 +4,7 @@ const questions = document.querySelectorAll(".question");
 questions.forEach((item) => {
   // Chaque élément du tableau est représenté par item
   // Maintenant chaque élément du tableau (item) est soumis à une action au clic
-  item.addEventListener("click", function () {
+  item.addEventListener("click", () => {
     // je sélectionne et je stocke la DIV suivante de l'item cliqué (reponse)
     const next = item.nextElementSibling;
     // On rend visible ou invisible la réponse

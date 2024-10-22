@@ -2,14 +2,14 @@
 let postsContainer = document.querySelector("#article");
 
 // Créer la fonction pour Changer le format de date, elle permet de passer la date en JJ/MM/YYYY
-function formateDate(maDate) {
+const formateDate = (maDate) => {
   const event = new Date(maDate);
   const options = { year: "numeric", month: "numeric", day: "numeric" };
   return event.toLocaleDateString("fr-FR", options);
-}
+};
 
 //Créer la fonction qui permet de créer toute la mise en forme d'un article (éléments et attributs)
-function createArticle(item) {
+const createArticle = (item) => {
   //Je crée l'élement img pour récupérer dans wordpress l'image de l'article
   let image = document.createElement("img");
   image.src = `${item["_embedded"]["wp:featuredmedia"][0]["source_url"]}`;
@@ -43,7 +43,7 @@ function createArticle(item) {
   date.innerText = `${formateDate(item.date)}`;
   date.classList.add("dateArticle");
   headerArticle.appendChild(date);
-}
+};
 
 // Récupérer l'ID de l'article dans l'url
 // Récupérer la chaine de requête dans l'url

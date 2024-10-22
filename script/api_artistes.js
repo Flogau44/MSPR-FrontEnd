@@ -3,7 +3,7 @@
 let postsContainerArtists = document.getElementById("artists");
 
 //Créer la fonction qui permet de créer toute la mise en forme d'un artistes (éléments et attributs)
-function createArtists(item) {
+const createArtists = (item) => {
   //Je crée l'élement article pour afficher correctement les informations de chaque artistes
   let artist = document.createElement("article");
   artist.classList.add("artist");
@@ -45,13 +45,13 @@ function createArtists(item) {
   date.classList.add("dateArtists");
   date.innerText = `${item.class_list[11].slice(11)}`;
   descriptionArtist.appendChild(date);
-}
+};
 //Création de la liste des artistes
 //Sélection de la div où toutes les artistes seront chargées
 let postsContainerPlanning = document.getElementById("planning");
 
 //Créer la fonction qui permet de créer toute la mise en forme d'un artistes (éléments et attributs)
-function createArtistsHours(item) {
+const createArtistsHours = (item) => {
   //Je crée l'élement article pour afficher correctement les informations de chaque artistes
   let artistHour = document.createElement("article");
   artistHour.classList.add("artistHour");
@@ -93,7 +93,7 @@ function createArtistsHours(item) {
   horaireArtistHour.classList.add("horaireArtistHour");
   horaireArtistHour.innerText = `${item.class_list[9].slice(11)}`;
   descriptionArtistHour.appendChild(horaireArtistHour);
-}
+};
 
 // Récupérer les données de l'API WP et ensuite afficher tous les artistes sur la page information
 //Sélection de l'url WP-JSON
@@ -111,7 +111,7 @@ async function updateData() {
       //Afficher que les artistes (filtre à appliquer sur la category-artiste de WordPress)
       (a) => a.class_list[7] === "category-artiste"
     );
-    allArtist.forEach(function (a) {
+    allArtist.forEach((a) => {
       createArtists(a);
       createArtistsHours(a);
       // Je rappelle la fonction createArtists et createArtistsHours afin de créer tout les éléments de chaque artistes

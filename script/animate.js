@@ -1,5 +1,5 @@
 // slideinleft
-const slideInLeft = function (entries) {
+const slideInLeft = (entries) => {
   entries.forEach((entry) => {
     console.log(entries);
     // L'élément se trouve-t-il dans la fenêtre de visualisation ?
@@ -17,7 +17,7 @@ const observ1 = new IntersectionObserver(slideInLeft);
 // Récupérez tous les éléments que vous souhaitez afficher lors du défilement.
 const targets1 = document.querySelectorAll(".js-show-on-scroll1");
 // Boucle sur chacune des cibles
-targets1.forEach(function (target) {
+targets1.forEach((target) => {
   // Cacher l'élément
   target.classList.add("opacity-0");
   // Ajouter l'élément à l'observateur
@@ -25,7 +25,7 @@ targets1.forEach(function (target) {
 });
 
 // Spinner-grow
-const spinnerGrow = function (entries) {
+const spinnerGrow = (entries) => {
   entries.forEach((entry) => {
     // L'élément se trouve-t-il dans la fenêtre de visualisation ?
     if (entry.isIntersecting) {
@@ -42,7 +42,7 @@ const observ2 = new IntersectionObserver(spinnerGrow);
 // Récupérez tous les éléments que vous souhaitez afficher lors du défilement.
 const targets2 = document.querySelectorAll(".js-show-on-scroll2");
 // Boucle sur chacune des cibles
-targets2.forEach(function (target) {
+targets2.forEach((target) => {
   // Cacher l'élément
   target.classList.add("opacity-0");
   // Ajouter l'élément à l'observateur
@@ -50,7 +50,7 @@ targets2.forEach(function (target) {
 });
 
 // Fadeinup
-const fadeInUp = function (entries) {
+const fadeInUp = (entries) => {
   entries.forEach((entry) => {
     // L'élément se trouve-t-il dans la fenêtre de visualisation ?
     if (entry.isIntersecting) {
@@ -67,7 +67,7 @@ const observ3 = new IntersectionObserver(fadeInUp);
 // Récupérez tous les éléments que vous souhaitez afficher lors du défilement.
 const targets3 = document.querySelectorAll(".js-show-on-scroll3");
 // Boucle sur chacune des cibles
-targets3.forEach(function (target) {
+targets3.forEach((target) => {
   // Cacher l'élément
   target.classList.add("opacity-0");
   // Ajouter l'élément à l'observateur

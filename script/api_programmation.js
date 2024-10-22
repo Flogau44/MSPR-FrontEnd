@@ -3,7 +3,7 @@
 let postsContainerArtists = document.getElementById("programmationArtists");
 
 //Créer la fonction qui permet de créer toute la mise en forme d'un artistes (éléments et attributs)
-function createArtists(item) {
+const createArtists = (item) => {
   //Je crée l'élement article pour afficher correctement les informations de chaque artistes
   let artist = document.createElement("article");
   artist.classList.add("artistProg");
@@ -45,7 +45,7 @@ function createArtists(item) {
   date.classList.add("dateArtists");
   date.innerText = `${item.class_list[11].slice(11)}`;
   descriptionArtist.appendChild(date);
-}
+};
 
 // Récupérer les données de l'API WP et ensuite afficher tous les artistes sur la page information
 //Sélection de l'url WP-JSON
@@ -59,7 +59,7 @@ async function updateData() {
     // conversion de la réponse au format Javascript
     const reponseJS = await reponseJSON.json();
     //Récupérer la liste complète des artistes au chargement de la page
-    reponseJS.forEach(function (a) {
+    reponseJS.forEach((a) => {
       createArtists(a);
       // Je rappelle la fonction createArtists et createArtistsHours afin de créer tout les éléments de chaque artistes
     });
@@ -70,7 +70,7 @@ async function updateData() {
 //Je rappelle la fonction updateData afin d'afficher les données de l'artiste
 updateData();
 
-//Caroussel
+//Caroussel de programmation artiste, 6 artistes
 
 const imageList = document.querySelector(".slider-artist .image-list");
 console.log(imageList);

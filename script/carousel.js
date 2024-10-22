@@ -2,7 +2,7 @@
 
 let slideIndex = 1;
 
-function showSlides(n) {
+const showSlides = (n) => {
   let i;
   let slides = document.getElementsByClassName("carouselSlide");
   let dots = document.getElementsByClassName("carouselDot");
@@ -21,10 +21,10 @@ function showSlides(n) {
   slides[slideIndex - 1].style.display = "block";
   dots[slideIndex - 1].className += " focus";
   setTimeout(showSlides, 2000);
-}
+};
 
 showSlides(slideIndex);
 
-function currentSlide(n) {
+const currentSlide = (n) => {
   showSlides((slideIndex = n));
-}
+};

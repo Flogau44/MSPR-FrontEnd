@@ -2,7 +2,7 @@
 let postsContainer = document.querySelector("#artist");
 
 //Créer la fonction qui permet de créer toute la mise en forme d'un artiste (éléments et attributs)
-function createArtist(item) {
+const createArtist = (item) => {
   //Je crée l'élement img pour récupérer dans wordpress l'image de l'artiste
   let image = document.createElement("img");
   image.src = `${item["_embedded"]["wp:featuredmedia"][0]["source_url"]}`;
@@ -52,7 +52,7 @@ function createArtist(item) {
   scene.innerText = `${item.class_list[8].slice(9)}`;
   scene.classList.add("sceneArtist");
   headerArtist.appendChild(scene);
-}
+};
 
 // Récupérer l'ID de l'artiste dans l'url
 // Récupérer la chaine de requête dans l'url

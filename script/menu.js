@@ -14,21 +14,21 @@ const togglemobilemenulink = document.querySelectorAll(
 );
 
 // Fermer le menu quand on clique sur l'hamburger
-hamburger.addEventListener("click", function () {
+hamburger.addEventListener("click", () => {
   toggleMobileMenu.classList.toggle("hidden");
   logo.classList.toggle("hidden");
   hamburger.classList.toggle("fa-times");
 });
 
 // Fermer le menu quand on clique sur un lien du menu
-togglemobilemenulink.forEach(function (link) {
-  link.addEventListener("click", function () {
+togglemobilemenulink.forEach((link) => {
+  link.addEventListener("click", () => {
     toggleMobileMenu.classList.add("hidden");
   });
 });
 
 // Changer la couleur du menu au scroll
-window.onscroll = function () {
+window.onscroll = () => {
   // Je sélectionne et je stocke la barre du menu
   const ud_header = document.querySelector(".ud-header");
   // Je stocke le menu en fixed
