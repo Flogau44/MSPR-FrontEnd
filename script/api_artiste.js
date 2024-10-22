@@ -76,7 +76,6 @@ async function updateData() {
     const item = reponseJS.find((a) => a.id == id);
     // Je rappelle la fonction createArticle afin de créer tout les éléments de l'artiste
     createArtist(item);
-    console.log(item);
   } catch (error) {
     console.log(error, "erreur");
   }

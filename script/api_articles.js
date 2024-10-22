@@ -56,7 +56,7 @@ const createArticles = (item) => {
 // Récupérer les données de l'API WordPress et ensuite afficher ces données sur la page information
 //Sélection de l'url WP-JSON
 const restUrl =
-  "https://flo-perso.alwaysdata.net/nationsound/wordpress/wp-json/wp/v2/posts?per_page=60&_embed";
+  "https://flo-perso.alwaysdata.net/nationsound/wordpress/wp-json/wp/v2/posts?_embed&categories=5&per_page=60";
 
 async function updateData() {
   try {
@@ -64,14 +64,9 @@ async function updateData() {
     // code à exécuter après réception de la réponse
     // conversion de la réponse au format Javascript
     const reponseJS = await reponseJSON.json();
-    let newsCategory = reponseJS.filter(
-      //Afficher que les articles (filtre à appliquer sur la category-news de WordPress)
-      (n) => n.class_list[7] === "category-news"
-    );
-    newsCategory.forEach(function (n) {
+    reponseJS.forEach(function (n) {
       // Je rappelle la fonction createArticles afin de créer tout les éléments de chaque articles
       createArticles(n);
-      console.log(newsCategory);
     });
   } catch (error) {
     console.log(error, "erreur");

@@ -170,7 +170,7 @@ const displaySceneArtists = (sceneName, artistDay, artists) => {
 // Récupérer les données de l'API WP et ensuite afficher tous les artistes sur la page information
 //Sélection de l'url WP-JSON
 const restUrl =
-  "https://flo-perso.alwaysdata.net/nationsound/wordpress/wp-json/wp/v2/posts?per_page=60&_embed";
+  "https://flo-perso.alwaysdata.net/nationsound/wordpress/wp-json/wp/v2/posts?_embed&categories=4&per_page=60";
 
 async function updateData() {
   try {

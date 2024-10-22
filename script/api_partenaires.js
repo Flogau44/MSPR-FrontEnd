@@ -53,7 +53,7 @@ const displayPartnerType = (categoryName, partners) => {
 // Récupérer les données de l'API WordPress et ensuite afficher ces données sur la page information
 //Sélection de l'url WP-JSON
 const restUrl =
-  "https://flo-perso.alwaysdata.net/nationsound/wordpress/wp-json/wp/v2/posts?per_page=60&_embed";
+  "https://flo-perso.alwaysdata.net/nationsound/wordpress/wp-json/wp/v2/posts?_embed&categories=55&per_page=60";
 
 async function updateData() {
   try {

@@ -67,7 +67,6 @@ async function updateData2() {
     reponseJS2.forEach((n) => {
       // Je rappelle la fonction createArticles afin de créer tout les éléments de chaque articles
       createArticles(n);
-      console.log(reponseJS2);
     });
   } catch (error) {
     console.log(error, "erreur");
