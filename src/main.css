@@ -74,6 +74,9 @@
 .article {
   @apply max-w-md flex flex-col justify-center;
 }
+.linkArticle {
+  @apply transform transition-all duration-300 hover:opacity-80 hover:scale-105;
+}
 .imgArticles {
   @apply w-full rounded-lg;
 }
@@ -105,7 +108,7 @@
   @apply mx-4 my-4 flex flex-col justify-center items-center gap-y-6 md:grid md:grid-cols-3 md:justify-items-center md:gap-x-4;
 }
 .artist {
-  @apply max-w-full h-auto relative flex flex-col justify-center;
+  @apply max-w-full h-auto relative flex flex-col justify-center animate-fadeinup;
 }
 .image-list {
   @apply flex flex-row gap-x-4 overflow-hidden;
@@ -122,6 +125,9 @@
 #artist {
   @apply mx-6 mb-6 flex flex-col justify-between gap-y-6 md:grid md:grid-cols-[60%,40%] md:space-x-6;
 }
+.linkArtist {
+  @apply transform transition-all duration-300 hover:opacity-80 hover:scale-105;
+}
 .informationArtist {
   @apply flex flex-col;
 }
@@ -135,7 +141,7 @@
   @apply text-lightblue text-2xl font-bold;
 }
 .dateArtists {
-  @apply text-white text-xl font-medium;
+  @apply text-white text-xl font-bold;
 }
 .dateArtist {
   @apply text-darkblue text-2xl font-semibold;
@@ -154,6 +160,30 @@
 }
 .resumeArtist {
   @apply py-6;
+}
+
+#filterButtonArtist {
+  @apply text-white bg-navyblue;
+}
+
+#filterButtonArtist:hover {
+  @apply text-darkblue bg-lightblue-900 ring ring-darkblue;
+}
+
+#filterButtonArtist.active {
+  @apply text-darkblue bg-lightblue-900 ring ring-darkblue;
+}
+
+#filterButtonArticle {
+  @apply text-white bg-navyblue;
+}
+
+#filterButtonArticle:hover {
+  @apply text-darkblue bg-lightblue-900 ring ring-darkblue;
+}
+
+#filterButtonArticle.active {
+  @apply text-darkblue bg-lightblue-900 ring ring-darkblue;
 }
 
 #filterButtonsArtist {
@@ -196,7 +226,7 @@
   @apply mx-4 h-28 w-full bg-blue rounded-lg md:w-72;
 }
 .linkArtistHour {
-  @apply p-2 grid grid-cols-2 content-center justify-items-center gap-2;
+  @apply p-2 grid grid-cols-2 content-center justify-items-center md:justify-items-start gap-2;
 }
 .imgArtistHour {
   @apply h-24 w-20 object-cover rounded-md;

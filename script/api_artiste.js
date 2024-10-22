@@ -25,7 +25,7 @@ const createArtist = (item) => {
 
   //Je crée l'élement div pour récupérer dans wordpres le résumé de l'artiste
   let resumeArtist = document.createElement("div");
-  resumeArtist.innerHTML = `${item.excerpt.rendered.slice(13)}`;
+  resumeArtist.innerHTML = `${item.content.rendered}`;
   resumeArtist.classList.add("resumeArtist");
   informationArtist.appendChild(resumeArtist);
 
@@ -75,6 +75,7 @@ async function updateData() {
     const item = reponseJS.find((a) => a.id == id);
     // Je rappelle la fonction createArticle afin de créer tout les éléments de l'artiste
     createArtist(item);
+    console.log(item);
   } catch (error) {
     console.log(error, "erreur");
   }

@@ -13,6 +13,7 @@ const createArtists = (item) => {
   //Je crée l'élement a pour générer un lien qui permettra d'aller sur la page détaillée de l'artiste
   let link = document.createElement("a");
   link.href = `artiste.html?id=${item.id}`;
+  link.classList.add("linkArtist");
   link.setAttribute(
     "title",
     `${item["_embedded"]["wp:featuredmedia"][0]["slug"]}`
@@ -55,6 +56,7 @@ const createArtistsHours = (item) => {
   //Je crée l'élement article pour afficher correctement les informations de chaque artistes
   let artistHour = document.createElement("article");
   artistHour.classList.add("artistHour");
+  artistHour.setAttribute("data-scene", `${item.class_list[8].slice(9)}`);
   postsContainerPlanning.appendChild(artistHour);
 
   //Je crée l'élement a pour générer un lien qui permettra d'aller sur la page détaillée de l'artiste
@@ -115,7 +117,6 @@ async function updateData() {
       createArtists(a);
       createArtistsHours(a);
       // Je rappelle la fonction createArtists et createArtistsHours afin de créer tout les éléments de chaque artistes
-      console.log(allArtist);
     });
   } catch (error) {
     console.log(error, "erreur");
@@ -190,3 +191,18 @@ const filterArtists = (e) => {
 filterButtonsSubLevel.forEach((button) =>
   button.addEventListener("click", filterArtists)
 );
+
+//Afficher les artistes en fonction des scènes et horaires
+const filterScenes = document.getElementById("planning").children;
+
+const filterScene = () => {
+  for (let i = 0; i < filterScenes.length; i++) {
+    if (filterScenes[i].dataset.scene === "scene-1") {
+      filterScenes[i].classList.replace("hide", "show");
+      console.log(filterScenes);
+    } else {
+      filterScenes[i].classList.add("hide");
+    }
+  }
+};
+filterScene();

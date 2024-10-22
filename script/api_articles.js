@@ -18,6 +18,7 @@ const createArticles = (item) => {
   //Je crée l'élement a pour générer un lien qui permettra d'aller sur la page détaillée de l'article
   let link = document.createElement("a");
   link.href = `article.html?id=${item.id}`;
+  link.classList.add("linkArticle");
   link.setAttribute(
     "title",
     `${item["_embedded"]["wp:featuredmedia"][0]["slug"]}`

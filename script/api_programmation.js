@@ -73,7 +73,6 @@ updateData();
 //Caroussel de programmation artiste, 6 artistes
 
 const imageList = document.querySelector(".slider-artist .image-list");
-console.log(imageList);
 const slideButtons = document.querySelectorAll(".slidebuttons .slide-button");
 
 const maxScrollLeft = imageList.scrollWidth - imageList.clientWidth;

@@ -599,6 +599,22 @@ main {
   position: absolute;
 }
 
+.relative {
+  position: relative;
+}
+
+.-left-6 {
+  left: -1.5rem;
+}
+
+.-right-6 {
+  right: -1.5rem;
+}
+
+.bottom-1\/2 {
+  bottom: 50%;
+}
+
 .bottom-5 {
   bottom: 1.25rem;
 }
@@ -609,6 +625,10 @@ main {
 
 .top-0 {
   top: 0px;
+}
+
+.z-30 {
+  z-index: 30;
 }
 
 .z-40 {
@@ -700,16 +720,16 @@ main {
   height: 2.5rem;
 }
 
+.h-12 {
+  height: 3rem;
+}
+
 .h-20 {
   height: 5rem;
 }
 
 .h-3 {
   height: 0.75rem;
-}
-
-.h-8 {
-  height: 2rem;
 }
 
 .h-\[300px\] {
@@ -722,6 +742,10 @@ main {
 
 .h-screen {
   height: 100vh;
+}
+
+.w-12 {
+  width: 3rem;
 }
 
 .w-20 {
@@ -738,10 +762,6 @@ main {
 
 .w-7 {
   width: 1.75rem;
-}
-
-.w-8 {
-  width: 2rem;
 }
 
 .w-full {
@@ -838,10 +858,6 @@ main {
 
 .justify-between {
   justify-content: space-between;
-}
-
-.justify-around {
-  justify-content: space-around;
 }
 
 .gap-4 {
@@ -989,11 +1005,6 @@ main {
 .px-5 {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
-}
-
-.px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
 }
 
 .py-10 {
@@ -1266,6 +1277,20 @@ main {
   justify-content: center;
 }
 
+.linkArticle {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.linkArticle:hover {
+  --tw-scale-x: 1.05;
+  --tw-scale-y: 1.05;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  opacity: 0.8;
+}
+
 .imgArticles {
   width: 100%;
   border-radius: 0.5rem;
@@ -1348,6 +1373,22 @@ main {
   display: flex;
   height: auto;
   max-width: 100%;
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(0, 100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0, 0, 0);
+  }
+}
+
+.artist {
+  animation: fade-in-up 2s ease-in-out 0s 1;
   flex-direction: column;
   justify-content: center;
 }
@@ -1400,6 +1441,20 @@ main {
   }
 }
 
+.linkArtist {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.linkArtist:hover {
+  --tw-scale-x: 1.05;
+  --tw-scale-y: 1.05;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  opacity: 0.8;
+}
+
 .informationArtist {
   display: flex;
   flex-direction: column;
@@ -1432,7 +1487,7 @@ main {
 .dateArtists {
   font-size: 1.25rem;
   line-height: 1.75rem;
-  font-weight: 500;
+  font-weight: 700;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
@@ -1477,6 +1532,64 @@ main {
 .resumeArtist {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+}
+
+#filterButtonArtist {
+  --tw-bg-opacity: 1;
+  background-color: rgb(28 41 66 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+#filterButtonArtist:hover {
+  background-color: rgba(95, 194, 186, 0.9);
+  --tw-text-opacity: 1;
+  color: rgb(11 22 44 / var(--tw-text-opacity));
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(11 22 44 / var(--tw-ring-opacity));
+}
+
+#filterButtonArtist.active {
+  background-color: rgba(95, 194, 186, 0.9);
+  --tw-text-opacity: 1;
+  color: rgb(11 22 44 / var(--tw-text-opacity));
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(11 22 44 / var(--tw-ring-opacity));
+}
+
+#filterButtonArticle {
+  --tw-bg-opacity: 1;
+  background-color: rgb(28 41 66 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+#filterButtonArticle:hover {
+  background-color: rgba(95, 194, 186, 0.9);
+  --tw-text-opacity: 1;
+  color: rgb(11 22 44 / var(--tw-text-opacity));
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(11 22 44 / var(--tw-ring-opacity));
+}
+
+#filterButtonArticle.active {
+  background-color: rgba(95, 194, 186, 0.9);
+  --tw-text-opacity: 1;
+  color: rgb(11 22 44 / var(--tw-text-opacity));
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(11 22 44 / var(--tw-ring-opacity));
 }
 
 #filterButtonsArtist {
@@ -1610,6 +1723,12 @@ main {
   justify-items: center;
   gap: 0.5rem;
   padding: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .linkArtistHour {
+    justify-items: start;
+  }
 }
 
 .imgArtistHour {
@@ -1823,20 +1942,12 @@ main {
     flex-direction: row;
   }
 
-  .md\:content-center {
-    align-content: center;
-  }
-
   .md\:items-start {
     align-items: flex-start;
   }
 
   .md\:items-center {
     align-items: center;
-  }
-
-  .md\:justify-center {
-    justify-content: center;
   }
 
   .md\:justify-between {
