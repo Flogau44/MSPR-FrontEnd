@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="keywords"
+      content="festival, concert, musique, artiste, scène, billetterie, évenènement"
+    />
+    <title>Nation Sound</title>
+    <link rel="stylesheet" href="./dist/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/542ce770e9.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header
+      class="ud-header bg-darkblue text-white shadow-md top-0 left-0 z-40 w-full h-20 md:h-28"
+    >
+      <nav
+        id="main-nav"
+        class="mx-auto flex justify-between items-center py-4 md:justify-start md:px-20 md:py-2"
+      >
+        <!--Menu Mobile-->
+        <div>
+          <!--Menu Hamburger-->
+          <button
+            id="toggleHamburger"
+            class="cursor-pointer px-4 w-7 md:hidden"
+          >
+            <i class="fas fa-bars fa-2xl" style="color: #ffffff"></i>
+          </button>
+          <ul
+            id="toggleMobileMenu"
+            class="hidden bg-darkblue h-screen w-screen pl-4 pt-6 space-y-6 text-4xl font-semibold items-center animate-menuslideinleft md:hidden"
+          >
+            <li>
+              <a
+                href="./index.html"
+                class="uppercase transition duration-0 text-white hover:text-lightblue hover:duration-1000"
+                title="Vers la page d'acceuil du site 'Nation Sound'"
+                >Acceuil</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="uppercase transition duration-0 text-white hover:text-lightblue hover:duration-1000"
+                title="Vers la page d'informations du site 'Nation Sound'"
+                >Informations</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="uppercase transition duration-0 text-white hover:text-lightblue hover:duration-1000"
+                title="Vers la page programmation du site 'Nation Sound'"
+                >Programmation</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="uppercase transition duration-0 text-white hover:text-lightblue hover:duration-1000"
+                title="Vers la page billetterie du site 'Nation Sound'"
+                >Billetterie</a
+              >
+            </li>
+            <li>
+              <a
+                href="./infos_pratiques.html"
+                class="uppercase transition duration-0 text-white hover:text-lightblue hover:duration-1000"
+                title="Vers la page d'infos pratiques du site 'Nation Sound'"
+                >Infos pratiques</a
+              >
+            </li>
+            <li>
+              <a
+                href="./partenaires.html"
+                class="uppercase transition duration-0 text-white hover:text-lightblue hover:duration-1000"
+                title="Vers la page des partenaires du site 'Nation Sound'"
+                >Partenaires</a
+              >
+            </li>
+          </ul>
+        </div>
+        <!--Logo-->
+        <div class="pr-6 flex flex-col items-center">
+          <a href="./index.html" title="Page d'accueil">
+            <img
+              src="./images/logo.png"
+              id="logo"
+              class="w-20 md:w-28"
+              alt="logo"
+            />
+          </a>
+          <p class="hidden text-xl font-semibold md:flex">
+            <span class="text-lightblue font-bold">11.12.13</span
+            ><span id="logoTitle">&nbsp;JUILLET</span>
+          </p>
+        </div>
+        <div>
+          <!--Menu desktop-->
+          <ul
+            id="toggleDesktopMenu"
+            class="hidden md:text-xl md:font-semibold md:flex md:flex-row md:items-center md:justify-between md:space-x-5"
+          >
+            <li>
+              <a
+                href="./index.html"
+                class="uppercase transition duration-0 hover:text-lightblue hover:duration-1000"
+                title="Vers la page d'acceuil du site 'Nation Sound'"
+                >Acceuil</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="uppercase transition duration-0 hover:text-lightblue hover:duration-1000"
+                title="Vers la page d'informations du site 'Nation Sound'"
+                >Informations</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="uppercase transition duration-0 hover:text-lightblue hover:duration-1000"
+                title="Vers la page programmation du site 'Nation Sound'"
+                >Programmation</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="uppercase transition duration-0 hover:text-lightblue hover:duration-1000"
+                title="Vers la page billetterie du site 'Nation Sound'"
+                >Billetterie</a
+              >
+            </li>
+            <li class="min-w-44">
+              <a
+                href="./infos_pratiques.html"
+                class="uppercase transition duration-0 hover:text-lightblue hover:duration-1000"
+                title="Vers la page d'infos pratiques du site 'Nation Sound'"
+                >Infos pratiques</a
+              >
+            </li>
+            <li>
+              <a
+                href="./partenaires.html"
+                class="uppercase transition duration-0 hover:text-lightblue hover:duration-1000"
+                title="Vers la page des partenaires du site 'Nation Sound'"
+                >Partenaires</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main class="h-full pt-0 md:pt-2">
+      <h1 class="my-4 uppercase flex justify-center">Infos Pratiques</h1>
+      <nav class="mt-6">
+        <ul
+          class="flex flex-row justify-center space-x-4 font-bold text-base md:text-2xl"
+        >
+          <li>
+            <a
+              href="./infos_pratiques.html"
+              class="uppercase transition duration-0 text-blue-900 hover:text-darkblue hover:duration-500 hover:border-b-2 hover:border-darkblue"
+              title="Vers la page Venir du site 'Nation Sound'"
+              >Venir</a
+            >
+          </li>
+          <li>
+            <a
+              href="./sur_place.html"
+              class="uppercase transition duration-0 text-darkblue border-darkblue border-b-2 hover:duration-500"
+              title="Vers la page Sur place du site 'Nation Sound'"
+              >Sur place</a
+            >
+          </li>
+          <li>
+            <a
+              href="./ou_dormir.html"
+              class="uppercase transition duration-0 text-blue-900 hover:text-darkblue hover:duration-500 hover:border-b-2 hover:border-darkblue"
+              title="Vers la page Où dormir du site 'Nation Sound'"
+              >Où dormir?</a
+            >
+          </li>
+          <li>
+            <a
+              href="./accessibilite.html"
+              class="uppercase transition duration-0 text-blue-900 hover:text-darkblue hover:duration-500 hover:border-b-2 hover:border-darkblue"
+              title="Vers la page Accessibilité du site 'Nation Sound'"
+              >Accessibilité</a
+            >
+          </li>
+          <li>
+            <a
+              href="./faq_1.html"
+              class="uppercase transition duration-0 text-blue-900 hover:text-darkblue hover:duration-500 hover:border-b-2 hover:border-darkblue"
+              title="Vers la page FAQ du site 'Nation Sound'"
+              >f.a.q.</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <section
+        class="py-10 px-4 md:px-16 flex flex-col text-base md:text-xl md:flex-row md:justify-between md:gap-x-10"
+      >
+        <h2 class="uppercase">Plan du festival</h2>
+        <div></div>
+      </section>
+      <section>
+        <article
+          class="py-10 px-4 md:px-16 flex flex-col bg-navyblue text-white text-base md:text-xl md:flex-row md:justify-between md:gap-x-10"
+        >
+          <img
+            src="./images/train.jpg"
+            class="w-full py-4 md:py-0 md:w-7/12"
+            alt="Navette"
+          />
+          <div
+            class="flex flex-col gap-y-4 md:w-5/12 animate-spinnergrow js-show-on-scroll"
+          >
+            <h2 class="uppercase text-lightblue">Entrée du festival</h2>
+            <p>
+              Un contrôle des billets sera effectué à l’entrée du festival. Un
+              bracelet à usage unique vous sera remis. Il ne pourra pas être
+              enlevé et remis à quelqu’un d’autre. Attention : vous risqueriez
+              de vous faire refuser l’accès au festival.
+            </p>
+            <p>
+              Les portes du festival ouvrent le jeudi 11 juillet à 14h30, le
+              vendredi 12 juillet à 14h30 et le samedi 13 juillet à 14h30. Les
+              concerts commencent environ 1h30 après ces horaires.
+            </p>
+            <p>
+              L’introduction de drogues, d’alcool et d’appareils photos
+              professionnels sont strictement interdits dans l’enceinte du
+              festival. Pour des raisons de sécurité, des objets ne sont pas
+              autorisés sur site : les récipients en verre, les outils
+              tranchants et/ou dangereux (cutters, couteaux…), les bouchons de
+              bouteilles en plastique…
+            </p>
+          </div>
+        </article>
+        <article
+          class="py-10 px-4 md:px-16 flex flex-col text-base md:text-xl md:flex-row md:justify-between md:gap-x-10"
+        >
+          <div
+            class="flex flex-col gap-y-4 md:w-5/12 animate-spinnergrow js-show-on-scroll"
+          >
+            <h2 class="uppercase">Espace familles</h2>
+            <p>
+              Familles, au festival, pour recharger les batteries, l’Espace
+              Familles vous est dédié jusqu’à 23h, près du camping. Vous pourrez
+              vous y détendre et profiter de nombreux services et animations :
+              espace détente, massage, coloriage, maquillage, jeux de société…
+              Comment accéder à l’Espace Familles ? Présentez-vous à l’accueil
+              du festival pour récupérer votre accès spécifique, indiquez le nom
+              de votre enfant, son prénom et votre numéro de téléphone.
+              Rendez-vous ensuite sur le site, dans une zone à l’écart des
+              scènes, en toute tranquillité, pour accéder au château. Afin que
+              l’Espace Familles reste un endroit calme et agréable, sa capacité
+              reste limitée. Un peu d’attente pourra vous être demandée.
+            </p>
+          </div>
+          <img
+            src="./images/espace_detente.jpg"
+            class="w-full py-4 md:py-0 md:w-7/12"
+            alt="Navette"
+          />
+        </article>
+        <article
+          class="py-10 px-4 md:px-16 flex flex-col bg-navyblue text-white text-base md:text-xl md:flex-row md:justify-between md:gap-x-10"
+        >
+          <img
+            src="./images/train.jpg"
+            class="w-full py-4 md:py-0 md:w-7/12"
+            alt="Navette"
+          />
+          <div
+            class="flex flex-col gap-y-4 md:w-5/12 animate-spinnergrow js-show-on-scroll"
+          >
+            <h2 class="uppercase text-lightblue">Stand de prévention</h2>
+            <p>
+              Pour limiter et sensibiliser sur les comportements liés à l’excès
+              d’alcool, à la consommation de drogues ou les risques auditifs, un
+              stand de prévention est accessible à tous.
+            </p>
+            <p>
+              Des bénévoles dispensent informations et conseils auprès du
+              public. Des bouchons d’oreille, casques, préservatifs, éthylotests
+              et autres sont à disposition durant le festival.
+            </p>
+          </div>
+        </article>
+        <article
+          class="py-10 px-4 md:px-16 flex flex-col text-base md:text-xl md:flex-row md:justify-between md:gap-x-10"
+        >
+          <div
+            class="flex flex-col gap-y-4 md:w-5/12 animate-spinnergrow js-show-on-scroll"
+          >
+            <h2 class="uppercase">Safe zone</h2>
+            <p>
+              Cette année encore Nation Sound renforce sa vigilance en proposant
+              un espace Safe Zone ouvert à tous et toutes, où les
+              festivaliers.ières trouveront une zone de refuge en cas de danger
+              ou incident. Un espace safe et calme afin de proposer un festival
+              toujours plus bienveillant !
+            </p>
+          </div>
+          <img
+            src="./images/parking_velo.jpg"
+            class="w-full py-4 md:py-0 md:w-7/12"
+            alt="Navette"
+          />
+        </article>
+      </section>
+    </main>
+    <footer class="bg-darkblue text-white w-full">
+      <div
+        class="flex flex-col items-center space-y-4 md:flex-row md:justify-around md:items-start"
+      >
+        <!--Nation Sound-->
+        <div class="flex flex-col">
+          <img src="./images/logo.png" class="w-64" />
+        </div>
+        <!--Réseaux sociaux-->
+        <div class="flex flex-col space-y-6 items-center md:items-start">
+          <div class="flex flex-col items-center space-y-2 md:items-start">
+            <div>
+              <h1>Restons connectés</h1>
+            </div>
+            <div>
+              <p class="text-xl">Suivez-nous sur nos réseaux sociaux !</p>
+            </div>
+          </div>
+          <div class="flex flex-row space-x-3">
+            <a href="#" title="Vers la page facebook">
+              <i
+                class="fab fa-facebook text-white fa-2xl transition duration-0 hover:duration-1000 hover:text-blue"
+              ></i>
+            </a>
+            <a href="#" title="Vers la page instagramm">
+              <i
+                class="fab fa-instagramm text-white fa-2xl transition duration-0 hover:duration-1000 hover:text-blue"
+              ></i>
+            </a>
+            <a href="#" title="Vers la page twitter">
+              <i
+                class="fab fa-twitter text-white fa-2xl transition duration-0 hover:duration-1000 hover:text-blue"
+              ></i>
+            </a>
+            <a href="#" title="Vers la page youtube">
+              <i
+                class="fab fa-youtube text-white fa-2xl transition duration-0 hover:duration-1000 hover:text-blue"
+              ></i>
+            </a>
+            <a href="#" title="Vers la page snapchat">
+              <i
+                class="fab fa-snapchat text-white fa-2xl transition duration-0 hover:duration-1000 hover:text-blue"
+              ></i>
+            </a>
+            <a href="#" title="Vers la page linkedin">
+              <i
+                class="fab fa-linkedin text-white transition duration-0 hover:duration-1000 fa-2xl hover:text-blue"
+              ></i>
+            </a>
+          </div>
+        </div>
+        <!--Contact et infos-->
+        <div>
+          <ul
+            class="text-2xl font-semibold flex flex-col items-center space-y-2 md:items-start"
+          >
+            <li>
+              <a
+                href="./contact.html"
+                class="transition duration-0 hover:text-blue hover:duration-1000"
+                title="Vers la page contact du site 'Nation Sound'"
+                >Contact</a
+              >
+            </li>
+            <li>
+              <a
+                href="./mentions_legales.html"
+                class="transition duration-0 hover:text-blue hover:duration-1000"
+                title="Vers la page des mentions légales du site 'Nation Sound'"
+                >Mentions légales</a
+              >
+            </li>
+            <li>
+              <a
+                href="./faq.html"
+                class="transition duration-0 hover:text-blue hover:duration-1000"
+                title="Vers la page F.A.Q. du site 'Nation Sound'"
+                >F.A.Q.</a
+              >
+            </li>
+            <li>
+              <a
+                href="./partenaires.html"
+                class="transition duration-0 hover:text-blue hover:duration-1000"
+                title="Vers la page des partenaires du site 'Nation Sound'"
+                >Partenaires</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="py-2 flex flex-col items-center">
+        <div class="py-2">
+          Copyright &copy; 2024 Live Envents -
+          <span class="text-lightblue font-semibold">N</span>ation
+          <span class="text-lightblue font-semibold">S</span>ound - Tous droits
+          réservés
+        </div>
+      </div>
+    </footer>
+    <script src="./menu.js"></script>
+    <script src="./animate.js"></script>
+  </body>
+</html>

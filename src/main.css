@@ -1,3 +1,58 @@
 @tailwind base;
+
+@layer base {
+  body {
+    font-family: "Cormorant Garamond", serif;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  .Roboto {
+    font-family: "Roboto", sans-serif;
+  }
+  h1 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-weight: 700;
+    color: #0b162c;
+  }
+  h2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+    color: #0b162c;
+  }
+  h3 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 700;
+    color: #0b162c;
+  }
+  main {
+    color: #3b556d;
+  }
+}
+
 @tailwind components;
 @tailwind utilities;
+
+.sticky {
+  @apply fixed;
+}
+.blueMenu {
+  @apply bg-white-800 text-darkblue;
+}
+.question {
+  @apply flex flex-row justify-between items-center py-2 space-x-4 cursor-pointer uppercase text-blue;
+}
+
+.reponse {
+  @apply hidden text-xl text-navyblue;
+}
+.visible {
+  @apply block;
+}
