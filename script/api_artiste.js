@@ -1,5 +1,5 @@
 //Sélection de la div où tous les articles vont être chargés
-let postsContainer = document.querySelector("#article");
+let postsContainer = document.querySelector("#artiste");
 
 // Changer le format de date
 function formateDate(maDate) {
@@ -8,35 +8,35 @@ function formateDate(maDate) {
   return event.toLocaleDateString("fr-FR", options);
 }
 
-//Créer tout le contenu pour un article
+//Créer tout le contenu pour un artiste
 function articles(item) {
   let image = document.createElement("img");
   image.src = `${item["_embedded"]["wp:featuredmedia"][0]["source_url"]}`;
-  image.classList.add("imgArticle");
+  image.classList.add("imgArtiste");
   postsContainer.appendChild(image);
 
-  let informationArticle = document.createElement("div");
-  informationArticle.classList.add("informationArticle");
-  postsContainer.appendChild(informationArticle);
+  let informationArtiste = document.createElement("div");
+  informationArtiste.classList.add("informationArtiste");
+  postsContainer.appendChild(informationArtiste);
 
-  let headerArticle = document.createElement("div");
-  headerArticle.classList.add("headerArticle");
-  informationArticle.appendChild(headerArticle);
+  let headerArtiste = document.createElement("div");
+  headerArtiste.classList.add("headerArtiste");
+  informationArtiste.appendChild(headerArtiste);
 
-  let resumeArticle = document.createElement("div");
-  resumeArticle.innerHTML = `${item.excerpt.rendered}`;
-  resumeArticle.classList.add("resumeArticle");
-  informationArticle.appendChild(resumeArticle);
+  let resumeArtiste = document.createElement("div");
+  resumeArtiste.innerHTML = `${item.excerpt.rendered}`;
+  resumeArtiste.classList.add("resumeArtiste");
+  informationArtiste.appendChild(resumeArtiste);
 
-  let title = document.createElement("h2");
-  title.innerText = `${item.title.rendered}`;
-  title.classList.add("titleArticle");
-  headerArticle.appendChild(title);
+  let name = document.createElement("h2");
+  name.innerText = `${item.title.rendered}`;
+  name.classList.add("nameArtiste");
+  headerArtiste.appendChild(name);
 
   let date = document.createElement("p");
   date.innerText = `${formateDate(item.date)}`;
-  date.classList.add("dateArticle");
-  headerArticle.appendChild(date);
+  date.classList.add("dateArtiste");
+  headerArtiste.appendChild(date);
 }
 
 // Récupérer l'ID article dans l'url
@@ -60,7 +60,7 @@ async function data() {
     const reponseJS = await reponseJSON.json();
     console.log(reponseJS);
     // Trouver l'id de l'objet correspondant à l'id de l'url
-    const item = reponseJS.find((news) => news.id == id);
+    const item = reponseJS.find((a) => a.id == id);
     // Afficher les données de l'article
     articles(item);
   } catch (error) {

@@ -1,5 +1,5 @@
-//Sélection de la div où tous les articles vont être chargés
-let postsContainer = document.querySelector("#articles");
+//Sélection de la div où tous les artistes vont être chargés
+let postsContainer = document.querySelector("#artistes");
 
 // Changer le format de date
 function formateDate(maDate) {
@@ -8,39 +8,34 @@ function formateDate(maDate) {
   return event.toLocaleDateString("fr-FR", options);
 }
 
-//Créer tout le contenu pour un article
-function articles(item) {
-  let article = document.createElement("article");
-  article.classList.add("article");
-  postsContainer.appendChild(article);
+//Créer tout le contenu pour un artiste
+function artistes(item) {
+  let artiste = document.createElement("article");
+  artiste.classList.add("artiste");
+  postsContainer.appendChild(artiste);
 
   let link = document.createElement("a");
-  link.href = `article.html?id=${item.id}`;
-  article.appendChild(link);
+  link.href = `artiste.html?id=${item.id}`;
+  artiste.appendChild(link);
 
   let image = document.createElement("img");
   image.src = `${item["_embedded"]["wp:featuredmedia"][0]["source_url"]}`;
   link.appendChild(image);
 
-  let descriptionArticle = document.createElement("div");
-  descriptionArticle.classList.add("descriptionArticle");
-  link.appendChild(descriptionArticle);
+  let descriptionArtiste = document.createElement("div");
+  descriptionArtiste.classList.add("descriptionArtiste");
+  link.appendChild(descriptionArtiste);
 
-  let title = document.createElement("h2");
-  title.innerText = `${item.title.rendered}`;
-  title.classList.add("titleArticle");
-  descriptionArticle.appendChild(title);
+  let name = document.createElement("h2");
+  name.innerText = `${item.title.rendered}`;
+  name.classList.add("nameArtiste");
+  descriptionArtiste.appendChild(name);
 
   let date = document.createElement("p");
-  date.classList.add("dateArticle");
+  date.classList.add("dateArtistes");
   date.innerText = `${formateDate(item.date)}`;
-  descriptionArticle.appendChild(date);
-
-  const categorieNews = `${item.class_list[7]}`;
-  console.log(categorieNews);
+  descriptionArtiste.appendChild(date);
 }
-
-// Sélectionner l'index catégorie
 
 // Récupérer les données de l'API WP et ensuite afficher ces données sur la page information
 
@@ -56,7 +51,7 @@ async function data() {
     const reponseJS = await reponseJSON.json();
     console.log(reponseJS);
     reponseJS.forEach(function (news) {
-      articles(news);
+      artistes(news);
     });
   } catch (error) {
     console.log(error, "erreur");

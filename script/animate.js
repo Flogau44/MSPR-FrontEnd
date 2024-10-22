@@ -12,7 +12,7 @@ const slideinleft = function (entries) {
     }
   });
 };
-// Création d'un nouvel observateur
+// Création d'un nouvel observateur pour le slideinleft
 const observ1 = new IntersectionObserver(slideinleft);
 // Récupérez tous les éléments que vous souhaitez afficher lors du défilement.
 const targets1 = document.querySelectorAll(".js-show-on-scroll");
@@ -38,7 +38,7 @@ const spinnerGrow = function (entries) {
     }
   });
 };
-// Création d'un nouvel observateur
+// Création d'un nouvel observateur pour le spinnergrow
 const observ2 = new IntersectionObserver(spinnerGrow);
 // Récupérez tous les éléments que vous souhaitez afficher lors du défilement.
 const targets2 = document.querySelectorAll(".js-show-on-scroll");

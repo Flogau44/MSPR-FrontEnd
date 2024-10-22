@@ -22,7 +22,7 @@
   </head>
   <body>
     <header
-      class="ud-header bg-darkblue text-white shadow-md top-0 left-0 z-40 w-full h-20 md:h-28"
+      class="ud-header bg-darkblue text-white shadow-md top-0 left-0 z-50 w-full h-20 md:h-28"
     >
       <nav
         id="main-nav"
@@ -175,16 +175,8 @@
             articles</a
           >
         </div>
-        <section id="article">
+        <section id="article" class="animate-spinnergrow js-show-on-scroll">
           <!-- Article ajouté en JavaScript via le lien du fichier JSON Wordpress-->
-          <img src="" alt="" class="imgArticle" />
-          <div class="informationArticle">
-            <div class="headerArticle">
-              <h2 class="titleArticle"></h2>
-              <p class="dateArticle"></p>
-            </div>
-            <p class="resumeArticle"></p>
-          </div>
         </section>
       </section>
     </main>
@@ -290,5 +282,6 @@
     </footer>
     <script src="./script/menu.js"></script>
     <script src="./script/api_article.js"></script>
+    <script src="./script/animate.js"></script>
   </body>
 </html>
