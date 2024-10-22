@@ -1,30 +1,34 @@
 // Menu Mobile
 
-// Je sélectionne et je stocke l'icône hamburger
-const hamburger = document.querySelector("#toggleHamburger i");
+// Je sélectionne et je stocke l'icône hamburger non active (fa-bars)
+const hamburgerNonactive = document.querySelector(
+  ".navbar-mobile #hamburgerNonactive"
+);
+// Je sélectionne et je stocke l'icône hamburger active (fa-times)
+const hamburgerActive = document.querySelector(
+  ".navbar-mobile #hamburgerActive"
+);
+// Je sélectionne et je stocke l'élément DIV menu global
+const modal = document.querySelector(".modal");
+// Je sélectionne et je stocke les liens du menu
+const modalLink = document.querySelectorAll(".navbar-mobile-list");
 // Je sélectionne et je stocke le logo
 const logo = document.getElementById("logo");
 // Je sélectionne et je stocke le titre du logo
 const logoTitle = document.getElementById("logoTitle");
-// // Je sélectionne et je stocke l'élément DIV menu global
-const toggleMobileMenu = document.querySelector("#toggleMobileMenu");
-// Je sélectionne et je stocke les liens du menu
-const togglemobilemenulink = document.querySelectorAll(
-  "#toggleMobileMenu .nav-link"
-);
 
-// Fermer le menu quand on clique sur l'hamburger
-hamburger.addEventListener("click", () => {
-  toggleMobileMenu.classList.toggle("hidden");
-  logo.classList.toggle("hidden");
-  hamburger.classList.toggle("fa-times");
+// Ouvrir le menu quand on clique sur l'hamburger non active (fa-bars)
+hamburgerNonactive.addEventListener("click", () => {
+  modal.classList.remove("hidden");
+  hamburgerNonactive.style.display = "none";
+  hamburgerActive.style.display = "flex";
 });
 
-// Fermer le menu quand on clique sur un lien du menu
-togglemobilemenulink.forEach((link) => {
-  link.addEventListener("click", () => {
-    toggleMobileMenu.classList.add("hidden");
-  });
+// Fermer le menu quand on clique sur l'hamburger active (fa-times)
+hamburgerActive.addEventListener("click", () => {
+  modal.classList.add("hidden");
+  hamburgerNonactive.style.display = "flex";
+  hamburgerActive.style.display = "none";
 });
 
 // Changer la couleur du menu au scroll
@@ -41,15 +45,15 @@ window.onscroll = () => {
     ud_header.classList.add("blueMenu");
     logo.src = "./images/logo_1.png";
     logoTitle.style.color = "#0b162c";
-    hamburger.style.color = "#0b162c";
-    // Sinon si le menu garde l'état d'origine
+    hamburgerNonactive.style.color = "#0b162c";
+    // Sinon le menu garde l'état d'origine
   } else {
     ud_header.classList.add("bg-darkblue");
     ud_header.classList.remove("sticky");
     ud_header.classList.remove("blueMenu");
     logo.src = "./images/logo.png";
     logoTitle.style.color = "#ffffff";
-    hamburger.style.color = "#ffffff";
+    hamburgerNonactive.style.color = "#ffffff";
   }
   //console.log(logoTitle);
 };

@@ -32,8 +32,8 @@ const createArticle = (item) => {
   resumeArticle.classList.add("resumeArticle");
   informationArticle.appendChild(resumeArticle);
 
-  //Je crée l'élement h2 pour récupérer dans wordpress le titre de l'article
-  let title = document.createElement("h2");
+  //Je crée l'élement h1 pour récupérer dans wordpress le titre de l'article
+  let title = document.createElement("h1");
   title.innerText = `${item.title.rendered}`;
   title.classList.add("titleArticle");
   headerArticle.appendChild(title);

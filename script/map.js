@@ -32,10 +32,10 @@ var scene1 = L.marker([49.05982, 2.3579], {
   }).bindPopup("Scène 3"),
   scene4 = L.marker([49.06693, 2.38101], {
     icon: myIconScene,
-  }).bindPopup("Scène 4");
-scene5 = L.marker([49.05034, 2.35851], {
-  icon: myIconScene,
-}).bindPopup("Scène 5");
+  }).bindPopup("Scène 4"),
+  scene5 = L.marker([49.05034, 2.35851], {
+    icon: myIconScene,
+  }).bindPopup("Scène 5");
 
 var markerScene = L.layerGroup([scene1, scene2, scene3, scene4, scene5]).addTo(
   myMap
@@ -60,19 +60,19 @@ var wc1 = L.marker([49.0482, 2.36675], {
   }).bindPopup("WC 3"),
   wc4 = L.marker([49.06127, 2.38523], {
     icon: myIconWc,
-  }).bindPopup("WC 4");
-wc5 = L.marker([49.06482, 2.39172], {
-  icon: myIconWc,
-}).bindPopup("WC 5");
-wc6 = L.marker([49.06131, 2.38262], {
-  icon: myIconWc,
-}).bindPopup("WC 6");
-wc7 = L.marker([49.0634, 2.3703], {
-  icon: myIconWc,
-}).bindPopup("WC 7");
-wc8 = L.marker([49.05199, 2.38202], {
-  icon: myIconWc,
-}).bindPopup("WC 8");
+  }).bindPopup("WC 4"),
+  wc5 = L.marker([49.06482, 2.39172], {
+    icon: myIconWc,
+  }).bindPopup("WC 5"),
+  wc6 = L.marker([49.06131, 2.38262], {
+    icon: myIconWc,
+  }).bindPopup("WC 6"),
+  wc7 = L.marker([49.0634, 2.3703], {
+    icon: myIconWc,
+  }).bindPopup("WC 7"),
+  wc8 = L.marker([49.05199, 2.38202], {
+    icon: myIconWc,
+  }).bindPopup("WC 8");
 
 var markerWc = L.layerGroup([wc1, wc2, wc3, wc4, wc5, wc6, wc7, wc8]).addTo(
   myMap
@@ -97,15 +97,15 @@ var bar1 = L.marker([49.04834, 2.37284], {
   }).bindPopup("Bar 3"),
   bar4 = L.marker([49.06204, 2.36532], {
     icon: myIconBar,
-  }).bindPopup("Bar 4");
-bar5 = L.marker([49.0555, 2.37874], {
-  icon: myIconBar,
-}).bindPopup("Bar 5");
-bar6 = L.marker([49.05198, 2.35618], {
-  icon: myIconBar,
-})
-  .bindPopup("Bar 6")
-  .addTo(myMap);
+  }).bindPopup("Bar 4"),
+  bar5 = L.marker([49.0555, 2.37874], {
+    icon: myIconBar,
+  }).bindPopup("Bar 5"),
+  bar6 = L.marker([49.05198, 2.35618], {
+    icon: myIconBar,
+  })
+    .bindPopup("Bar 6")
+    .addTo(myMap);
 
 var markerBar = L.layerGroup([bar1, bar2, bar3, bar4, bar5, bar6]).addTo(myMap);
 
@@ -128,13 +128,13 @@ var waterPoint1 = L.marker([49.04829, 2.37931], {
   }).bindPopup("Point d'eau 3"),
   waterPoint4 = L.marker([49.06511, 2.37612], {
     icon: myIconWaterPoint,
-  }).bindPopup("Point d'eau 4");
-waterPoint5 = L.marker([49.05757, 2.35526], {
-  icon: myIconWaterPoint,
-}).bindPopup("Point d'eau 5");
-waterPoint6 = L.marker([49.05408, 2.38721], {
-  icon: myIconWaterPoint,
-}).bindPopup("Point d'eau 6");
+  }).bindPopup("Point d'eau 4"),
+  waterPoint5 = L.marker([49.05757, 2.35526], {
+    icon: myIconWaterPoint,
+  }).bindPopup("Point d'eau 5"),
+  waterPoint6 = L.marker([49.05408, 2.38721], {
+    icon: myIconWaterPoint,
+  }).bindPopup("Point d'eau 6");
 
 var markerWaterPoint = L.layerGroup([
   waterPoint1,
@@ -158,10 +158,10 @@ var stageManagement1 = L.marker([49.05625, 2.36145], {
   }).bindPopup("Régie 1"),
   stageManagement2 = L.marker([49.05501, 2.36162], {
     icon: myIconStageManagement,
-  }).bindPopup("Régie 2");
-stageManagement3 = L.marker([49.05979, 2.37424], {
-  icon: myIconStageManagement,
-}).bindPopup("Régie 3");
+  }).bindPopup("Régie 2"),
+  stageManagement3 = L.marker([49.05979, 2.37424], {
+    icon: myIconStageManagement,
+  }).bindPopup("Régie 3");
 
 var markerStageManagement = L.layerGroup([
   stageManagement1,
@@ -199,9 +199,12 @@ var psh1 = L.marker([49.05681, 2.36489], {
   }).bindPopup("Plateforme PSH 1"),
   psh2 = L.marker([49.06336, 2.38261], {
     icon: myIconPlateformPsh,
-  }).bindPopup("Plateforme PSH 2");
+  }).bindPopup("Plateforme PSH 2"),
+  psh3 = L.marker([49.05129, 2.36625], {
+    icon: myIconPlateformPsh,
+  }).bindPopup("Plateforme PSH 3");
 
-var markerPsh = L.layerGroup([psh1, psh2]).addTo(myMap);
+var markerPsh = L.layerGroup([psh1, psh2, psh3]).addTo(myMap);
 
 // liste des restaurants
 var myIconRestaurant = L.icon({
@@ -222,19 +225,19 @@ var restaurant1 = L.marker([49.04845, 2.37687], {
   }).bindPopup("Restaurant 3"),
   restaurant4 = L.marker([49.06409, 2.37249], {
     icon: myIconRestaurant,
-  }).bindPopup("Restaurant 4");
-restaurant5 = L.marker([49.05364, 2.35579], {
-  icon: myIconRestaurant,
-}).bindPopup("Restaurant 5");
-restaurant6 = L.marker([49.06131, 2.382623], {
-  icon: myIconRestaurant,
-}).bindPopup("Restaurant 6");
-restaurant7 = L.marker([49.0634, 2.3703], {
-  icon: myIconRestaurant,
-}).bindPopup("Restaurant 7");
-restaurant8 = L.marker([49.05541, 2.35545], {
-  icon: myIconRestaurant,
-}).bindPopup("Restaurant 8");
+  }).bindPopup("Restaurant 4"),
+  restaurant5 = L.marker([49.05364, 2.35579], {
+    icon: myIconRestaurant,
+  }).bindPopup("Restaurant 5"),
+  restaurant6 = L.marker([49.06131, 2.382623], {
+    icon: myIconRestaurant,
+  }).bindPopup("Restaurant 6"),
+  restaurant7 = L.marker([49.0634, 2.3703], {
+    icon: myIconRestaurant,
+  }).bindPopup("Restaurant 7"),
+  restaurant8 = L.marker([49.05541, 2.35545], {
+    icon: myIconRestaurant,
+  }).bindPopup("Restaurant 8");
 
 var markerRestaurants = L.layerGroup([
   restaurant1,
@@ -351,6 +354,19 @@ var markerPrevention = L.marker([49.05159, 2.37186], {
 }).addTo(myMap);
 markerPrevention.bindPopup("<b>Stand de prévention</b>");
 
+// liste acceuil psh
+var myIconPshAcceuil = L.icon({
+  iconUrl: "./images/mapIcone/acceuil_psh.png",
+  iconSize: [25, 25],
+  iconAnchor: [0, 25],
+  popupAnchor: [0, -25],
+});
+
+var markerPshAcceuil = L.marker([49.05079, 2.37595], {
+  icon: myIconPshAcceuil,
+}).addTo(myMap);
+markerPshAcceuil.bindPopup("<b>Acceuil PSH</b>");
+
 // Polygone festival
 
 var polygon = L.polygon(
@@ -412,13 +428,13 @@ var baseMaps = {};
 var overlayMaps = {
   "<div class='layers-control-img'><img src='./images/mapIcone/waterPoint.png'/></div>Point d'eau":
     markerWaterPoint,
-  "<div class='layers-control-img'><img src='/images/mapIcone/prevention.png'/> </div>Prevention":
+  "<div class='layers-control-img'><img src='./images/mapIcone/prevention.png'/> </div>Prevention":
     markerPrevention,
   "<div class='layers-control-img'><img src='./images/mapIcone/tipi.png'/> </div>Tipi":
     markerTipi,
   "<div class='layers-control-img'><img src='./images/mapIcone/acceuil.png'/> </div>Acceuil":
     markerReception,
-  "<div class='layers-control-img'><img src='/images/mapIcone/parking.png'/> </div>Parking Auto":
+  "<div class='layers-control-img'><img src='./images/mapIcone/parking.png'/> </div>Parking Auto":
     markerParking,
   "<div class='layers-control-img'><img src='./images/mapIcone/parking_velo.png'/> </div>Parking vélo":
     markerParkingBike,
@@ -442,6 +458,8 @@ var overlayMaps = {
     markerWc,
   "<div class='layers-control-img'><img src='./images/mapIcone/micro.png'/> </div>Scène":
     markerScene,
+  "<div class='layers-control-img'><img src='./images/mapIcone/acceuil_psh.png'/> </div>Acceuil PSH":
+    markerPshAcceuil,
 };
 
 var layerControl = L.control

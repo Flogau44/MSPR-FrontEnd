@@ -23,146 +23,119 @@
   </head>
   <body>
     <header
-      class="ud-header bg-darkblue text-white top-0 left-0 z-50 w-full h-20 md:h-28"
+      class="ud-header bg-darkblue text-white top-0 left-0 z-50 w-full h-20 flex flex-row items-center justify-center md:justify-between md:pl-6 md:pr-20 md:h-28"
     >
+      <!--Menu Mobile-->
+      <nav class="navbar-mobile md:hidden">
+        <!--Hamburger-->
+        <i
+          id="hamburgerNonactive"
+          class="fa-bars fas fa-2xl absolute left-3 z-999 text-white cursor-pointer w-7"
+        ></i>
+        <i
+          id="hamburgerActive"
+          class="fa-times fas fa-2xl absolute left-3 z-999 text-white cursor-pointer w-7"
+        ></i>
+        <div
+          class="modal hidden absolute top-0 left-0 z-100 bg-darkblue h-screen w-full text-4xl font-semibold items-center animate-menuslideinleft"
+        >
+          <div
+            class="navbar-mobile-list h-screen flex flex-col items-center justify-center space-y-5"
+          >
+            <a
+              href="./index.html"
+              class="uppercase transition duration-0 text-white hover:text-lightblue hover:duration-500"
+              title="Vers la page d'acceuil du site 'Nation Sound'"
+              >Acceuil</a
+            >
+            <a
+              href="./informations.html"
+              class="uppercase transition duration-0 text-white hover:text-lightblue hover:duration-500"
+              title="Vers la page d'informations du site 'Nation Sound'"
+              >Informations</a
+            >
+            <a
+              href="./programmation.html"
+              class="uppercase transition duration-0 text-white hover:text-lightblue hover:duration-500"
+              title="Vers la page programmation du site 'Nation Sound'"
+              >Programmation</a
+            >
+            <a
+              href="./billetterie.html"
+              class="uppercase transition duration-0 text-white hover:text-lightblue hover:duration-500"
+              title="Vers la page billetterie du site 'Nation Sound'"
+              >Billetterie</a
+            >
+            <a
+              href="./infos_pratiques.html"
+              class="uppercase transition duration-0 text-white hover:text-lightblue hover:duration-500"
+              title="Vers la page d'infos pratiques du site 'Nation Sound'"
+              >Infos pratiques</a
+            >
+            <a
+              href="./partenaires.html"
+              class="uppercase transition duration-0 text-white hover:text-lightblue hover:duration-500"
+              title="Vers la page des partenaires du site 'Nation Sound'"
+              >Partenaires</a
+            >
+          </div>
+        </div>
+      </nav>
+      <!--Logo-->
+      <div class="pr-6 flex flex-col items-center">
+        <a href="./index.html" title="Page d'accueil">
+          <img
+            src="./images/logo.png"
+            id="logo"
+            class="w-20 md:w-28"
+            alt="logo"
+          />
+        </a>
+        <p class="hidden text-xl font-semibold md:flex">
+          <span class="text-lightblue font-bold">11.12.13</span
+          ><span id="logoTitle">&nbsp;JUILLET</span>
+        </p>
+      </div>
+      <!--Menu desktop-->
       <nav
-        id="main-nav"
-        class="mx-auto flex justify-between items-center py-4 md:px-20 md:py-2"
+        class="navbar-desktop hidden md:text-xl md:font-semibold md:flex md:flex-row md:space-x-5"
       >
-        <!--Menu Mobile-->
-        <div>
-          <!--Menu Hamburger-->
-          <button
-            id="toggleHamburger"
-            class="cursor-pointer px-4 w-7 md:hidden"
-          >
-            <i class="fas fa-bars fa-2xl" style="color: #ffffff"></i>
-          </button>
-          <ul
-            id="toggleMobileMenu"
-            class="hidden bg-darkblue h-screen w-screen pl-4 pt-6 space-y-6 text-4xl font-semibold items-center animate-menuslideinleft md:hidden"
-          >
-            <li>
-              <a
-                href="./index.html"
-                class="uppercase transition duration-0 text-white hover:text-lightblue hover:duration-500"
-                title="Vers la page d'acceuil du site 'Nation Sound'"
-                >Acceuil</a
-              >
-            </li>
-            <li>
-              <a
-                href="./informations.html"
-                class="uppercase transition duration-0 text-white hover:text-lightblue hover:duration-500"
-                title="Vers la page d'informations du site 'Nation Sound'"
-                >Informations</a
-              >
-            </li>
-            <li>
-              <a
-                href="./programmation.html"
-                class="uppercase transition duration-0 text-white hover:text-lightblue hover:duration-500"
-                title="Vers la page programmation du site 'Nation Sound'"
-                >Programmation</a
-              >
-            </li>
-            <li>
-              <a
-                href="./billetterie.html"
-                class="uppercase transition duration-0 text-white hover:text-lightblue hover:duration-500"
-                title="Vers la page billetterie du site 'Nation Sound'"
-                >Billetterie</a
-              >
-            </li>
-            <li>
-              <a
-                href="./infos_pratiques.html"
-                class="uppercase transition duration-0 text-white hover:text-lightblue hover:duration-500"
-                title="Vers la page d'infos pratiques du site 'Nation Sound'"
-                >Infos pratiques</a
-              >
-            </li>
-            <li>
-              <a
-                href="./partenaires.html"
-                class="uppercase transition duration-0 text-white hover:text-lightblue hover:duration-500"
-                title="Vers la page des partenaires du site 'Nation Sound'"
-                >Partenaires</a
-              >
-            </li>
-          </ul>
-        </div>
-        <!--Logo-->
-        <div class="pr-6 flex flex-col items-center">
-          <a href="./index.html" title="Page d'accueil">
-            <img
-              src="./images/logo.png"
-              id="logo"
-              class="w-20 md:w-28"
-              alt="logo"
-            />
-          </a>
-          <p class="hidden text-xl font-semibold md:flex">
-            <span class="text-lightblue font-bold">11.12.13</span
-            ><span id="logoTitle">&nbsp;JUILLET</span>
-          </p>
-        </div>
-        <div>
-          <!--Menu desktop-->
-          <ul
-            id="toggleDesktopMenu"
-            class="hidden md:text-xl md:font-semibold md:flex md:flex-row md:items-center md:justify-between md:space-x-5"
-          >
-            <li>
-              <a
-                href="./index.html"
-                class="uppercase transition duration-0 hover:text-lightblue hover:duration-500"
-                title="Vers la page d'acceuil du site 'Nation Sound'"
-                >Acceuil</a
-              >
-            </li>
-            <li>
-              <a
-                href="./informations.html"
-                class="uppercase transition duration-0 hover:text-lightblue hover:duration-500"
-                title="Vers la page d'informations du site 'Nation Sound'"
-                >Informations</a
-              >
-            </li>
-            <li>
-              <a
-                href="./programmation.html"
-                class="uppercase transition duration-0 hover:text-lightblue hover:duration-500"
-                title="Vers la page programmation du site 'Nation Sound'"
-                >Programmation</a
-              >
-            </li>
-            <li>
-              <a
-                href="./billetterie.html"
-                class="uppercase transition duration-0 hover:text-lightblue hover:duration-500"
-                title="Vers la page billetterie du site 'Nation Sound'"
-                >Billetterie</a
-              >
-            </li>
-            <li class="min-w-44">
-              <a
-                href="./infos_pratiques.html"
-                class="uppercase transition duration-0 hover:text-lightblue hover:duration-500"
-                title="Vers la page d'infos pratiques du site 'Nation Sound'"
-                >Infos pratiques</a
-              >
-            </li>
-            <li>
-              <a
-                href="./partenaires.html"
-                class="uppercase transition duration-0 hover:text-lightblue hover:duration-500"
-                title="Vers la page des partenaires du site 'Nation Sound'"
-                >Partenaires</a
-              >
-            </li>
-          </ul>
-        </div>
+        <a
+          href="./index.html"
+          class="uppercase transition duration-0 hover:text-lightblue hover:duration-500"
+          title="Vers la page d'acceuil du site 'Nation Sound'"
+          >Acceuil</a
+        >
+        <a
+          href="./informations.html"
+          class="uppercase transition duration-0 hover:text-lightblue hover:duration-500"
+          title="Vers la page d'informations du site 'Nation Sound'"
+          >Informations</a
+        >
+        <a
+          href="./programmation.html"
+          class="uppercase transition duration-0 hover:text-lightblue hover:duration-500"
+          title="Vers la page programmation du site 'Nation Sound'"
+          >Programmation</a
+        >
+        <a
+          href="./billetterie.html"
+          class="uppercase transition duration-0 hover:text-lightblue hover:duration-500"
+          title="Vers la page billetterie du site 'Nation Sound'"
+          >Billetterie</a
+        >
+        <a
+          href="./infos_pratiques.html"
+          class="uppercase transition duration-0 hover:text-lightblue hover:duration-500"
+          title="Vers la page d'infos pratiques du site 'Nation Sound'"
+          >Infos pratiques</a
+        >
+        <a
+          href="./partenaires.html"
+          class="uppercase transition duration-0 hover:text-lightblue hover:duration-500"
+          title="Vers la page des partenaires du site 'Nation Sound'"
+          >Partenaires</a
+        >
       </nav>
     </header>
     <main class="h-full pt-0 md:pt-2">
@@ -177,7 +150,7 @@
         ></div>
       </section>
     </main>
-    <footer class="px-2 bg-darkblue text-white w-full h-full">
+    <footer class="px-2 pt-2 bg-darkblue text-white w-full h-full">
       <div
         class="flex flex-col items-center space-y-4 md:grid md:grid-cols-3 md:gap-x-6 md:justify-items-center"
       >

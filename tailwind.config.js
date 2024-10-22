@@ -31,6 +31,10 @@ module.exports = {
         Roboto: ["Roboto", "sans-serif"],
         "cormorant-garamond": ["Cormorant Garamond", "serif"],
       },
+      zIndex: {
+        100: "100",
+        999: "999",
+      },
       keyframes: {
         "fade-in": {
           "0%": {

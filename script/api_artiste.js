@@ -29,8 +29,8 @@ const createArtist = (item) => {
   resumeArtist.classList.add("resumeArtist");
   informationArtist.appendChild(resumeArtist);
 
-  //Je crée l'élement h2 pour récupérer dans wordpress le nom de l'artiste
-  let name = document.createElement("h2");
+  //Je crée l'élement h1 pour récupérer dans wordpress le nom de l'artiste
+  let name = document.createElement("h1");
   name.innerText = `${item.title.rendered}`;
   name.classList.add("nameArtist");
   headerArtist.appendChild(name);
