@@ -154,3 +154,6 @@
 #btnActiveProg1 {
   @apply h-10 px-5 outline-none bg-lightblue-900 text-darkblue ring ring-darkblue;
 }
+.layers-control-img {
+  @apply max-w-4 max-h-4 inline-flex cursor-pointer overflow-hidden mx-2;
+}

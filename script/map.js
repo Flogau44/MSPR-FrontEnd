@@ -13,69 +13,7 @@ var osm = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
   maxZoom: 18,
 }).addTo(myMap);
 
-// Polygone festival
-
-var polygon = L.polygon(
-  [
-    [49.05059, 2.35593],
-    [49.05931, 2.35412],
-    [49.06671, 2.37832],
-    [49.06808, 2.38296],
-    [49.0669, 2.3858],
-    [49.05935, 2.38331],
-    [49.05406, 2.37842],
-    [49.04824, 2.38498],
-    [49.04772, 2.38116],
-    [49.04733, 2.36751],
-  ],
-  {
-    color: "yellow",
-  }
-).addTo(myMap);
-
-// Polygone camping
-
-var polygon = L.polygon(
-  [
-    [49.0669, 2.3858],
-    [49.06791, 2.387],
-    [49.06754, 2.39334],
-    [49.06529, 2.39364],
-    [49.06297, 2.39372],
-    [49.06038, 2.39501],
-    [49.04959, 2.39567],
-    [49.04824, 2.38498],
-    [49.05406, 2.37842],
-    [49.05935, 2.38331],
-  ],
-  {
-    color: "purple",
-  }
-).addTo(myMap);
-
-// Polygone parking
-
-var polygon = L.polygon(
-  [
-    [49.04772, 2.38116],
-    [49.04959, 2.39558],
-    [49.04018, 2.39455],
-    [49.03962, 2.38683],
-  ],
-  {
-    color: "blue",
-  }
-).addTo(myMap);
-
 // liste des scènes
-var scenes = {
-  "Scène 1": { lat: 49.05982, lon: 2.3579 },
-  "Scène 2": { lat: 49.06072, lon: 2.36116 },
-  "Scène 3": { lat: 49.06617, lon: 2.38374 },
-  "Scène 4": { lat: 49.06693, lon: 2.38101 },
-  "Scène 5": { lat: 49.05034, lon: 2.35851 },
-};
-
 var myIconScene = L.icon({
   iconUrl: "./images/mapIcone/micro.png",
   iconSize: [25, 25],
@@ -83,25 +21,27 @@ var myIconScene = L.icon({
   popupAnchor: [0, -25],
 });
 
-for (scene in scenes) {
-  var markerScene = L.marker([scenes[scene].lat, scenes[scene].lon], {
+var scene1 = L.marker([49.05982, 2.3579], {
     icon: myIconScene,
-  }).addTo(myMap);
-  markerScene.bindPopup("<b>" + scene + "</b>");
-}
+  }).bindPopup("Scène 1"),
+  scene2 = L.marker([49.06072, 2.36116], {
+    icon: myIconScene,
+  }).bindPopup("Scène 2"),
+  scene3 = L.marker([49.06617, 2.38374], {
+    icon: myIconScene,
+  }).bindPopup("Scène 3"),
+  scene4 = L.marker([49.06693, 2.38101], {
+    icon: myIconScene,
+  }).bindPopup("Scène 4");
+scene5 = L.marker([49.05034, 2.35851], {
+  icon: myIconScene,
+}).bindPopup("Scène 5");
+
+var markerScene = L.layerGroup([scene1, scene2, scene3, scene4, scene5]).addTo(
+  myMap
+);
 
 // liste des WC
-var wcs = {
-  "WC 1": { lat: 49.0482, lon: 2.36675 },
-  "WC 2": { lat: 49.05439, lon: 2.37699 },
-  "WC 3": { lat: 49.057, lon: 2.39258 },
-  "WC 4": { lat: 49.06127, lon: 2.38523 },
-  "WC 5": { lat: 49.06482, lon: 2.39172 },
-  "WC 6": { lat: 49.06131, lon: 2.38262 },
-  "WC 7": { lat: 49.0634, lon: 2.3703 },
-  "WC 8": { lat: 49.05199, lon: 2.38202 },
-};
-
 var myIconWc = L.icon({
   iconUrl: "./images/mapIcone/wc.png",
   iconSize: [25, 25],
@@ -109,23 +49,36 @@ var myIconWc = L.icon({
   popupAnchor: [0, -25],
 });
 
-for (wc in wcs) {
-  var markerWc = L.marker([wcs[wc].lat, wcs[wc].lon], {
+var wc1 = L.marker([49.0482, 2.36675], {
     icon: myIconWc,
-  }).addTo(myMap);
-  markerWc.bindPopup("<b>" + wc + "</b>");
-}
+  }).bindPopup("WC 1"),
+  wc2 = L.marker([49.05439, 2.37699], {
+    icon: myIconWc,
+  }).bindPopup("WC 2"),
+  wc3 = L.marker([49.057, 2.39258], {
+    icon: myIconWc,
+  }).bindPopup("WC 3"),
+  wc4 = L.marker([49.06127, 2.38523], {
+    icon: myIconWc,
+  }).bindPopup("WC 4");
+wc5 = L.marker([49.06482, 2.39172], {
+  icon: myIconWc,
+}).bindPopup("WC 5");
+wc6 = L.marker([49.06131, 2.38262], {
+  icon: myIconWc,
+}).bindPopup("WC 6");
+wc7 = L.marker([49.0634, 2.3703], {
+  icon: myIconWc,
+}).bindPopup("WC 7");
+wc8 = L.marker([49.05199, 2.38202], {
+  icon: myIconWc,
+}).bindPopup("WC 8");
+
+var markerWc = L.layerGroup([wc1, wc2, wc3, wc4, wc5, wc6, wc7, wc8]).addTo(
+  myMap
+);
 
 // liste des bars
-var bars = {
-  "Bar 1": { lat: 49.04834, lon: 2.37284 },
-  "Bar 2": { lat: 49.05727, lon: 2.38058 },
-  "Bar 3": { lat: 49.06268, lon: 2.3682 },
-  "Bar 4": { lat: 49.06204, lon: 2.36532 },
-  "Bar 5": { lat: 49.0555, lon: 2.37874 },
-  "Bar 6": { lat: 49.05198, lon: 2.35618 },
-};
-
 var myIconBar = L.icon({
   iconUrl: "./images/mapIcone/bar.png",
   iconSize: [25, 25],
@@ -133,23 +86,30 @@ var myIconBar = L.icon({
   popupAnchor: [0, -25],
 });
 
-for (bar in bars) {
-  var markerBar = L.marker([bars[bar].lat, bars[bar].lon], {
+var bar1 = L.marker([49.04834, 2.37284], {
     icon: myIconBar,
-  }).addTo(myMap);
-  markerBar.bindPopup("<b>" + bar + "</b>");
-}
+  }).bindPopup("Bar 1"),
+  bar2 = L.marker([49.05727, 2.38058], {
+    icon: myIconBar,
+  }).bindPopup("Bar 2"),
+  bar3 = L.marker([49.06268, 2.3682], {
+    icon: myIconBar,
+  }).bindPopup("Bar 3"),
+  bar4 = L.marker([49.06204, 2.36532], {
+    icon: myIconBar,
+  }).bindPopup("Bar 4");
+bar5 = L.marker([49.0555, 2.37874], {
+  icon: myIconBar,
+}).bindPopup("Bar 5");
+bar6 = L.marker([49.05198, 2.35618], {
+  icon: myIconBar,
+})
+  .bindPopup("Bar 6")
+  .addTo(myMap);
+
+var markerBar = L.layerGroup([bar1, bar2, bar3, bar4, bar5, bar6]).addTo(myMap);
 
 // liste des points d'eau
-var waterPoints = {
-  "Point d'eau 1": { lat: 49.04829, lon: 2.37931 },
-  "Point d'eau 2": { lat: 49.05321, lon: 2.37733 },
-  "Point d'eau 3": { lat: 49.05436, lon: 2.36926 },
-  "Point d'eau 4": { lat: 49.06511, lon: 2.37612 },
-  "Point d'eau 5": { lat: 49.05757, lon: 2.35526 },
-  "Point d'eau 6": { lat: 49.05408, lon: 2.38721 },
-};
-
 var myIconWaterPoint = L.icon({
   iconUrl: "./images/mapIcone/waterPoint.png",
   iconSize: [25, 25],
@@ -157,23 +117,35 @@ var myIconWaterPoint = L.icon({
   popupAnchor: [0, -25],
 });
 
-for (waterPoint in waterPoints) {
-  var markerWaterPoint = L.marker(
-    [waterPoints[waterPoint].lat, waterPoints[waterPoint].lon],
-    {
-      icon: myIconWaterPoint,
-    }
-  ).addTo(myMap);
-  markerWaterPoint.bindPopup("<b>" + waterPoint + "</b>");
-}
+var waterPoint1 = L.marker([49.04829, 2.37931], {
+    icon: myIconWaterPoint,
+  }).bindPopup("Point d'eau 1"),
+  waterPoint2 = L.marker([49.05321, 2.37733], {
+    icon: myIconWaterPoint,
+  }).bindPopup("Point d'eau 2"),
+  waterPoint3 = L.marker([49.05436, 2.36926], {
+    icon: myIconWaterPoint,
+  }).bindPopup("Point d'eau 3"),
+  waterPoint4 = L.marker([49.06511, 2.37612], {
+    icon: myIconWaterPoint,
+  }).bindPopup("Point d'eau 4");
+waterPoint5 = L.marker([49.05757, 2.35526], {
+  icon: myIconWaterPoint,
+}).bindPopup("Point d'eau 5");
+waterPoint6 = L.marker([49.05408, 2.38721], {
+  icon: myIconWaterPoint,
+}).bindPopup("Point d'eau 6");
+
+var markerWaterPoint = L.layerGroup([
+  waterPoint1,
+  waterPoint2,
+  waterPoint3,
+  waterPoint4,
+  waterPoint5,
+  waterPoint6,
+]).addTo(myMap);
 
 // liste des régies
-var stageManagements = {
-  "Régie 1": { lat: 49.05625, lon: 2.36145 },
-  "Régie 2": { lat: 49.05501, lon: 2.36162 },
-  "Régie 3": { lat: 49.05979, lon: 2.37424 },
-};
-
 var myIconStageManagement = L.icon({
   iconUrl: "./images/mapIcone/stage_management.png",
   iconSize: [25, 25],
@@ -181,25 +153,23 @@ var myIconStageManagement = L.icon({
   popupAnchor: [0, -25],
 });
 
-for (stageManagement in stageManagements) {
-  var markerStageManagement = L.marker(
-    [
-      stageManagements[stageManagement].lat,
-      stageManagements[stageManagement].lon,
-    ],
-    {
-      icon: myIconStageManagement,
-    }
-  ).addTo(myMap);
-  markerStageManagement.bindPopup("<b>" + stageManagement + "</b>");
-}
+var stageManagement1 = L.marker([49.05625, 2.36145], {
+    icon: myIconStageManagement,
+  }).bindPopup("Régie 1"),
+  stageManagement2 = L.marker([49.05501, 2.36162], {
+    icon: myIconStageManagement,
+  }).bindPopup("Régie 2");
+stageManagement3 = L.marker([49.05979, 2.37424], {
+  icon: myIconStageManagement,
+}).bindPopup("Régie 3");
+
+var markerStageManagement = L.layerGroup([
+  stageManagement1,
+  stageManagement2,
+  stageManagement3,
+]).addTo(myMap);
 
 // liste des secouristes
-var rescuers = {
-  "Secouriste 1": { lat: 49.05285, lon: 2.36952 },
-  "Secouriste 2": { lat: 49.05402, lon: 2.39301 },
-};
-
 var myIconRescuer = L.icon({
   iconUrl: "./images/mapIcone/rescuer.png",
   iconSize: [25, 25],
@@ -207,19 +177,16 @@ var myIconRescuer = L.icon({
   popupAnchor: [0, -25],
 });
 
-for (rescuer in rescuers) {
-  var markerRescuer = L.marker([rescuers[rescuer].lat, rescuers[rescuer].lon], {
+var rescuer1 = L.marker([49.05285, 2.3695], {
     icon: myIconRescuer,
-  }).addTo(myMap);
-  markerRescuer.bindPopup("<b>" + rescuer + "</b>");
-}
+  }).bindPopup("Secouriste 1"),
+  rescuer2 = L.marker([49.05402, 2.39301], {
+    icon: myIconRescuer,
+  }).bindPopup("Secouriste 2");
+
+var markerRescuer = L.layerGroup([rescuer1, rescuer2]).addTo(myMap);
 
 // liste des pshs
-var pshs = {
-  "Plateforme PSH 1": { lat: 49.05681, lon: 2.36489 },
-  "Plateforme PSH 2": { lat: 49.06336, lon: 2.38261 },
-};
-
 var myIconPlateformPsh = L.icon({
   iconUrl: "./images/mapIcone/psh.png",
   iconSize: [25, 25],
@@ -227,12 +194,14 @@ var myIconPlateformPsh = L.icon({
   popupAnchor: [0, -25],
 });
 
-for (psh in pshs) {
-  var markerPsh = L.marker([pshs[psh].lat, pshs[psh].lon], {
+var psh1 = L.marker([49.05681, 2.36489], {
     icon: myIconPlateformPsh,
-  }).addTo(myMap);
-  markerPsh.bindPopup("<b>" + psh + "</b>");
-}
+  }).bindPopup("Plateforme PSH 1"),
+  psh2 = L.marker([49.06336, 2.38261], {
+    icon: myIconPlateformPsh,
+  }).bindPopup("Plateforme PSH 2");
+
+var markerPsh = L.layerGroup([psh1, psh2]).addTo(myMap);
 
 // liste des restaurants
 var myIconRestaurant = L.icon({
@@ -276,7 +245,7 @@ var markerRestaurants = L.layerGroup([
   restaurant6,
   restaurant7,
   restaurant8,
-]);
+]).addTo(myMap);
 
 // liste parking auto
 var myIconParking = L.icon({
@@ -382,29 +351,103 @@ var markerPrevention = L.marker([49.05159, 2.37186], {
 }).addTo(myMap);
 markerPrevention.bindPopup("<b>Stand de prévention</b>");
 
+// Polygone festival
+
+var polygon = L.polygon(
+  [
+    [49.05059, 2.35593],
+    [49.05931, 2.35412],
+    [49.06671, 2.37832],
+    [49.06808, 2.38296],
+    [49.0669, 2.3858],
+    [49.05935, 2.38331],
+    [49.05406, 2.37842],
+    [49.04824, 2.38498],
+    [49.04772, 2.38116],
+    [49.04733, 2.36751],
+  ],
+  {
+    color: "yellow",
+  }
+).addTo(myMap);
+
+// Polygone camping
+
+var polygon = L.polygon(
+  [
+    [49.0669, 2.3858],
+    [49.06791, 2.387],
+    [49.06754, 2.39334],
+    [49.06529, 2.39364],
+    [49.06297, 2.39372],
+    [49.06038, 2.39501],
+    [49.04959, 2.39567],
+    [49.04824, 2.38498],
+    [49.05406, 2.37842],
+    [49.05935, 2.38331],
+  ],
+  {
+    color: "purple",
+  }
+).addTo(myMap);
+
+// Polygone parking
+
+var polygon = L.polygon(
+  [
+    [49.04772, 2.38116],
+    [49.04959, 2.39558],
+    [49.04018, 2.39455],
+    [49.03962, 2.38683],
+  ],
+  {
+    color: "blue",
+  }
+).addTo(myMap);
+
 // Ajout de la légende
 
-var baseMaps = {
-  "<span style='color: red'>OpenStreetMap</span>": osm,
-};
+var baseMaps = {};
 
 var overlayMaps = {
-  Prevention: markerPrevention,
-  Tipi: markerTipi,
-  Acceuil: markerReception,
-  "Parking Auto": markerParking,
-  "Parking vélo": markerParkingBike,
-  "Espace Famille": markerFamily,
-  Entrée: markerEntrance,
-  Camping: markerCamping,
-  PSH: markerPsh,
-  "Point de secouriste": markerRescuer,
-  Régie: markerStageManagement,
-  "Point d'eau": markerWaterPoint,
-  Restaurant: markerRestaurants,
-  Bar: markerBar,
-  WC: markerWc,
-  Scène: markerScene,
+  "<div class='layers-control-img'><img src='./images/mapIcone/waterPoint.png'/></div>Point d'eau":
+    markerWaterPoint,
+  "<div class='layers-control-img'><img src='/images/mapIcone/prevention.png'/> </div>Prevention":
+    markerPrevention,
+  "<div class='layers-control-img'><img src='./images/mapIcone/tipi.png'/> </div>Tipi":
+    markerTipi,
+  "<div class='layers-control-img'><img src='./images/mapIcone/acceuil.png'/> </div>Acceuil":
+    markerReception,
+  "<div class='layers-control-img'><img src='/images/mapIcone/parking.png'/> </div>Parking Auto":
+    markerParking,
+  "<div class='layers-control-img'><img src='./images/mapIcone/parking_velo.png'/> </div>Parking vélo":
+    markerParkingBike,
+  "<div class='layers-control-img'><img src='./images/mapIcone/family.png'/> </div>Espace Famille":
+    markerFamily,
+  "<div class='layers-control-img'><img src='./images/mapIcone/entrance.png'/> </div>Entrée":
+    markerEntrance,
+  "<div class='layers-control-img'><img src='./images/mapIcone/camping.png'/> </div>Camping":
+    markerCamping,
+  "<div class='layers-control-img'><img src='./images/mapIcone/psh.png'/> </div>PSH":
+    markerPsh,
+  "<div class='layers-control-img'><img src='./images/mapIcone/rescuer.png'/> </div>Point de secouriste":
+    markerRescuer,
+  "<div class='layers-control-img'><img src='./images/mapIcone/stage_management.png'/> </div>Régie":
+    markerStageManagement,
+  "<div class='layers-control-img'><img src='./images/mapIcone/restaurant.png'/> </div>Restaurant":
+    markerRestaurants,
+  "<div class='layers-control-img'><img src='./images/mapIcone/bar.png'/> </div>Bar":
+    markerBar,
+  "<div class='layers-control-img'><img src='./images/mapIcone/wc.png'/> </div>WC":
+    markerWc,
+  "<div class='layers-control-img'><img src='./images/mapIcone/micro.png'/> </div>Scène":
+    markerScene,
 };
 
-var layerControl = L.control.layers(baseMaps, overlayMaps).addTo(myMap);
+var layerControl = L.control
+  .layers(baseMaps, overlayMaps, {
+    position: "topright",
+    //collapsed: false,
+  })
+  .addTo(myMap);
+layerControl.expand();

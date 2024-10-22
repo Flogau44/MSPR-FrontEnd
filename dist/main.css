@@ -1438,6 +1438,16 @@ main {
   --tw-ring-color: rgb(11 22 44 / var(--tw-ring-opacity));
 }
 
+.layers-control-img {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  display: inline-flex;
+  max-height: 1rem;
+  max-width: 1rem;
+  cursor: pointer;
+  overflow: hidden;
+}
+
 .hover\:border-b-2:hover {
   border-bottom-width: 2px;
 }
