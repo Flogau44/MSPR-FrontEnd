@@ -450,4 +450,5 @@ var layerControl = L.control
     //collapsed: false,
   })
   .addTo(myMap);
+
 layerControl.expand();

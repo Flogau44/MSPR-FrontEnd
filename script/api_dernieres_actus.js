@@ -50,7 +50,8 @@ function createArticles(item) {
 
 // Récupérer les données de l'API WP et ensuite afficher ces données sur la page information
 
-const restUrl = "http://localhost:10004/wp-json/wp/v2/posts?per_page=60&_embed";
+const restUrl =
+  "http://localhost:10004/wp-json/wp/v2/posts?_embed&categories=5&per_page=3";
 
 async function updateData() {
   try {
@@ -58,13 +59,9 @@ async function updateData() {
     // code à exécuter après réception de la réponse
     // conversion de la réponse au format Javascript
     const reponseJS = await reponseJSON.json();
-    console.log(reponseJS);
-    let newsCategory = reponseJS.filter(
-      (n) => n.class_list[7] === "category-news"
-    );
-    newsCategory.forEach(function (n) {
+    reponseJS.forEach(function (n) {
       createArticles(n);
-      console.log(newsCategory);
+      console.log(reponseJS);
     });
   } catch (error) {
     console.log(error, "erreur");

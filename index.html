@@ -207,15 +207,46 @@
         </div>
       </section>
       <!--Section liste des concerts-->
-      <section class="h-[300px]"></section>
+      <section
+        class="h-[300px] py-10 flex flex-col items-center space-y-4 bg-navyblue"
+      >
+        <h2 class="uppercase text-lightblue js-show-on-scroll-2">
+          Programmation
+        </h2>
+      </section>
+      <!--Section billetterie-->
+      <section class="py-8 flex flex-col items-center space-y-4">
+        <h2 class="uppercase js-show-on-scroll-2">Billetterie</h2>
+        <p class="uppercase text-base font-medium md:text-xl">
+          Billet 1 jour · Forfait 3 Jours
+        </p>
+        <button
+          type="button"
+          class="h-10 px-5 text-darkblue text-xl font-bold bg-lightblue-900 ring-darkblue rounded-md hover:text-white hover:bg-blue-900 outline-none hover:ring hover:ring-darkblue transition-colors duration-700"
+        >
+          <a href="./billetterie.html"> Voir la billetterie</a>
+        </button>
+      </section>
       <!--Section plan du festival-->
-      <section class="py-10 px-4 md:px-16 flex flex-col text-base md:text-xl">
+      <section
+        class="py-10 px-4 md:px-16 flex flex-col bg-navyblue text-base md:text-xl"
+      >
         <h2
-          class="uppercase flex justify-center animate-spinnergrow js-show-on-scroll"
+          class="uppercase text-lightblue flex justify-center js-show-on-scroll-2"
         >
           Plan du festival
         </h2>
         <div id="myMap" class="my-6 flex justify-center"></div>
+      </section>
+      <section class="py-10 px-4 md:px-16 flex flex-col text-base md:text-xl">
+        <h2
+          class="uppercase text-lightblue flex justify-center js-show-on-scroll-2"
+        >
+          Les dernières Actualités
+        </h2>
+        <section id="articles" class="js-show-on-scroll-2">
+          <!-- Articles ajoutés en JavaScript via le lien du fichier JSON Wordpress-->
+        </section>
       </section>
     </main>
     <footer class="bg-darkblue text-white w-full">
@@ -321,6 +352,7 @@
     <script src="./script/menu.js"></script>
     <script src="./script/carousel.js"></script>
     <script src="./script/map.js"></script>
-    <script src="./animate.js"></script>
+    <script src="./script/animate.js"></script>
+    <script src="./script/api_dernieres_actus.js"></script>
   </body>
 </html>

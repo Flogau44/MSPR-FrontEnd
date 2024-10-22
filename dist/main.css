@@ -775,22 +775,6 @@ main {
   animation: slide-in-left 1s ease-in-out 0s 1;
 }
 
-@keyframes slide-in-left {
-  0% {
-    opacity: 0;
-    transform: translateX(-400px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.animate-slideinleft {
-  animation: slide-in-left 1s ease-in-out 0s 1;
-}
-
 @keyframes spinner-grow {
   0% {
     transform: scale(0.75);
@@ -953,6 +937,10 @@ main {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-lightblue-900 {
+  background-color: rgba(95, 194, 186, 0.9);
+}
+
 .p-0 {
   padding: 0px;
 }
@@ -994,6 +982,11 @@ main {
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .pb-4 {
@@ -1038,6 +1031,10 @@ main {
 
 .font-bold {
   font-weight: 700;
+}
+
+.font-medium {
+  font-weight: 500;
 }
 
 .font-semibold {
@@ -1092,6 +1089,11 @@ main {
 .outline-none {
   outline: 2px solid transparent;
   outline-offset: 2px;
+}
+
+.ring-darkblue {
+  --tw-ring-opacity: 1;
+  --tw-ring-color: rgb(11 22 44 / var(--tw-ring-opacity));
 }
 
 .transition {
@@ -1227,8 +1229,14 @@ main {
   justify-content: center;
 }
 
+.imgArticles {
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
 .imgArticle {
   width: 100%;
+  border-radius: 0.5rem;
 }
 
 .informationArticle {
@@ -1469,6 +1477,15 @@ main {
   background-color: rgba(95, 194, 186, 0.9);
 }
 
+.hover\:bg-white:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-blue-900:hover {
+  background-color: rgba(59, 85, 109, 0.9);
+}
+
 .hover\:text-blue:hover {
   --tw-text-opacity: 1;
   color: rgb(59 85 109 / var(--tw-text-opacity));
@@ -1482,6 +1499,11 @@ main {
 .hover\:text-lightblue:hover {
   --tw-text-opacity: 1;
   color: rgb(95 194 186 / var(--tw-text-opacity));
+}
+
+.hover\:text-white:hover {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .hover\:ring:hover {

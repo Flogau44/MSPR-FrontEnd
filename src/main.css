@@ -68,9 +68,11 @@
 .article {
   @apply max-w-md flex flex-col justify-center;
 }
-
+.imgArticles {
+  @apply w-full rounded-lg;
+}
 .imgArticle {
-  @apply w-full;
+  @apply w-full rounded-lg;
 }
 .informationArticle {
   @apply flex flex-col;
