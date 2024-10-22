@@ -3,7 +3,24 @@
 var myMap = L.map("myMap", {
   center: [49.05466, 2.37556],
   zoom: 13.5,
+  fullscreenControl: true, // Ajoute le bouton plein écran
 });
+
+// Fonction pour ajuster le zoom en fonction de la taille de la fenêtre
+function adjustZoom() {
+  var width = window.innerWidth;
+  var zoomLevel;
+
+  if (width < 800) {
+    zoomLevel = 13; // Zoom pour les petits écrans
+  } else if (width < 1200) {
+    zoomLevel = 13.5; // Zoom pour les écrans moyens
+  } else {
+    zoomLevel = 14; // Zoom pour les grands écrans
+  }
+
+  myMap.setZoom(zoomLevel);
+}
 
 // On charge les tuiles
 var osm = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -12,6 +29,12 @@ var osm = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
   minZoom: 10,
   maxZoom: 18,
 }).addTo(myMap);
+
+// Ajuster le zoom au chargement de la page
+adjustZoom();
+
+// Ajuster le zoom lors du redimensionnement de la fenêtre
+window.addEventListener("resize", adjustZoom);
 
 // liste des scènes
 var myIconScene = L.icon({

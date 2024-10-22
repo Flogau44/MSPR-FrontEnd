@@ -821,6 +821,10 @@ main {
        column-gap: 1rem;
 }
 
+.gap-y-14 {
+  row-gap: 3.5rem;
+}
+
 .gap-y-2 {
   row-gap: 0.5rem;
 }
@@ -831,6 +835,10 @@ main {
 
 .gap-y-6 {
   row-gap: 1.5rem;
+}
+
+.gap-y-20 {
+  row-gap: 5rem;
 }
 
 .space-x-3 > :not([hidden]) ~ :not([hidden]) {
@@ -1458,6 +1466,32 @@ main {
      object-fit: cover;
 }
 
+/*Carousel du haut pour les grands écrans*/
+
+.splide__pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.splide__pagination > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
+
+.splide__pagination .splide__pagination__page {
+  height: 0.75rem;
+  width: 0.75rem;
+  border-radius: 9999px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.splide__pagination .splide__pagination__page.is-active {
+  --tw-bg-opacity: 1;
+  background-color: rgb(95 194 186 / var(--tw-bg-opacity));
+}
+
 /*Carousel programmation*/
 
 .artistProg {
@@ -1855,37 +1889,108 @@ main {
 #partners {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  row-gap: 3rem;
 }
 
-#partners > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
+.nameCategory {
+  position: relative;
+  border-top-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgb(59 85 109 / var(--tw-border-opacity));
+  padding: 1rem;
 }
 
-#partners {
-  padding: 1.5rem;
+.categoryTitle {
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  --tw-translate-x: -50%;
+  --tw-translate-y: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(59 85 109 / var(--tw-text-opacity));
+}
+
+.categoryPartner {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.5rem;
 }
 
 @media (min-width: 768px) {
-  #partners {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    justify-items: center;
-    gap: 1.5rem;
+  .categoryPartner {
+    margin-left: 6rem;
+    margin-right: 6rem;
   }
 }
 
 @media (min-width: 1024px) {
-  #partners {
+  .categoryPartner {
+    margin-left: 10rem;
+    margin-right: 10rem;
+  }
+}
+
+.categoryPartners {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.categoryPartners > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(2.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(2.5rem * var(--tw-space-y-reverse));
+}
+
+@media (min-width: 768px) {
+  .categoryPartners {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    justify-content: center;
+    -moz-column-gap: 1.5rem;
+         column-gap: 1.5rem;
+  }
+
+  .categoryPartners > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0px * var(--tw-space-y-reverse));
+  }
+}
+
+@media (min-width: 1024px) {
+  .categoryPartners {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
+.linkPartner {
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.linkPartner:hover {
+  --tw-scale-x: 1.05;
+  --tw-scale-y: 1.05;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  opacity: 0.8;
+}
+
 .imgPartner {
-  height: 100px;
-  max-width: 100%;
+  height: 5rem;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .hover\:border-b-2:hover {

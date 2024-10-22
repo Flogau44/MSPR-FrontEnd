@@ -151,6 +151,16 @@
   @apply w-[325px] h-[400px] object-cover rounded-lg;
 }
 
+/*Carousel du haut pour les grands écrans*/
+.splide__pagination {
+  @apply flex justify-center space-x-2;
+}
+.splide__pagination .splide__pagination__page {
+  @apply w-3 h-3 bg-white rounded-full;
+}
+.splide__pagination .splide__pagination__page.is-active {
+  @apply bg-lightblue;
+}
 /*Carousel programmation*/
 .artistProg {
   @apply relative;
@@ -283,8 +293,23 @@
 
 /*Partenaires*/
 #partners {
-  @apply flex flex-col items-center p-6 space-y-6 md:grid md:grid-cols-3 md:gap-6 md:justify-items-center lg:grid-cols-4;
+  @apply flex flex-col gap-y-12;
+}
+.nameCategory {
+  @apply border-t-2 border-blue p-4 relative;
+}
+.categoryTitle {
+  @apply absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 px-2 text-blue bg-white;
+}
+.categoryPartner {
+  @apply mx-4 flex flex-col gap-y-10 md:mx-24 lg:mx-40;
+}
+.categoryPartners {
+  @apply flex flex-col justify-center items-center space-y-10 md:grid md:grid-cols-3 md:justify-center md:space-y-0 md:gap-x-6 lg:grid-cols-4;
+}
+.linkPartner {
+  @apply transform transition-all duration-300 hover:opacity-80 hover:scale-105;
 }
 .imgPartner {
-  @apply max-w-full h-[100px];
+  @apply w-full h-20 object-contain;
 }

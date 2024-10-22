@@ -71,7 +71,7 @@ function convertDate(dateString) {
 //Sélection de la div où toutes les artistes seront chargées
 const postsContainerPlanning = document.getElementById("planning");
 
-function displaySceneArtists(sceneName, artistDay, artists) {
+const displaySceneArtists = (sceneName, artistDay, artists) => {
   let sceneContainer = document.querySelector(
     `.sceneContainer[data-scene="${sceneName}"]`
   );
@@ -165,7 +165,7 @@ function displaySceneArtists(sceneName, artistDay, artists) {
     horaireArtistHour.innerText = `${artist.class_list[9].slice(11)}`;
     descriptionArtistHour.appendChild(horaireArtistHour);
   });
-}
+};
 
 // Récupérer les données de l'API WP et ensuite afficher tous les artistes sur la page information
 //Sélection de l'url WP-JSON
