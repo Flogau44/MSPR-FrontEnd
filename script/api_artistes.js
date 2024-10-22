@@ -3,8 +3,9 @@ let postsContainer = document.querySelector("#artists");
 
 //Créer tout le contenu pour un artiste
 function createArtists(item) {
-  let artist = document.createElement("artist");
+  let artist = document.createElement("article");
   artist.classList.add("artist");
+  artist.setAttribute("data-name", `${item.class_list[10].slice(9)}`);
   postsContainer.appendChild(artist);
 
   let link = document.createElement("a");
@@ -65,18 +66,29 @@ async function updateData() {
 
 updateData();
 
-//Filtrer les artistes suivant la date sélectionée
-const firstDate = document.getElementById("firstDate");
-firstDate.addEventListener("click", () => {
-  return updateData();
-});
+//Filtrer les artistes
+// Sélectionner les éléments HTML
+const filterButtons = document.querySelectorAll("#filterButtons button");
+const filterArtist = document.getElementById("artists").children;
+//console.log(filterArtist);
 
-const secondDate = document.getElementById("secondDate");
-secondDate.addEventListener("click", () => {
-  return updateData();
-});
+// Fonction permettant de filtrer les artistes en fonction des boutons de filtrage
+const filterArtists = (e) => {
+  document.querySelector("#filterButtons .active").classList.remove("active");
+  e.target.classList.add("active");
 
-const thirdDate = document.getElementById("thirdDate");
-thirdDate.addEventListener("click", () => {
-  return updateData();
-});
+  for (let i = 0; i < filterArtist.length; i++) {
+    if (
+      filterArtist[i].dataset.name === e.target.dataset.filter ||
+      e.target.dataset.filter === "lineup"
+    ) {
+      filterArtist[i].classList.replace("hide", "show");
+    } else {
+      filterArtist[i].classList.add("hide");
+    }
+  }
+};
+
+filterButtons.forEach((button) =>
+  button.addEventListener("click", filterArtists)
+);

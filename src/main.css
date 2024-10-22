@@ -56,9 +56,14 @@
 .visible {
   @apply block;
 }
+
 #myMap {
   @apply h-[300px] z-10 md:h-[600px];
 }
+.layers-control-img {
+  @apply max-w-4 max-h-4 inline-flex cursor-pointer overflow-hidden mx-2;
+}
+
 #articles {
   @apply mx-4 my-4 flex flex-col justify-center items-center gap-y-6 md:grid md:grid-cols-3 md:justify-center md:gap-x-4;
 }
@@ -98,64 +103,57 @@
 #artists {
   @apply mx-4 my-4 flex flex-col justify-center items-center gap-y-6 md:grid md:grid-cols-3 md:justify-center md:items-start md:gap-x-4;
 }
-#artist {
-  @apply mx-6 mb-6 flex flex-col justify-between gap-y-6 md:grid md:grid-cols-[60%,40%] md:space-x-6;
-}
-
 .artist {
   @apply max-w-md relative flex flex-col justify-center;
 }
-
+#artists .artist.hide {
+  @apply hidden;
+}
+#artist {
+  @apply mx-6 mb-6 flex flex-col justify-between gap-y-6 md:grid md:grid-cols-[60%,40%] md:space-x-6;
+}
 .informationArtist {
   @apply flex flex-col;
 }
-
 .headerArtist {
   @apply flex flex-col gap-y-1;
 }
-
 .descriptionArtist {
   @apply absolute bottom-0 z-10 pl-2 flex flex-col justify-start;
 }
-
 .nameArtist {
   @apply text-lightblue text-2xl font-bold;
 }
-
 .dateArtists {
   @apply text-white text-xl font-medium;
 }
-
 .dateArtist {
   @apply text-darkblue text-2xl font-semibold;
 }
-
 .horaireArtist {
   @apply text-blue text-xl font-semibold;
 }
-
 .sceneArtist {
   @apply text-blue text-xl font-semibold;
 }
-
 .imgArtists {
   @apply w-full rounded-lg;
 }
-
 .imgArtist {
   @apply w-full rounded-lg;
 }
-
 .resumeArtist {
   @apply py-6;
 }
 
-#btnActiveProg {
-  @apply h-10 px-5 outline-none bg-lightblue-900 text-darkblue ring ring-darkblue;
+#filterButtons button {
+  @apply text-white bg-navyblue;
 }
-#btnActiveProg1 {
-  @apply h-10 px-5 outline-none bg-lightblue-900 text-darkblue ring ring-darkblue;
+
+#filterButtons button:hover {
+  @apply text-darkblue bg-lightblue-900 ring ring-darkblue;
 }
-.layers-control-img {
-  @apply max-w-4 max-h-4 inline-flex cursor-pointer overflow-hidden mx-2;
+
+#filterButtons button.active {
+  @apply text-darkblue bg-lightblue-900 ring ring-darkblue;
 }
