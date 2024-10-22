@@ -428,7 +428,7 @@ var overlayMaps = {
     markerEntrance,
   "<div class='layers-control-img'><img src='./images/mapIcone/camping.png'/> </div>Camping":
     markerCamping,
-  "<div class='layers-control-img'><img src='./images/mapIcone/psh.png'/> </div>PSH":
+  "<div class='layers-control-img'><img src='./images/mapIcone/psh.png'/> </div>Plateforme PSH":
     markerPsh,
   "<div class='layers-control-img'><img src='./images/mapIcone/rescuer.png'/> </div>Point de secouriste":
     markerRescuer,

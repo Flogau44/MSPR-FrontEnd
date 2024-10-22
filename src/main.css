@@ -69,7 +69,7 @@
   @apply mx-4 my-4 flex flex-col justify-center items-center gap-y-6 md:grid md:grid-cols-3 md:justify-center md:gap-x-4;
 }
 #article {
-  @apply mx-6 mb-6 flex flex-col justify-between gap-y-6 md:grid md:grid-cols-[60%,40%] md:space-x-6;
+  @apply mx-6 mb-6 text-base flex flex-col justify-between gap-y-6 md:text-xl md:grid md:grid-cols-[60%,40%] md:space-x-6;
 }
 .article {
   @apply max-w-md flex flex-col justify-center;
@@ -123,13 +123,13 @@
   @apply hidden;
 }
 #artist {
-  @apply mx-6 mb-6 flex flex-col items-center justify-between gap-y-6 md:flex-row md:justify-center md:space-x-12;
+  @apply mx-6 mb-6 text-base flex flex-col items-center justify-between gap-y-6 md:text-xl md:flex-row md:items-start md:justify-center md:space-x-12;
 }
 .linkArtist {
   @apply transform transition-all duration-300 hover:opacity-80 hover:scale-105;
 }
 .informationArtist {
-  @apply max-w-[400px] flex flex-col;
+  @apply max-w-full flex flex-col;
 }
 .headerArtist {
   @apply flex flex-col gap-y-1;
@@ -156,7 +156,7 @@
   @apply w-[325px] h-[400px] object-cover rounded-lg;
 }
 .imgArtist {
-  @apply max-w-[400px] h-full rounded-lg;
+  @apply max-w-full h-full rounded-lg md:max-w-[400px];
 }
 .resumeArtist {
   @apply py-6;
@@ -226,7 +226,7 @@
   @apply mx-4 h-28 w-full bg-blue rounded-lg md:w-72;
 }
 .linkArtistHour {
-  @apply p-2 grid grid-cols-2 content-center justify-items-center md:justify-items-start gap-2;
+  @apply p-2 grid grid-cols-2 content-center justify-items-start gap-2;
 }
 .imgArtistHour {
   @apply h-24 w-20 object-cover rounded-md;

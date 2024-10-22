@@ -28,7 +28,7 @@ const createArticle = (item) => {
 
   //Je crée l'élement div pour récupérer dans wordpres le résumé de l'article
   let resumeArticle = document.createElement("div");
-  resumeArticle.innerHTML = `${item.excerpt.rendered}`;
+  resumeArticle.innerHTML = `${item.content.rendered}`;
   resumeArticle.classList.add("resumeArticle");
   informationArticle.appendChild(resumeArticle);
 
