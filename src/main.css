@@ -102,16 +102,19 @@
 }
 
 #artists {
-  @apply mx-4 my-4 flex flex-col justify-center items-center gap-y-6 md:grid md:grid-cols-3 md:justify-center md:items-start md:gap-x-4;
+  @apply mx-4 my-4 flex flex-col justify-center items-center gap-y-6 md:grid md:grid-cols-3 md:justify-items-center md:gap-x-4;
 }
 .artist {
-  @apply max-w-md relative flex flex-col justify-center;
+  @apply max-w-full h-auto relative flex flex-col justify-center;
+}
+.image-list {
+  @apply flex flex-row gap-x-4 overflow-hidden;
 }
 .artistProg {
-  @apply relative flex flex-col justify-center;
+  @apply relative;
 }
 .imgArtistsProg {
-  @apply w-full rounded-lg;
+  @apply max-w-max h-[300px] object-cover rounded-lg;
 }
 #artists .artist.hide {
   @apply hidden;
@@ -144,7 +147,7 @@
   @apply text-blue text-xl font-semibold;
 }
 .imgArtists {
-  @apply w-full rounded-lg;
+  @apply w-[325px] h-[400px] object-cover rounded-lg;
 }
 .imgArtist {
   @apply w-full rounded-lg;
@@ -196,7 +199,7 @@
   @apply p-2 grid grid-cols-2 content-center justify-items-center gap-2;
 }
 .imgArtistHour {
-  @apply h-24 rounded-md;
+  @apply h-24 w-20 object-cover rounded-md;
 }
 .descriptionArtistHour {
   @apply flex flex-col justify-center;

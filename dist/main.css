@@ -627,11 +627,6 @@ main {
   margin: 0px;
 }
 
-.mx-14 {
-  margin-left: 3.5rem;
-  margin-right: 3.5rem;
-}
-
 .mx-4 {
   margin-left: 1rem;
   margin-right: 1rem;
@@ -709,10 +704,6 @@ main {
   display: none;
 }
 
-.h-1\/2 {
-  height: 50%;
-}
-
 .h-10 {
   height: 2.5rem;
 }
@@ -725,12 +716,20 @@ main {
   height: 0.75rem;
 }
 
+.h-\[300px\] {
+  height: 300px;
+}
+
 .h-full {
   height: 100%;
 }
 
 .h-screen {
   height: 100vh;
+}
+
+.h-8 {
+  height: 2rem;
 }
 
 .w-20 {
@@ -757,16 +756,32 @@ main {
   width: 100vw;
 }
 
+.w-6 {
+  width: 1.5rem;
+}
+
+.w-4 {
+  width: 1rem;
+}
+
+.w-2 {
+  width: 0.5rem;
+}
+
+.w-10 {
+  width: 2.5rem;
+}
+
+.w-8 {
+  width: 2rem;
+}
+
 .min-w-44 {
   min-width: 11rem;
 }
 
-.max-w-7xl {
-  max-width: 80rem;
-}
-
-.max-w-\[1000px\] {
-  max-width: 1000px;
+.max-w-\[400px\] {
+  max-width: 400px;
 }
 
 @keyframes fade-in-up {
@@ -817,28 +832,8 @@ main {
   animation: slide-in-left 1s ease-in-out 0s 1;
 }
 
-@keyframes spinner-grow {
-  0% {
-    transform: scale(0.75);
-    opacity: 0;
-  }
-
-  100% {
-    transform: none;
-    opacity: 1;
-  }
-}
-
-.animate-spinnergrow {
-  animation: spinner-grow 1s ease-in-out 0s 1;
-}
-
 .cursor-pointer {
   cursor: pointer;
-}
-
-.grid-flow-col {
-  grid-auto-flow: column;
 }
 
 .grid-cols-2 {
@@ -869,6 +864,10 @@ main {
   justify-content: space-between;
 }
 
+.justify-around {
+  justify-content: space-around;
+}
+
 .gap-4 {
   gap: 1rem;
 }
@@ -888,6 +887,11 @@ main {
 
 .gap-y-6 {
   row-gap: 1.5rem;
+}
+
+.gap-x-6 {
+  -moz-column-gap: 1.5rem;
+       column-gap: 1.5rem;
 }
 
 .space-x-1 > :not([hidden]) ~ :not([hidden]) {
@@ -926,10 +930,6 @@ main {
   margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
 }
 
-.overflow-hidden {
-  overflow: hidden;
-}
-
 .rounded-full {
   border-radius: 9999px;
 }
@@ -944,6 +944,10 @@ main {
 
 .rounded-sm {
   border-radius: 0.125rem;
+}
+
+.rounded {
+  border-radius: 0.25rem;
 }
 
 .border-y-2 {
@@ -989,6 +993,21 @@ main {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-red {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 0 0 / var(--tw-bg-opacity));
+}
+
+.bg-lightblue {
+  --tw-bg-opacity: 1;
+  background-color: rgb(95 194 186 / var(--tw-bg-opacity));
+}
+
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .p-0 {
@@ -1365,8 +1384,7 @@ main {
   #artists {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    align-items: flex-start;
-    justify-content: center;
+    justify-items: center;
     -moz-column-gap: 1rem;
          column-gap: 1rem;
   }
@@ -1375,21 +1393,31 @@ main {
 .artist {
   position: relative;
   display: flex;
-  max-width: 28rem;
+  height: auto;
+  max-width: 100%;
   flex-direction: column;
   justify-content: center;
+}
+
+.image-list {
+  display: flex;
+  flex-direction: row;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+  overflow: hidden;
 }
 
 .artistProg {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 .imgArtistsProg {
-  width: 100%;
+  height: 300px;
+  max-width: -moz-max-content;
+  max-width: max-content;
   border-radius: 0.5rem;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 #artists .artist.hide {
@@ -1481,8 +1509,11 @@ main {
 }
 
 .imgArtists {
-  width: 100%;
+  height: 400px;
+  width: 325px;
   border-radius: 0.5rem;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .imgArtist {
@@ -1630,7 +1661,10 @@ main {
 
 .imgArtistHour {
   height: 6rem;
+  width: 5rem;
   border-radius: 0.375rem;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .descriptionArtistHour {
@@ -1674,6 +1708,11 @@ main {
 
 .hover\:bg-lightblue-700:hover {
   background-color: rgba(95, 194, 186, 0.7);
+}
+
+.hover\:bg-blue:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 85 109 / var(--tw-bg-opacity));
 }
 
 .hover\:text-blue:hover {
@@ -1770,6 +1809,10 @@ main {
     height: 1.25rem;
   }
 
+  .md\:h-\[500px\] {
+    height: 500px;
+  }
+
   .md\:w-28 {
     width: 7rem;
   }
@@ -1788,6 +1831,10 @@ main {
 
   .md\:w-\[600px\] {
     width: 600px;
+  }
+
+  .md\:max-w-\[830px\] {
+    max-width: 830px;
   }
 
   .md\:max-w-full {

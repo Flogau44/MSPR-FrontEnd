@@ -72,16 +72,18 @@ updateData();
 
 //Caroussel
 
-const imageList = document.querySelector(".slider-wrapper .image-list");
+const imageList = document.querySelector(".slider-artist .image-list");
 console.log(imageList);
-const slideButtons = document.querySelectorAll(".slider-wrapper .slide-button");
-console.log(slideButtons);
+const slideButtons = document.querySelectorAll(".slidebuttons .slide-button");
+
+const maxScrollLeft = imageList.scrollWidth - imageList.clientWidth;
 
 // Faire glisser les images en fonction des clics sur le bouton de diapositive
 slideButtons.forEach((button) => {
   button.addEventListener("click", () => {
     const direction = button.id === "prev-slide" ? -1 : 1;
     const scrollAmount = imageList.clientWidth * direction;
-    imageList.scrollBy({ left: scrollAmount });
+    imageList.scrollBy({ left: scrollAmount, behavior: "smooth" });
   });
 });
+console.log(slideButtons);

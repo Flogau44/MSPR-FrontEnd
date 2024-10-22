@@ -10,7 +10,7 @@ function createArtist(item) {
     "alt",
     `${item["_embedded"]["wp:featuredmedia"][0]["slug"]}`
   );
-  image.classList.add("imgArtiste");
+  image.classList.add("imgArtist");
   postsContainer.appendChild(image);
 
   //Je crée l'élement div pour afficher correctement les informations de l'artiste

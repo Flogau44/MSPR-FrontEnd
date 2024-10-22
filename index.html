@@ -180,13 +180,25 @@
       <section class="relative m-0 p-0">
         <!--Faire apparaitre les images-->
         <div class="carouselSlide hidden">
-          <img src="./images/Scene1.jpg" class="w-full h-1/2" alt="Scène1" />
+          <img
+            src="./images/Scene1.jpg"
+            class="w-full h-[300px] md:h-[500px] object-cover"
+            alt="Scène1"
+          />
         </div>
         <div class="carouselSlide hidden">
-          <img src="./images/scene2.jpg" class="w-full h-1/2" alt="Scène2" />
+          <img
+            src="./images/scene2.jpg"
+            class="w-full h-[300px] md:h-[500px] object-cover"
+            alt="Scène2"
+          />
         </div>
         <div class="carouselSlide hidden">
-          <img src="./images/scene3.jpg" class="w-full h-1/2" alt="Scène3" />
+          <img
+            src="./images/scene3.jpg"
+            class="w-full h-[300px] md:h-[500px] object-cover"
+            alt="Scène3"
+          />
         </div>
         <!--Faire apparaitre 3 boutons pour sélectionner l'image-->
         <div
@@ -208,26 +220,32 @@
       </section>
       <!--Section liste des concerts-->
       <section
-        class="w-full py-10 flex flex-col items-center space-y-4 bg-navyblue max-w-7xl"
+        class="w-full py-10 flex flex-col items-center gap-y-4 bg-navyblue"
       >
-        <div class="slider-wrapper max-w-[1000px]">
-          <div class="px-20 items-center flex flex-row justify-between">
-            <h2 class="uppercase text-lightblue">Programmation</h2>
-            <div class="flex flex-row gap-x-4">
-              <button id="prev-slide" class="slide-button cursor-pointer">
-                <i class="fa fa-xl fa-chevron-left"></i>
-              </button>
-              <button id="next-slide" class="slide-button cursor-pointer">
-                <i class="fa fa-xl fa-chevron-right"></i>
-              </button>
-            </div>
+        <div
+          class="slidebuttons py-4 px-20 w-full flex flex-row justify-between items-center md:justify-around"
+        >
+          <h2 class="uppercase text-lightblue">Programmation</h2>
+          <div class="flex flex-row gap-x-4">
+            <button
+              id="prev-slide"
+              class="slide-button w-8 h-8 rounded-full text-darkblue bg-lightblue hover:ring-darkblue hover:bg-blue hover:text-white transition-colors duration-700"
+            >
+              <i class="fa fa-xl fa-chevron-left"></i>
+            </button>
+            <button
+              id="next-slide"
+              class="slide-button w-8 h-8 rounded-full text-darkblue bg-lightblue hover:ring-darkblue hover:bg-blue hover:text-white transition-colors duration-700"
+            >
+              <i class="fa fa-xl fa-chevron-right"></i>
+            </button>
           </div>
-          <section
+        </div>
+        <div class="slider-artist max-w-[400px] md:max-w-[830px] flex flex-col">
+          <div
             id="programmationArtists"
-            class="image-list mx-14 my-4 overflow-hidden grid grid-flow-col gap-x-4 animate-fadeinup js-show-on-scroll3"
-          >
-            <!-- Articles ajoutés en JavaScript via le lien du fichier JSON Wordpress-->
-          </section>
+            class="image-list animate-fadeinup js-show-on-scroll3"
+          ></div>
         </div>
         <button
           type="button"
