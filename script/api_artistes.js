@@ -68,24 +68,28 @@ function convertDate(dateString) {
   });
 }
 
-//Sélection de la div où toutes les artistes seront chargées
+//Sélection de la div où tous les artistes seront chargées pour la partie horaires
 const postsContainerPlanning = document.getElementById("planning");
 
 const displaySceneArtists = (sceneName, artistDay, artists) => {
+  //Sélection de la div où tous les artistes seront chargés selon le nom de la scène
   let sceneContainer = document.querySelector(
     `.sceneContainer[data-scene="${sceneName}"]`
   );
   if (!sceneContainer) {
+    //Je crée l'élement div pour afficher correctement le planning de chaque artiste par jour et par scène
     sceneContainer = document.createElement("div");
     sceneContainer.classList.add("sceneContainer");
     sceneContainer.setAttribute("data-scene", sceneName);
     postsContainerPlanning.appendChild(sceneContainer);
 
+    //Je crée l'élement h2 pour récupérer dans wordpress le nom de la scène
     const nameScene = document.createElement("h2");
     nameScene.classList.add("nameScene");
     nameScene.innerText = `${sceneName.toUpperCase()}`;
     sceneContainer.appendChild(nameScene);
 
+    //Je crée l'élement div pour afficher correctement le planning de chaque artiste par jour et par scène
     const sceneAllartists = document.createElement("div");
     sceneAllartists.classList.add("sceneArtists");
     sceneContainer.appendChild(sceneAllartists);
@@ -93,24 +97,29 @@ const displaySceneArtists = (sceneName, artistDay, artists) => {
 
   const sceneAllartist = sceneContainer.querySelector(".sceneArtists");
 
+  //Je crée l'élement div pour afficher correctement le planning de chaque artiste par jour
   const dayContainer = document.createElement("div");
   dayContainer.classList.add("dayContainer");
   sceneAllartist.appendChild(dayContainer);
 
+  //Je crée l'élement div pour afficher correctement chaque journée de concert
   const dayArtist = document.createElement("div");
   dayArtist.classList.add("dayArtist");
   dayContainer.appendChild(dayArtist);
 
+  //Je crée l'élement h3 pour récupérer dans wordpress le jour
   const day = document.createElement("h3");
   day.classList.add("day");
   day.innerText = getDayName(artistDay);
   dayArtist.appendChild(day);
 
+  //Je crée l'élement h4 pour récupérer dans wordpress le jour, le mois et l'année
   const dayMonthYear = document.createElement("h4");
   dayMonthYear.classList.add("dayMonthYear");
   dayMonthYear.innerText = convertDate(artistDay);
   dayArtist.appendChild(dayMonthYear);
 
+  //Je crée l'élement div pour afficher correctement les artistes à leur journée de concert
   const daysAllartists = document.createElement("div");
   daysAllartists.classList.add("dayArtists");
   dayContainer.appendChild(daysAllartists);

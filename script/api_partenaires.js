@@ -3,20 +3,24 @@ const postsContainer = document.querySelector("#partners");
 
 //Créer la fonction qui permet de créer toute la mise en forme d'un partenaire (éléments et attributs)
 const displayPartnerType = (categoryName, partners) => {
+  //Je crée l'élement div pour afficher correctement les partenaires pour chaque catégorie
   const categoryPartner = document.createElement("div");
   categoryPartner.classList.add("categoryPartner");
   categoryPartner.setAttribute("data-partenaires", categoryName);
   postsContainer.appendChild(categoryPartner);
 
+  //Je crée l'élement div pour afficher correctement la catégorie partenaire
   const nameCategory = document.createElement("div");
   nameCategory.classList.add("nameCategory");
   categoryPartner.appendChild(nameCategory);
 
+  //Je crée l'élement h2 pour récupérer dans wordpress le titre de la catégorie partenaire (officiel et média)
   const nameCategoryPartner = document.createElement("h2");
   nameCategoryPartner.classList.add("categoryTitle");
   nameCategoryPartner.innerText = `${categoryName.toUpperCase()}`;
   nameCategory.appendChild(nameCategoryPartner);
 
+  //Je crée l'élement div pour afficher correctement les partenaires à leur catégorie
   const categoryAllPartners = document.createElement("div");
   categoryAllPartners.classList.add("categoryPartners");
   categoryPartner.appendChild(categoryAllPartners);

@@ -55,5 +55,4 @@ window.onscroll = () => {
     logoTitle.style.color = "#ffffff";
     hamburgerNonactive.style.color = "#ffffff";
   }
-  //console.log(logoTitle);
 };
