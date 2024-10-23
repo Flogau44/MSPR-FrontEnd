@@ -1,3 +1,315 @@
 @tailwind base;
+
+@layer base {
+  body {
+    font-family: "Cormorant Garamond", serif;
+    display: flex;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  .Roboto {
+    font-family: "Roboto", sans-serif;
+  }
+  h1 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    font-weight: 700;
+    color: #0b162c;
+  }
+  h2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+    color: #0b162c;
+  }
+  h3 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 700;
+    color: #0b162c;
+  }
+  main {
+    color: #3b556d;
+  }
+}
 @tailwind components;
 @tailwind utilities;
+
+/*Menu*/
+#hamburgerNonactive {
+  @apply flex;
+}
+#hamburgerActive {
+  @apply hidden;
+}
+.sticky {
+  @apply fixed;
+}
+.blueMenu {
+  @apply bg-white-800 text-darkblue shadow-md;
+}
+
+/*Accordeon F.A.Q*/
+.question {
+  @apply flex flex-row justify-between items-center py-2 space-x-4 cursor-pointer uppercase text-blue;
+}
+.reponse {
+  @apply hidden text-xl text-navyblue;
+}
+.visible {
+  @apply block;
+}
+
+/*Carte intéractive*/
+#myMap {
+  @apply h-[300px] z-10 md:h-[600px];
+}
+.layers-control-img {
+  @apply max-w-4 max-h-4 inline-flex cursor-pointer overflow-hidden mx-2;
+}
+/*Les articles*/
+#articles {
+  @apply mx-4 my-4 flex flex-col justify-center items-center gap-y-6 md:grid md:grid-cols-2 md:justify-center md:gap-x-4 lg:grid-cols-3;
+}
+.article {
+  @apply max-w-md flex flex-col justify-center;
+}
+.linkArticle {
+  @apply transform transition-all duration-300 hover:opacity-80 hover:scale-105;
+}
+.imgArticles {
+  @apply w-[600px] h-[300px] object-cover rounded-lg;
+}
+.descriptionArticle {
+  @apply pt-2 flex flex-row justify-between items-center;
+}
+.titleArticle {
+  @apply text-darkblue text-xl font-bold;
+}
+.dateArticle {
+  @apply text-blue text-xl;
+}
+
+/*Un seul article*/
+#article {
+  @apply mx-6 mb-6 text-base flex flex-col items-center justify-between gap-y-6 md:text-xl md:flex-row md:items-start md:gap-x-12 md:justify-center;
+}
+.imgArticle {
+  @apply max-w-full h-full rounded-lg md:max-w-[400px];
+}
+.informationArticle {
+  @apply max-w-full flex flex-col md:max-w-[500px];
+}
+.headerArticle {
+  @apply flex flex-col md:flex-row md:justify-between;
+}
+.resumeArticle {
+  @apply py-6;
+}
+
+/*Bouton Article*/
+#filterButtonArticle {
+  @apply text-white bg-navyblue;
+}
+
+#filterButtonArticle:hover {
+  @apply text-darkblue bg-lightblue-900 ring ring-darkblue;
+}
+
+#filterButtonArticle.active {
+  @apply text-darkblue bg-lightblue-900 ring ring-darkblue;
+}
+
+/*Les artistes line-up*/
+#artists {
+  @apply mx-4 my-4 flex flex-col justify-center items-center gap-y-6 md:grid md:grid-cols-2 md:justify-items-center md:gap-x-4 lg:grid-cols-3;
+}
+.artist {
+  @apply max-w-full h-auto relative flex flex-col justify-center animate-fadeinup;
+}
+#artists .artist.hide {
+  @apply hidden;
+}
+.linkArtist {
+  @apply transform transition-all duration-300 hover:opacity-80 hover:scale-105;
+}
+.descriptionArtist {
+  @apply absolute bottom-0 z-10 pl-2 flex flex-col justify-start;
+}
+.nameArtist {
+  @apply text-lightblue font-bold;
+}
+.dateArtists {
+  @apply text-white text-xl font-bold;
+}
+.imgArtists {
+  @apply w-[325px] h-[400px] object-cover rounded-lg;
+}
+
+/*Carousel du haut pour les grands écrans*/
+.splide__pagination {
+  @apply flex justify-center space-x-2;
+}
+.splide__pagination .splide__pagination__page {
+  @apply w-3 h-3 bg-white rounded-full;
+}
+.splide__pagination .splide__pagination__page.is-active {
+  @apply bg-lightblue;
+}
+/*Carousel programmation*/
+.artistProg {
+  @apply relative;
+}
+.imgArtistsProg {
+  @apply max-w-full h-[300px] object-cover rounded-lg;
+}
+
+/*Un seul artiste*/
+#artist {
+  @apply mx-6 mb-6 text-base flex flex-col items-center justify-between gap-y-6 md:text-xl md:flex-row md:items-start md:gap-x-12 md:justify-center;
+}
+.informationArtist {
+  @apply max-w-full flex flex-col md:max-w-[500px];
+}
+.headerArtist {
+  @apply flex flex-col gap-y-1;
+}
+.dateArtist {
+  @apply text-darkblue text-2xl font-semibold;
+}
+.horaireArtist {
+  @apply text-blue text-xl font-semibold;
+}
+.sceneArtist {
+  @apply text-blue text-xl font-semibold;
+}
+.imgArtist {
+  @apply max-w-full h-full rounded-lg md:max-w-[400px];
+}
+.resumeArtist {
+  @apply py-6;
+}
+.videoArtist {
+  @apply w-full h-full aspect-video;
+}
+
+/*Bouton programmation*/
+#filterButtonArtist {
+  @apply text-white bg-navyblue;
+}
+
+#filterButtonArtist:hover {
+  @apply text-darkblue bg-lightblue-900 ring ring-darkblue;
+}
+
+#filterButtonArtist.active {
+  @apply text-darkblue bg-lightblue-900 ring ring-darkblue;
+}
+#filterButtonsArtist {
+  @apply text-white bg-navyblue;
+}
+
+#filterButtonsArtist:hover {
+  @apply text-darkblue bg-lightblue-900 ring ring-darkblue;
+}
+
+#filterButtonsArtist.active {
+  @apply text-darkblue bg-lightblue-900 ring ring-darkblue;
+}
+#filterButtonsPlanning {
+  @apply text-white bg-navyblue;
+}
+
+#filterButtonsPlanning:hover {
+  @apply text-darkblue bg-lightblue-900 ring ring-darkblue;
+}
+
+#filterButtonsPlanning.active {
+  @apply text-darkblue bg-lightblue-900 ring ring-darkblue;
+}
+#filterButtonsSubLevel button {
+  @apply text-white bg-navyblue;
+}
+
+#filterButtonsSubLevel button:hover {
+  @apply text-darkblue bg-lightblue-900 ring ring-darkblue;
+}
+
+#filterButtonsSubLevel button.active {
+  @apply text-darkblue bg-lightblue-900 ring ring-darkblue;
+}
+
+/*Planning Artistes*/
+#planning {
+  @apply mx-4 my-4 gap-y-10;
+}
+.sceneContainer {
+  @apply flex flex-col gap-y-4;
+}
+.nameScene {
+  @apply flex flex-row justify-center font-extrabold;
+}
+.sceneArtists {
+  @apply flex flex-col gap-y-10 md:grid md:grid-cols-2 md:justify-items-center md:gap-x-4 lg:grid-cols-3;
+}
+.dayContainer {
+  @apply flex flex-col gap-y-6 items-center;
+}
+.dayArtist {
+  @apply px-4 h-28 w-[300px] flex flex-col justify-center items-start bg-navyblue  rounded-lg md:w-72 lg:w-80;
+}
+.day {
+  @apply text-white uppercase;
+}
+.dayMonthYear {
+  @apply text-white;
+}
+.dayArtists {
+  @apply flex flex-col gap-y-4 items-center;
+}
+.artistHour {
+  @apply px-4 h-28 w-[300px] bg-blue rounded-lg md:w-72 lg:w-80;
+}
+.linkArtistHour {
+  @apply p-2 grid grid-cols-2 content-center justify-items-start gap-2 transform transition-all duration-300 hover:opacity-80 hover:scale-105;
+}
+.imgArtistHour {
+  @apply h-24 w-20 object-cover rounded-md;
+}
+.descriptionArtistHour {
+  @apply flex flex-col justify-center;
+}
+.nameArtistHour {
+  @apply text-lightblue text-xl font-bold;
+}
+.horaireArtistHour {
+  @apply text-white text-xl font-semibold;
+}
+
+/*Partenaires*/
+#partners {
+  @apply flex flex-col gap-y-12;
+}
+.nameCategory {
+  @apply border-t-2 border-blue p-4 relative;
+}
+.categoryTitle {
+  @apply absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 px-2 text-blue bg-white;
+}
+.categoryPartner {
+  @apply mx-4 flex flex-col gap-y-10 md:mx-24 lg:mx-40;
+}
+.categoryPartners {
+  @apply flex flex-col justify-center items-center space-y-10 md:grid md:grid-cols-3 md:justify-center md:space-y-0 md:gap-x-6 lg:grid-cols-4;
+}
+.linkPartner {
+  @apply transform transition-all duration-300 hover:opacity-80 hover:scale-105;
+}
+.imgPartner {
+  @apply w-full h-20 object-contain;
+}

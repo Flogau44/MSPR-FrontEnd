@@ -15,36 +15,11 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-      crossorigin=""
-    />
-    <script
-      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-      crossorigin=""
-    ></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/1.6.0/Control.FullScreen.css"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.fullscreen/1.6.0/Control.FullScreen.min.js"></script>
-    <script src="https://unpkg.com/leaflet.locatecontrol@0.72.0/dist/L.Control.Locate.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet.locatecontrol@0.72.0/dist/L.Control.Locate.min.css"
-    />
     <script
       src="https://kit.fontawesome.com/542ce770e9.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://shop.eventix.io/build/integrate.js"></script>
   </head>
   <body>
     <header
@@ -163,97 +138,16 @@
         >
       </nav>
     </header>
-    <main class="h-full mt-0 pt-0">
-      <!--Section Caroussel-->
-      <section class="hidden lg:flex">
-        <!--Faire apparaitre les images-->
-        <div
-          id="slider1"
-          class="splide"
-          role="group"
-          aria-label="Splide Basic HTML Example"
-        >
-          <div class="splide__track">
-            <ul class="splide__list">
-              <li class="splide__slide" data-splide-interval="100">
-                <img
-                  src="./images/Scene1.jpg"
-                  class="w-screen h-[400px] md:h-[500px] object-cover"
-                  alt="Scène1"
-                />
-              </li>
-              <li class="splide__slide" data-splide-interval="100">
-                <img
-                  src="./images/scene2.jpg"
-                  class="w-screen h-[400px] md:h-[500px] object-cover"
-                  alt="Scène2"
-                />
-              </li>
-              <li class="splide__slide" data-splide-interval="100">
-                <img
-                  src="./images/scene3.jpg"
-                  class="w-screen h-[400px] md:h-[500px] object-cover"
-                  alt="Scène3"
-                />
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-      <!--Section liste des concerts-->
-      <section
-        class="w-full py-10 flex flex-col items-center gap-y-4 bg-darkblue"
-      >
-        <div class="py-4 w-full flex flex-row justify-center">
-          <h2 class="uppercase text-lightblue">— Programmation —</h2>
+    <main class="h-full pt-0 md:pt-2">
+      <section class="mt-6">
+        <div class="mb-4 flex flex-row justify-center">
+          <h1 class="uppercase">— Billetterie —</h1>
         </div>
         <div
-          id="slider2"
-          class="splide px-16 md:px-20"
-          role="group"
-          aria-label="Splide Basic HTML Example"
-        >
-          <div class="splide__track">
-            <ul class="splide__list" id="slider2-list"></ul>
-          </div>
-        </div>
-        <button
-          type="button"
-          class="h-10 px-5 text-darkblue text-xl font-bold bg-lightblue-900 ring-darkblue rounded-md hover:text-white hover:bg-blue-900 outline-none hover:ring hover:ring-darkblue transition-colors duration-700 animate-fadeinup js-show-on-scroll3"
-        >
-          <a href="./programmation.html">Découvrez la programmation</a>
-        </button>
-      </section>
-      <!--Section billetterie-->
-      <section class="py-8 flex flex-col items-center space-y-4">
-        <h2 class="uppercase js-show-on-scroll-2">— Billetterie —</h2>
-        <p class="uppercase text-base font-medium md:text-xl">
-          Billet 1 jour · Forfait 3 Jours
-        </p>
-        <img src="./images/ticket.png" alt="ticket" />
-        <button
-          type="button"
-          class="h-10 px-5 text-darkblue text-xl font-bold bg-lightblue-900 ring-darkblue rounded-md hover:text-white hover:bg-blue-900 outline-none hover:ring hover:ring-darkblue transition-colors duration-700 animate-fadeinup js-show-on-scroll3"
-        >
-          <a href="./billetterie.html">Voir la billetterie</a>
-        </button>
-      </section>
-      <!--Section plan du festival-->
-      <section
-        class="py-10 px-4 md:px-16 flex flex-col text-base bg-darkblue md:text-xl"
-      >
-        <h2 class="uppercase flex justify-center text-lightblue">
-          — Plan du festival —
-        </h2>
-        <div id="myMap" class="my-6 flex justify-center"></div>
-      </section>
-      <section
-        class="py-10 px-4 flex flex-col justify-center items-center text-base md:px-16 md:text-xl"
-      >
-        <h2 class="uppercase flex justify-center">— Dernières Actualités —</h2>
-        <section id="articles" class="animate-fadeinup js-show-on-scroll3">
-          <!-- Articles ajoutés en JavaScript via le lien du fichier JSON Wordpress-->
-        </section>
+          id="shop-frame"
+          data-url="https://shop.eventix.io/a30cb309-6515-11ef-a9cb-7e126431635e"
+          style="max-width: 800px; margin: 0 auto"
+        ></div>
       </section>
     </main>
     <footer class="px-2 pt-2 bg-darkblue text-white w-full h-full">
@@ -358,9 +252,5 @@
       </div>
     </footer>
     <script src="./script/menu.js"></script>
-    <script src="./script/carousel.js"></script>
-    <script src="./script/map.js"></script>
-    <script src="./script/animate.js"></script>
-    <script src="./script/api_dernieres_actus.js"></script>
   </body>
 </html>

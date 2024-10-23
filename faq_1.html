@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="keywords"
+      content="festival, concert, musique, artiste, scène, billetterie, évenènement"
+    />
+    <title>Nation Sound</title>
+    <link rel="stylesheet" href="./dist/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/542ce770e9.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header
+      class="ud-header bg-darkblue text-white top-0 left-0 z-50 w-full h-20 flex flex-row items-center justify-center lg:justify-start lg:pl-12 lg:h-28"
+    >
+      <!--Menu Mobile-->
+      <nav class="navbar-mobile lg:hidden">
+        <!--Hamburger-->
+        <i
+          id="hamburgerNonactive"
+          class="fa-bars fas fa-2xl absolute left-3 z-999 text-white cursor-pointer w-7"
+        ></i>
+        <i
+          id="hamburgerActive"
+          class="fa-times fas fa-2xl absolute left-3 z-999 text-white cursor-pointer w-7"
+        ></i>
+        <div
+          class="modal hidden absolute top-0 left-0 z-100 bg-darkblue h-screen w-full text-4xl font-semibold items-center animate-menuslideinleft"
+        >
+          <div
+            class="navbar-mobile-list h-screen flex flex-col items-center justify-start pt-16 space-y-5"
+          >
+            <a
+              href="./index.html"
+              class="uppercase transition duration-0 text-white hover:text-lightblue hover:duration-500"
+              title="Vers la page d'accueil du site 'Nation Sound'"
+              >Accueil</a
+            >
+            <a
+              href="./informations.html"
+              class="uppercase transition duration-0 text-white hover:text-lightblue hover:duration-500"
+              title="Vers la page d'informations du site 'Nation Sound'"
+              >Informations</a
+            >
+            <a
+              href="./programmation.html"
+              class="uppercase transition duration-0 text-white hover:text-lightblue hover:duration-500"
+              title="Vers la page programmation du site 'Nation Sound'"
+              >Programmation</a
+            >
+            <a
+              href="./billetterie.html"
+              class="uppercase transition duration-0 text-white hover:text-lightblue hover:duration-500"
+              title="Vers la page billetterie du site 'Nation Sound'"
+              >Billetterie</a
+            >
+            <a
+              href="./infos_pratiques.html"
+              class="uppercase transition duration-0 text-white hover:text-lightblue hover:duration-500"
+              title="Vers la page d'infos pratiques du site 'Nation Sound'"
+              >Infos pratiques</a
+            >
+            <a
+              href="./partenaires.html"
+              class="uppercase transition duration-0 text-white hover:text-lightblue hover:duration-500"
+              title="Vers la page des partenaires du site 'Nation Sound'"
+              >Partenaires</a
+            >
+          </div>
+        </div>
+      </nav>
+      <!--Logo-->
+      <div class="pr-6 flex flex-col items-center">
+        <a href="./index.html" title="Page d'accueil">
+          <img
+            src="./images/logo.png"
+            id="logo"
+            class="w-20 md:w-28"
+            alt="logo"
+          />
+        </a>
+        <p class="hidden text-xl font-semibold lg:flex">
+          <span class="text-lightblue font-bold">11.12.13</span
+          ><span id="logoTitle">&nbsp;JUILLET</span>
+        </p>
+      </div>
+      <!--Menu desktop-->
+      <nav
+        class="navbar-desktop hidden lg:text-xl lg:font-semibold lg:flex lg:flex-row lg:space-x-5"
+      >
+        <a
+          href="./index.html"
+          class="uppercase transition duration-0 hover:text-lightblue hover:duration-500"
+          title="Vers la page d'accueil du site 'Nation Sound'"
+          >Accueil</a
+        >
+        <a
+          href="./informations.html"
+          class="uppercase transition duration-0 hover:text-lightblue hover:duration-500"
+          title="Vers la page d'informations du site 'Nation Sound'"
+          >Informations</a
+        >
+        <a
+          href="./programmation.html"
+          class="uppercase transition duration-0 hover:text-lightblue hover:duration-500"
+          title="Vers la page programmation du site 'Nation Sound'"
+          >Programmation</a
+        >
+        <a
+          href="./billetterie.html"
+          class="uppercase transition duration-0 hover:text-lightblue hover:duration-500"
+          title="Vers la page billetterie du site 'Nation Sound'"
+          >Billetterie</a
+        >
+        <a
+          href="./infos_pratiques.html"
+          class="uppercase transition duration-0 hover:text-lightblue min-w-[170px] hover:duration-500"
+          title="Vers la page d'infos pratiques du site 'Nation Sound'"
+          >Infos pratiques</a
+        >
+        <a
+          href="./partenaires.html"
+          class="uppercase transition duration-0 hover:text-lightblue hover:duration-500"
+          title="Vers la page des partenaires du site 'Nation Sound'"
+          >Partenaires</a
+        >
+      </nav>
+    </header>
+    <main class="h-full pt-0 md:pt-2">
+      <h1 class="my-4 uppercase flex justify-center">— Infos Pratiques —</h1>
+      <nav class="mt-6">
+        <ul
+          class="flex flex-col items-center justify-center gap-4 font-bold text-base md:text-2xl md:flex-row md:items-end md:gap-x-4"
+        >
+          <li>
+            <a
+              href="./infos_pratiques.html"
+              class="uppercase transition duration-0 text-blue-900 hover:text-darkblue hover:duration-500 hover:border-b-2 hover:border-darkblue"
+              title="Vers la page Venir du site 'Nation Sound'"
+              >Venir</a
+            >
+          </li>
+          <li>
+            <a
+              href="./sur_place.html"
+              class="uppercase transition duration-0 text-blue-900 hover:text-darkblue hover:duration-500 hover:border-b-2 hover:border-darkblue"
+              title="Vers la page Sur place du site 'Nation Sound'"
+              >Sur place</a
+            >
+          </li>
+          <li>
+            <a
+              href="./ou_dormir.html"
+              class="uppercase transition duration-0 text-blue-900 hover:text-darkblue hover:duration-500 hover:border-b-2 hover:border-darkblue"
+              title="Vers la page Où dormir du site 'Nation Sound'"
+              >Où dormir?</a
+            >
+          </li>
+          <li>
+            <a
+              href="./accessibilite.html"
+              class="uppercase transition duration-0 text-blue-900 hover:text-darkblue hover:duration-500 hover:border-b-2 hover:border-darkblue"
+              title="Vers la page Accessibilité du site 'Nation Sound'"
+              >Accessibilité</a
+            >
+          </li>
+          <li>
+            <a
+              href="./faq_1.html"
+              class="uppercase transition duration-0 text-darkblue border-darkblue border-b-2 hover:duration-500"
+              title="Vers la page FAQ du site 'Nation Sound'"
+              >f.a.q.</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <section class="px-4 mb-10 md:px-16">
+        <div class="my-10">
+          <h2 class="uppercase font-bold">Général</h2>
+        </div>
+        <div class="border-black-500 border-t-2">
+          <div class="question">
+            <h3>OÙ SE TROUVE LE FESTIVAL ?</h3>
+            <i class="fas fa-xl fa-chevron-up" aria-hidden="true"></i>
+          </div>
+          <div class="reponse">
+            <p>Le festival se trouve à Atainville, à 48 min de Paris.</p>
+          </div>
+        </div>
+        <div class="border-black-500 border-t-2">
+          <div class="question">
+            <h3>QUELLES SONT LES HEURES D'OUVERTURE DU FESTIVAL ?</h3>
+            <i class="fas fa-xl fa-chevron-up" aria-hidden="true"></i>
+          </div>
+          <div class="reponse">
+            <p>
+              Le festival ouvre ses portes à 12h30 et ferme à 2h00 du matin.
+            </p>
+          </div>
+        </div>
+        <div class="border-black-500 border-t-2">
+          <div class="question">
+            <h3>QUELS SONT LES OBJETS INTERDITS SUR LE FESTIVAL ?</h3>
+            <i class="fas fa-xl fa-chevron-up" aria-hidden="true"></i>
+          </div>
+          <div class="reponse">
+            <p>Seront interdits sur le site :</p>
+            <ul>
+              <li>
+                Les armes, substances explosives, inflammables ou volatiles.
+              </li>
+              <li>Les substances illicites, drogues.</li>
+              <li>Les poussettes, les chariots.</li>
+              <li>
+                Les objets dangereux, tranchants ou contondants, les parapluies,
+                ainsi que tout objet susceptible de servir de projectile.
+              </li>
+              <li>
+                Les animaux (à l'exception des chiens-guides pour personnes
+                malvoyantes).
+              </li>
+              <li>
+                Les liquides et gels non-potables dans des contenants de plus de
+                100 ml Les trépieds et perches à selfie, laser, drones.
+              </li>
+              <li>Les grands sacs à dos (> 45 cm hauteur).</li>
+              <li>Le gaz et becs à gaz.</li>
+              <li>
+                Tout autre objet pouvant être considéré comme dangereux par
+                l’organisation.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-black-500 border-t-2">
+          <div class="question">
+            <h3>Comment se déroulent les paiements sur le festival ?</h3>
+            <i class="fas fa-xl fa-chevron-up" aria-hidden="true"></i>
+          </div>
+          <div class="reponse">
+            <p>
+              Tous les paiements se font via un système cashless. Sur place,
+              recharge ton cashless en scannant le QR Code disposé sur la puce
+              de ton bracelet en te rendant aux caisses et bornes de
+              rechargement du site et du camping.
+            </p>
+          </div>
+        </div>
+        <div class="border-black-500 border-t-2 border-b-2">
+          <div class="question">
+            <h3>LE CASHLESS EST-IL LE SEUL MOYEN DE PAIEMENT AUX ARDENTES ?</h3>
+            <i class="fas fa-xl fa-chevron-up" aria-hidden="true"></i>
+          </div>
+          <div class="reponse">
+            <p>
+              Oui, le Cashless est l’unique moyen de paiement sur le site et le
+              camping.
+            </p>
+          </div>
+        </div>
+        <div class="my-10">
+          <h2 class="uppercase font-bold">Tickets</h2>
+        </div>
+        <div class="border-black-500 border-t-2">
+          <div class="question">
+            <h3>Je n'ai pas reçu d'email de confirmation</h3>
+            <i class="fas fa-xl fa-chevron-up" aria-hidden="true"></i>
+          </div>
+          <div class="reponse">
+            <p>Les informations seront prochainement disponibles.</p>
+          </div>
+        </div>
+        <div class="border-black-500 border-t-2">
+          <div class="question">
+            <h3>Je souhaite upgrader un billet acheté en magasin</h3>
+            <i class="fas fa-xl fa-chevron-up" aria-hidden="true"></i>
+          </div>
+          <div class="reponse">
+            <p>
+              Les upgrades de tickets ne sont possibles qu'avec les tickets
+              achetés en ligne sur notre billetterie officielle.
+            </p>
+          </div>
+        </div>
+        <div class="border-black-500 border-t-2 border-b-2">
+          <div class="question">
+            <h3>Comment puis-je activer la protection de remboursement ?</h3>
+            <i class="fas fa-xl fa-chevron-up" aria-hidden="true"></i>
+          </div>
+          <div class="reponse">
+            <p>
+              Si tu as assuré tes billets au moment de ton achat et que tu
+              souhaites te faire rembourser, rends toi ici.
+            </p>
+          </div>
+        </div>
+        <div class="my-10">
+          <h2 class="uppercase font-bold">Camping</h2>
+        </div>
+        <div class="border-black-500 border-t-2">
+          <div class="question">
+            <h3>QUELLES SONT LES CONDITIONS D'ACCÈS AU CAMPING ?</h3>
+            <i class="fas fa-xl fa-chevron-up" aria-hidden="true"></i>
+          </div>
+          <div class="reponse">
+            <p>
+              Les campeurs sont susceptibles d’être soumis à des vérifications
+              du contenu de leurs bagages, ainsi qu’à des palpations par les
+              agents de sécurité, à l’entrée du camping.
+            </p>
+            <p>
+              Tout mineur doit disposer d’une autorisation parentale signée
+              accompagnée d’une photocopie de la carte d’identité des parents.
+              Ces documents devront être remis au poste de sécurité à l’entrée
+              du camping où ils y seront conservés.
+            </p>
+            <p>
+              L’accès au camping est réservé aux festivaliers de plus de 16 ans.
+              Tout mineur de moins de 18 ans doit obligatoirement être
+              accompagné d’un adulte responsable au sein du camping.
+            </p>
+            <p>
+              Toute personne ne remplissant pas ces conditions se verra refuser
+              l’accès au camping.
+            </p>
+          </div>
+        </div>
+        <div class="border-black-500 border-t-2">
+          <div class="question">
+            <h3>Quel type de tente est autorisé au sein du camping ?</h3>
+            <i class="fas fa-xl fa-chevron-up" aria-hidden="true"></i>
+          </div>
+          <div class="reponse">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+              quis sapien erat.
+            </p>
+          </div>
+        </div>
+        <div class="border-black-500 border-t-2">
+          <div class="question">
+            <h3>QUELS SONT LES OBJETS INTERDITS SUR LE CAMPING</h3>
+            <i class="fas fa-xl fa-chevron-up" aria-hidden="true"></i>
+          </div>
+          <div class="reponse">
+            <p>
+              La surface maximum que tu peux utiliser pour installer ta tente
+              est de 4m2 (emplacement 2 personnes) à 9m2 (emplacement 4
+              personnes). Les tentes avec coin salon intégré ne seront pas
+              autorisées.
+            </p>
+          </div>
+        </div>
+        <div class="border-black-500 border-y-2">
+          <div class="question">
+            <h3>Mon véhicule est-il accepté au sein du camping ?</h3>
+            <i class="fas fa-xl fa-chevron-up" aria-hidden="true"></i>
+          </div>
+          <div class="reponse">
+            <p>
+              Les voitures, motos, remorques, caravanes, camping-car, etc.
+              mettent en danger la sécurité des campeurs et ne sont donc pas
+              autorisés dans l’enceinte du camping et ses alentours. Ceci est
+              également valable pour les trottinettes, vélos et vélos
+              électriques, gyropodes, …
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="px-2 pt-2 bg-darkblue text-white w-full h-full">
+      <div
+        class="flex flex-col items-center space-y-4 md:grid md:grid-cols-3 md:gap-x-6 md:justify-items-center"
+      >
+        <!--Nation Sound-->
+        <div class="flex flex-col">
+          <img src="./images/logo.png" class="w-64" />
+        </div>
+        <!--Réseaux sociaux-->
+        <div class="flex flex-col space-y-6 items-center">
+          <div class="flex flex-col items-center space-y-2">
+            <div>
+              <h1 class="text-white">Restons connectés</h1>
+            </div>
+            <div>
+              <p class="text-xl">Suivez-nous sur nos réseaux sociaux !</p>
+            </div>
+          </div>
+          <div class="flex flex-row space-x-3">
+            <a href="#" title="Vers la page facebook">
+              <i
+                class="fab fa-facebook text-white fa-2xl transition duration-0 hover:duration-1000 hover:text-blue"
+              ></i>
+            </a>
+            <a href="#" title="Vers la page instagramm">
+              <i
+                class="fab fa-instagramm text-white fa-2xl transition duration-0 hover:duration-1000 hover:text-blue"
+              ></i>
+            </a>
+            <a href="#" title="Vers la page twitter">
+              <i
+                class="fab fa-twitter text-white fa-2xl transition duration-0 hover:duration-1000 hover:text-blue"
+              ></i>
+            </a>
+            <a href="#" title="Vers la page youtube">
+              <i
+                class="fab fa-youtube text-white fa-2xl transition duration-0 hover:duration-1000 hover:text-blue"
+              ></i>
+            </a>
+            <a href="#" title="Vers la page snapchat">
+              <i
+                class="fab fa-snapchat text-white fa-2xl transition duration-0 hover:duration-1000 hover:text-blue"
+              ></i>
+            </a>
+            <a href="#" title="Vers la page linkedin">
+              <i
+                class="fab fa-linkedin text-white transition duration-0 hover:duration-1000 fa-2xl hover:text-blue"
+              ></i>
+            </a>
+          </div>
+        </div>
+        <!--Contact et infos-->
+        <div>
+          <ul
+            class="text-2xl font-semibold flex flex-col items-center space-y-2 md:items-start"
+          >
+            <li>
+              <a
+                href="./contact.html"
+                class="transition duration-0 hover:text-blue hover:duration-1000"
+                title="Vers la page contact du site 'Nation Sound'"
+                >Contact</a
+              >
+            </li>
+            <li>
+              <a
+                href="./mentions_legales.html"
+                class="transition duration-0 hover:text-blue hover:duration-1000"
+                title="Vers la page des mentions légales du site 'Nation Sound'"
+                >Mentions légales</a
+              >
+            </li>
+            <li>
+              <a
+                href="./faq.html"
+                class="transition duration-0 hover:text-blue hover:duration-1000"
+                title="Vers la page F.A.Q. du site 'Nation Sound'"
+                >F.A.Q.</a
+              >
+            </li>
+            <li>
+              <a
+                href="./partenaires.html"
+                class="transition duration-0 hover:text-blue hover:duration-1000"
+                title="Vers la page des partenaires du site 'Nation Sound'"
+                >Partenaires</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="py-2 flex flex-col justify-center items-center md:flex-row">
+        <div>
+          Copyright &copy; 2024 Live Envents -
+
+          <span class="text-lightblue font-semibold">N</span>ation
+          <span class="text-lightblue font-semibold">S</span>ound -
+        </div>
+        <div>Tous droits réservés</div>
+      </div>
+    </footer>
+    <script src="./script/menu.js"></script>
+    <script src="./script/accordeon.js"></script>
+    <script src="./script/animate.js"></script>
+  </body>
+</html>
